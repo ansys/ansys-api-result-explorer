@@ -1,0 +1,157 @@
+syntax = "proto3";
+package ansys.api.result_explorer.v0.workspace;
+
+import "base.proto";
+import "google/protobuf/struct.proto";
+
+message WorkspaceCreate {
+  string name = 1;
+}
+
+message SyncOptions {
+  optional bool camera = 1;
+  optional bool time_freq = 2;
+  optional bool legend = 3;
+  optional bool probe_entity = 4;
+  optional bool probe_location = 5;
+}
+
+message Workspace {
+  string id = 1;
+  string name = 2;
+  optional SyncOptions sync_options = 3;
+  repeated string viewport_ids = 4;
+  optional string fullscreen_viewport_id = 5;
+}
+
+message WorkspaceUpdateRequest {
+  string workspace_id = 1; // id of the workspace to update
+  optional string name = 2;
+  optional SyncOptions sync_options = 3;
+  optional string fullscreen_viewport_id = 5; // if empty, exit full screen
+}
+
+message WorkspaceList {
+  repeated Workspace workspaces = 1;
+}
+
+message Viewport {
+  // unique identifier of the viewport
+  string id = 1;
+
+  // status of the viewport
+  bool ready = 2;
+  repeated string errors = 3;
+
+  // viewport configuration
+  optional string solution_id = 10;
+  optional string view_id = 11;
+  optional google.protobuf.Struct metadata = 12;
+  optional SyncOptions sync_options = 13;
+  optional float size = 14;
+  optional bool hidden = 15;
+}
+
+message ViewportList {
+  repeated Viewport viewports = 1;
+}
+
+message UpdateViewportRequest {
+  // id of the viewport to update
+  string viewport_id = 1;
+
+  // fields to update
+  optional string solution_id = 3; // if empty, no solution assigned
+  optional string view_id = 4; // if empty, no view assigned
+  optional google.protobuf.Struct metadata = 5;
+  optional SyncOptions sync_options = 6;
+  optional float size = 7;
+  optional bool hidden = 8;
+
+  // request options
+  bool wait = 20; // wait for the update to be applied before returning
+}
+
+enum ViewportDirection {
+  VIEWPORT_DIRECTION_UNSPECIFIED = 0;
+  VIEWPORT_DIRECTION_RIGHT = 1;
+  VIEWPORT_DIRECTION_BOTTOM = 2;
+}
+
+message CreateViewportRequest {
+  string workspace_id = 1;
+  string viewport_id = 2;
+  ViewportDirection direction = 3;
+  optional float size = 4;
+}
+
+message SnapshotSettings {
+  optional string background_color = 1;
+  optional bool transparent_background = 2;
+  optional bool show_logo = 3;
+  optional string text_color = 4;
+  // LogoColor logo_color = 5; // todo: good example to discuss enum usage
+  optional int32 metadata_text_size = 6;
+  optional bool show_legend = 7;
+  optional bool show_result_picker = 8;
+  optional bool show_solution_name = 9;
+  optional string solution_name = 10;
+  optional bool show_time_stamp = 11;
+  optional bool scale_logo_with_metadata = 12;
+  optional int32 height = 13;
+  optional int32 width = 14;
+}
+
+message CreateSnapshotRequest {
+  string viewport_id = 1;
+  SnapshotSettings settings = 2;
+}
+
+message Snapshot {
+  bytes data = 1;
+}
+
+message WorkspaceTemplate {
+  string data = 1;
+}
+
+message WorkspaceImportRequest {
+
+  message SolutionInfo {
+    string name = 1;
+    string result_provider_name = 2;
+    string file_path = 3;
+  }
+  
+  string template = 1;
+  string workspace_name = 2;
+  repeated SolutionInfo solutions = 3;
+
+  // options
+
+  optional bool use_camera_position = 10;
+  optional bool use_time_freq = 11;
+  optional bool use_body_visibility = 12;
+}
+
+service WorkspaceService {
+  // Workspace management
+  rpc Create(WorkspaceCreate) returns (Workspace);
+  rpc List(base.Empty) returns (WorkspaceList);
+  rpc Get(base.ResourceId) returns (Workspace);
+  rpc Delete(base.ResourceId) returns (base.Empty);
+  rpc Update(WorkspaceUpdateRequest) returns (Workspace);
+
+  // Viewport management
+  rpc ListViewports(base.ResourceId) returns (ViewportList);
+  rpc CreateViewport(CreateViewportRequest) returns (Viewport);
+  rpc DeleteViewport(base.ResourceId) returns (base.Empty);
+  rpc UpdateViewport(UpdateViewportRequest) returns (Viewport);
+
+  // Snapshot
+  rpc CreateSnapshot(CreateSnapshotRequest) returns (Snapshot);
+
+  // Export/Import template
+  rpc ExportWorkspace(base.ResourceId) returns (WorkspaceTemplate);
+  rpc ImportWorkspace(WorkspaceImportRequest) returns (base.ResourceId);
+}

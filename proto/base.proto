@@ -1,0 +1,10 @@
+syntax = "proto3";
+package ansys.api.result_explorer.v0.base;
+
+message Empty {
+  
+}
+
+message ResourceId {
+  string id = 1;
+}
