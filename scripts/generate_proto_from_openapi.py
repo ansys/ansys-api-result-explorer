@@ -27,7 +27,7 @@ def main():
         print("Make sure the server is running, or provide a file path/URL as argument")
         print()
     # Get the repository root
-    script_dir = Path(__file__).parent
+    script_dir = Path(__file__).parent.parent
     target_file = script_dir / "proto" / "server_models.proto"
 
     print("Creating temporary directory...")
