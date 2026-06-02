@@ -44,6 +44,10 @@ jobs:
         run: |
           python scripts/generate_proto_from_openapi.py
 
+      - name: Pre-commit checks
+        run: |
+          pre-commit run --files proto/server_models.proto
+
       - name: "Create PR if changes detected"
         id: create-pr
         uses: peter-evans/create-pull-request@v8
