@@ -27,18 +27,29 @@ jobs:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
           enable-cache: "false"
 
+      - name: Create data folder
+        run: mkdir -p /tmp/data
+
       - name: Start Result Explorer
         id: rx-compose
-        uses: ansys-internal/pyresultexplorer/.github/actions/result-explorer-docker@main
+        uses: ./.github/actions/result-explorer-docker
         with:
           token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
           ghcr-username: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
           ghcr-token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
           license-server: ${{ secrets.LICENSE_SERVER }}
+          results-folder: /tmp/data
 
       - name: Generate server models from openapi
         run: |
           python scripts/generate_proto_from_openapi.py
+
+      - name: Pre-commit checks
+        continue-on-error: true
+        run: |
+          uv sync --group build
+          pre-commit install
+          pre-commit run --files proto/server_models.proto
 
       - name: "Create PR if changes detected"
         id: create-pr

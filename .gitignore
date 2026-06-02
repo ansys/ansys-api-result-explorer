@@ -136,3 +136,5 @@ freeze/*log.txt
 .vscode
 
 test_results.xml
+
+result-explorer
