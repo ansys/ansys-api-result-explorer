@@ -18,7 +18,7 @@ pip install "ansys-api-result-explorer @ git+https://github.com/ansys-internal/r
 
 ## Build
 
-From the `python` subfolder, create a virtual environment
+Create a virtual environment
 
 ```
 uv venv
@@ -34,15 +34,5 @@ uv sync --group build
 Run the build script to run the proto compiler
 
 ```
-python proto_compile.py
-```
-
-
-## Run Unit Tests
-
-From the `python` subfolder
-
-```
-python -m pip install .[tests]
-python -m pytest -v
+python scripts/proto_compile.py
 ```
