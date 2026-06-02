@@ -13,7 +13,7 @@ pip install ansys-api-result-explorer
 Otherwise, they can be installed from sources with:
 
 ```bash
-pip install "ansys-api-result-explorer @ git+https://github.com/ansys-internal/result-explorer.git"
+pip install "ansys-api-result-explorer @ git+https://github.com/ansys/ansys-api-result-explorer.git"
 ```
 
 ## Build
