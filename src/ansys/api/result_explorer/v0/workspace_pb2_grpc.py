@@ -6,7 +6,7 @@ import warnings
 import base_pb2 as base__pb2
 import workspace_pb2 as workspace__pb2
 
-GRPC_GENERATED_VERSION = '1.76.0'
+GRPC_GENERATED_VERSION = '1.80.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
