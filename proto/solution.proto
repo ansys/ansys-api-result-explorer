@@ -1,0 +1,118 @@
+// Copyright (C) 2026 ANSYS, Inc. and/or its affiliates.
+// SPDX-License-Identifier: Apache-2.0
+//
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+package ansys.api.result_explorer.v0.solution;
+
+import "base.proto";
+import "server_models.proto";
+
+message SolutionCreate {
+  string result_provider_name = 1;
+
+  string name = 2;
+  repeated server_models.File files = 3;
+  server_models.HpsFiles hps_files = 4;
+  server_models.SplitMeshOptions split_mesh_options = 5;
+}
+
+message SolutionList {
+  repeated server_models.Solution solutions = 1;
+}
+
+message CreatePlotDefinitionRequest {
+  string solution_id = 1;
+  server_models.PlotDefinitionCreate plot_definition = 3;
+}
+
+message UpdatePlotDefinitionRequest {
+  string solution_id = 1;
+  string plot_definition_id = 2;
+  server_models.PlotDefinitionCreate plot_definition = 3;
+}
+
+message DeletePlotDefinitionRequest {
+  string solution_id = 1;
+  string plot_definition_id = 2;
+}
+
+message CreateChartDefinitionRequest {
+  string solution_id = 1;
+  server_models.ChartDefinitionCreate chart_definition = 3;
+}
+
+message UpdateChartDefinitionRequest {
+  string solution_id = 1;
+  string chart_definition_id = 2;
+  server_models.ChartDefinitionCreate chart_definition = 3;
+}
+
+message DeleteChartDefinitionRequest {
+  string solution_id = 1;
+  string chart_definition_id = 2;
+}
+
+message CreateNamedSelectionRequest {
+  string solution_id = 1;
+  server_models.NamedSelectionCreate named_selection = 2;
+}
+
+message UpdateNamedSelectionRequest {
+  string solution_id = 1;
+  string named_selection_id = 2;
+  server_models.NamedSelectionCreate named_selection = 3;
+}
+
+message DeleteNamedSelectionRequest {
+  string solution_id = 1;
+  string named_selection_id = 2;
+}
+
+message UpdateMeshOptionsRequest {
+  string solution_id = 1;
+  server_models.MeshGraphicsOptions mesh_options = 2;
+}
+
+service SolutionService { 
+  rpc Create(SolutionCreate) returns (server_models.Solution);
+  rpc Delete(base.ResourceId) returns (base.Empty);
+  rpc List(base.Empty) returns (SolutionList);
+  rpc Get(base.ResourceId) returns (server_models.Solution);
+
+  rpc UpdateMeshOptions(UpdateMeshOptionsRequest) 
+    returns (server_models.MeshGraphicsOptions);
+
+  rpc CreatePlotDefinition(CreatePlotDefinitionRequest) 
+    returns (server_models.PlotDefinition);
+  rpc UpdatePlotDefinition(UpdatePlotDefinitionRequest)
+    returns (server_models.PlotDefinition);
+  rpc DeletePlotDefinition(DeletePlotDefinitionRequest) 
+    returns (base.Empty);
+
+  rpc CreateChartDefinition(CreateChartDefinitionRequest)
+    returns (server_models.ChartDefinition);
+  rpc UpdateChartDefinition(UpdateChartDefinitionRequest) 
+    returns (server_models.ChartDefinition);
+  rpc DeleteChartDefinition(DeleteChartDefinitionRequest)
+    returns (base.Empty);
+
+  rpc CreateNamedSelection(CreateNamedSelectionRequest)
+    returns (server_models.NamedSelection);
+  rpc DeleteNamedSelection(DeleteNamedSelectionRequest)
+    returns (base.Empty);
+  rpc UpdateNamedSelection(UpdateNamedSelectionRequest)
+    returns (server_models.NamedSelection);
+}

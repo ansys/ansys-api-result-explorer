@@ -1,0 +1,139 @@
+// Copyright (C) 2026 ANSYS, Inc. and/or its affiliates.
+// SPDX-License-Identifier: Apache-2.0
+//
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+package ansys.api.result_explorer.v0.app;
+
+import "base.proto";
+import "server_models.proto";
+
+message AppInfo {
+  string version = 1;
+  string build_date = 2;
+  optional string branch = 3;
+  optional string commit_hash = 4;
+}
+
+message ResultProvider {
+  string name = 1;
+  string url = 2;
+  server_models.BuildInfo build_info = 3;
+  optional string hps_url = 4;
+  
+  repeated string solution_ids = 10;
+}
+
+message CreateResultProviderRequest {
+  string name = 1;
+  string url = 2;
+}
+
+message DeleteResultProviderRequest {
+  string name = 1;
+}
+
+message ResultProviderList {
+  repeated ResultProvider result_providers = 1;
+}
+
+enum AppTheme {
+  APP_THEME_UNSPECIFIED = 0;
+  APP_THEME_LIGHT = 1;
+  APP_THEME_DARK = 2;
+  APP_THEME_CLASSIC = 3;
+}
+
+enum ThreeDCameraProjection {
+  THREE_DCAMERA_PROJECTION_UNSPECIFIED = 0;
+  THREE_DCAMERA_PROJECTION_PERSPECTIVE = 1;
+  THREE_DCAMERA_PROJECTION_PARALLEL = 2;
+}
+
+enum ThreeDInteractionMode {
+  THREE_DINTERACTION_MODE_UNSPECIFIED = 0;
+  THREE_DINTERACTION_MODE_ANSYS = 1;
+  THREE_DINTERACTION_MODE_PRESET_2 = 2;
+  THREE_DINTERACTION_MODE_PRESET_3 = 3;
+}
+
+enum ThreeDColorMap {
+  THREE_DCOLOR_MAP_UNSPECIFIED = 0;
+  THREE_DCOLOR_MAP_RAINBOW = 1;
+  THREE_DCOLOR_MAP_TURBO = 2;
+  THREE_DCOLOR_MAP_COOL_WARM = 3;
+  THREE_DCOLOR_MAP_PLASMA = 4;
+  THREE_DCOLOR_MAP_INFERNO = 5;
+  THREE_DCOLOR_MAP_VIRIDIS = 6;
+}
+
+message AppearanceSettings {
+  AppTheme theme = 1;
+}
+
+message ThreeDSettings {
+  ThreeDCameraProjection camera_projection = 2;
+  ThreeDInteractionMode interaction_mode = 3;
+  ThreeDColorMap color_map = 4;
+  optional bool show_mesh_edges_by_default = 5;
+  optional bool use_global_min_max_by_default = 6;
+}
+
+message DataProcessingSettings {
+  optional ProcessingMode processing_mode = 1;
+  optional bool include_displacement = 2;
+  optional bool all_sets_scoping = 3;
+  server_models.ChunkingStrategy chunking_strategy = 4;
+  optional bool average_per_entity = 5;
+}
+
+enum ProcessingMode {
+  PROCESSING_MODE_UNSPECIFIED = 0;
+  PROCESSING_MODE_SKIN = 1;
+  PROCESSING_MODE_FULL = 2;
+}
+
+message AppSettings {
+  AppearanceSettings appearance = 1;
+  ThreeDSettings three_d = 2;
+  DataProcessingSettings data_processing = 3;
+}
+
+message Session {
+  string data = 1;
+}
+
+message AuthenticateResultProviderRequest {
+  string result_provider_name = 1;
+  string token = 2;
+}
+
+service AppService {
+  rpc GetAppInfo(base.Empty) returns (AppInfo);
+
+  rpc GetAppSettings(base.Empty) returns (AppSettings);
+  rpc UpdateAppSettings(AppSettings) returns (AppSettings);
+
+  rpc ListResultProviders(base.Empty) 
+    returns (ResultProviderList);
+  rpc CreateResultProvider(CreateResultProviderRequest)
+    returns (ResultProvider);
+  rpc DeleteResultProvider(DeleteResultProviderRequest)
+    returns (base.Empty);
+  rpc AuthenticateResultProvider(AuthenticateResultProviderRequest) returns (base.Empty);
+
+  rpc SaveSession(base.Empty) returns (Session);
+  rpc OpenSession(Session) returns (base.Empty);
+}

@@ -1,0 +1,71 @@
+// Copyright (C) 2026 ANSYS, Inc. and/or its affiliates.
+// SPDX-License-Identifier: Apache-2.0
+//
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+package ansys.api.result_explorer.v0.filesystem;
+
+// would be needed for routing directly to the server
+// import "google/api/annotations.proto";
+
+import "server_models.proto";
+
+message FilesystemRequest {
+  string result_provider_name = 1;
+}
+
+message LsRequest {
+  string result_provider_name = 1;
+
+  string path = 2;
+  optional int32 max_depth = 3;
+}
+
+message FsItems {
+  repeated server_models.FSItem items = 1;
+}
+
+message TailRequest {
+  string result_provider_name = 1;
+  string path = 2;
+  optional int32 lines_offset = 3;
+  optional int32 bytes_offset = 4;
+}
+
+message FileContent {
+  string content = 1;
+}
+
+service FilesystemService {
+  rpc Ls(LsRequest) returns (FsItems);
+  // would be needed for routing directly to the server
+  // {
+  //   option (google.api.http) = {
+  //     post: "/api/v1/fs/ls"
+  //   };
+  // }
+  rpc Pwd(FilesystemRequest) returns (server_models.FSPath);
+  rpc Home(FilesystemRequest) returns (server_models.FSPath);
+  rpc Stat(FilesystemRequest) returns (server_models.FSItem);
+  rpc Tail(TailRequest) returns (FileContent);
+}
+
+message HpsFsItems {
+  repeated server_models.HpsFSItem items = 1;
+}
+
+service HpsFilesystemService {
+  rpc Ls(LsRequest) returns (HpsFsItems);
+}
