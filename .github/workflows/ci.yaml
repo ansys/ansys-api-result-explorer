@@ -28,13 +28,13 @@ jobs:
 
     steps:
      
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: github.event_name == 'pull_request'
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: github.event_name != 'pull_request'
         with:
           token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
