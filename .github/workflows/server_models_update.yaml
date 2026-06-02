@@ -27,6 +27,9 @@ jobs:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
           enable-cache: "false"
 
+      - name: Create data folder
+        run: mkdir -p /tmp/data
+
       - name: Start Result Explorer
         id: rx-compose
         uses: ./.github/actions/result-explorer-docker
@@ -35,6 +38,7 @@ jobs:
           ghcr-username: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
           ghcr-token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
           license-server: ${{ secrets.LICENSE_SERVER }}
+          results-folder: /tmp/data
 
       - name: Generate server models from openapi
         run: |
