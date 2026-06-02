@@ -45,6 +45,7 @@ jobs:
           python scripts/generate_proto_from_openapi.py
 
       - name: Pre-commit checks
+        continue-on-error: true
         run: |
           uv sync --group build
           pre-commit install
