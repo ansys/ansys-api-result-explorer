@@ -46,6 +46,7 @@ jobs:
 
       - name: Pre-commit checks
         run: |
+          uv sync --group build
           pre-commit install
           pre-commit run --files proto/server_models.proto
 
