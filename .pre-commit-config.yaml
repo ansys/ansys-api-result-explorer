@@ -8,14 +8,17 @@ repos:
     # Run the linter.
     - id: ruff-check
       args: [ --fix ]
+      exclude: ^src/ansys/api/result_explorer/v0/
     # Run the formatter.
     - id: ruff-format
+      exclude: ^src/ansys/api/result_explorer/v0/
 
 # Add copyright statement to files
 - repo: https://github.com/ansys/pre-commit-hooks
   rev: v0.7.2
   hooks:
   - id: add-license-headers
+    exclude: ^src/ansys/api/result_explorer/v0/
     args:
     - --start_year=2026
     - --custom_license=Apache-2.0

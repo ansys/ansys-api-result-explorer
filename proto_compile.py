@@ -9,7 +9,7 @@ log = logging.getLogger()
 def proto_compile(proto_path, output_dir):
     target_protos = glob.glob(os.path.join(proto_path, "**/*.proto"), recursive=True)
     command = [
-        f"python -m grpc_tools.protoc",
+        "python -m grpc_tools.protoc",
         f"--python_out={output_dir}",
         f"--grpc_python_out={output_dir}",
         f"--mypy_out={output_dir}",
