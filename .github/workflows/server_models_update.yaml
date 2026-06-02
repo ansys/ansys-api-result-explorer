@@ -46,6 +46,7 @@ jobs:
 
       - name: Pre-commit checks
         run: |
+          pre-commit install
           pre-commit run --files proto/server_models.proto
 
       - name: "Create PR if changes detected"
