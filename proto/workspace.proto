@@ -83,6 +83,7 @@ message UpdateViewportRequest {
   optional SyncOptions sync_options = 6;
   optional float size = 7;
   optional bool hidden = 8;
+  optional google.protobuf.Struct display_options = 9;
 
   // request options
   bool wait = 20; // wait for the update to be applied before returning
