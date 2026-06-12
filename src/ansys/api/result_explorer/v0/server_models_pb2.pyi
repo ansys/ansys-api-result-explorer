@@ -557,11 +557,11 @@ class ChartDefinition(google.protobuf.message.Message):
     creation_time: builtins.str
     supports_monitoring: builtins.bool
     @property
-    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartResultOutput]: ...
+    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartResult]: ...
     @property
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinitionOutput: ...
+    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
     @property
     def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, Global___CustomOptionsValue]: ...
     def __init__(
@@ -569,13 +569,13 @@ class ChartDefinition(google.protobuf.message.Message):
         *,
         id: builtins.str = ...,
         name: builtins.str | None = ...,
-        results: collections.abc.Iterable[Global___ChartResultOutput] | None = ...,
+        results: collections.abc.Iterable[Global___ChartResult] | None = ...,
         all_sets: builtins.bool | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
         user_defined: builtins.bool | None = ...,
         script: builtins.str | None = ...,
         plotly_figure: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinitionOutput | None = ...,
+        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
         custom_options: collections.abc.Mapping[builtins.str, Global___CustomOptionsValue] | None = ...,
         chunk_size: builtins.int | None = ...,
@@ -648,24 +648,24 @@ class ChartDefinitionCreate(google.protobuf.message.Message):
     chunk_size: builtins.int
     id: builtins.str
     @property
-    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartResultInput]: ...
+    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartResult]: ...
     @property
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinitionInput: ...
+    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
     @property
     def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, Global___CustomOptionsValue]: ...
     def __init__(
         self,
         *,
         name: builtins.str | None = ...,
-        results: collections.abc.Iterable[Global___ChartResultInput] | None = ...,
+        results: collections.abc.Iterable[Global___ChartResult] | None = ...,
         all_sets: builtins.bool | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
         user_defined: builtins.bool | None = ...,
         script: builtins.str | None = ...,
         plotly_figure: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinitionInput | None = ...,
+        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
         custom_options: collections.abc.Mapping[builtins.str, Global___CustomOptionsValue] | None = ...,
         chunk_size: builtins.int | None = ...,
@@ -737,11 +737,11 @@ class ChartDefinitionSerialize(google.protobuf.message.Message):
     chunk_size: builtins.int
     supports_monitoring: builtins.bool
     @property
-    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartResultOutput]: ...
+    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartResult]: ...
     @property
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinitionOutput: ...
+    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
     @property
     def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, Global___CustomOptionsValue]: ...
     def __init__(
@@ -749,13 +749,13 @@ class ChartDefinitionSerialize(google.protobuf.message.Message):
         *,
         id: builtins.str = ...,
         name: builtins.str | None = ...,
-        results: collections.abc.Iterable[Global___ChartResultOutput] | None = ...,
+        results: collections.abc.Iterable[Global___ChartResult] | None = ...,
         all_sets: builtins.bool | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
         user_defined: builtins.bool | None = ...,
         script: builtins.str | None = ...,
         plotly_figure: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinitionOutput | None = ...,
+        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
         custom_options: collections.abc.Mapping[builtins.str, Global___CustomOptionsValue] | None = ...,
         chunk_size: builtins.int | None = ...,
@@ -783,7 +783,7 @@ class ChartDefinitionSerialize(google.protobuf.message.Message):
 Global___ChartDefinitionSerialize: typing_extensions.TypeAlias = ChartDefinitionSerialize
 
 @typing.final
-class ChartResultInput(google.protobuf.message.Message):
+class ChartResult(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NAME_FIELD_NUMBER: builtins.int
@@ -808,7 +808,7 @@ class ChartResultInput(google.protobuf.message.Message):
     @property
     def filters(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___Filter.ValueType]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinitionInput: ...
+    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
     def __init__(
         self,
         *,
@@ -818,7 +818,7 @@ class ChartResultInput(google.protobuf.message.Message):
         location: builtins.str | None = ...,
         average_by_entity: builtins.bool | None = ...,
         filters: collections.abc.Iterable[Global___Filter.ValueType] | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinitionInput | None = ...,
+        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
         shell_position: Global___ShellPosition.ValueType = ...,
         on_skin: builtins.bool | None = ...,
@@ -836,63 +836,7 @@ class ChartResultInput(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_on_skin", b"_on_skin"]) -> typing.Literal["on_skin"] | None: ...
 
-Global___ChartResultInput: typing_extensions.TypeAlias = ChartResultInput
-
-@typing.final
-class ChartResultOutput(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NAME_FIELD_NUMBER: builtins.int
-    RESULT_TYPE_FIELD_NUMBER: builtins.int
-    FIELDS_FIELD_NUMBER: builtins.int
-    LOCATION_FIELD_NUMBER: builtins.int
-    AVERAGE_BY_ENTITY_FIELD_NUMBER: builtins.int
-    FILTERS_FIELD_NUMBER: builtins.int
-    MESH_SCOPING_FIELD_NUMBER: builtins.int
-    NAMED_SELECTION_ID_FIELD_NUMBER: builtins.int
-    SHELL_POSITION_FIELD_NUMBER: builtins.int
-    ON_SKIN_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    result_type: Global___ResultType.ValueType
-    location: builtins.str
-    average_by_entity: builtins.bool
-    named_selection_id: builtins.str
-    shell_position: Global___ShellPosition.ValueType
-    on_skin: builtins.bool
-    @property
-    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Field]: ...
-    @property
-    def filters(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___Filter.ValueType]: ...
-    @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinitionOutput: ...
-    def __init__(
-        self,
-        *,
-        name: builtins.str | None = ...,
-        result_type: Global___ResultType.ValueType = ...,
-        fields: collections.abc.Iterable[Global___Field] | None = ...,
-        location: builtins.str | None = ...,
-        average_by_entity: builtins.bool | None = ...,
-        filters: collections.abc.Iterable[Global___Filter.ValueType] | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinitionOutput | None = ...,
-        named_selection_id: builtins.str | None = ...,
-        shell_position: Global___ShellPosition.ValueType = ...,
-        on_skin: builtins.bool | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_average_by_entity", b"_average_by_entity", "_location", b"_location", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "average_by_entity", b"average_by_entity", "location", b"location", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_average_by_entity", b"_average_by_entity", "_location", b"_location", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "average_by_entity", b"average_by_entity", "fields", b"fields", "filters", b"filters", "location", b"location", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "result_type", b"result_type", "shell_position", b"shell_position"]) -> None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["_average_by_entity", b"_average_by_entity"]) -> typing.Literal["average_by_entity"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["_location", b"_location"]) -> typing.Literal["location"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["_name", b"_name"]) -> typing.Literal["name"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["_named_selection_id", b"_named_selection_id"]) -> typing.Literal["named_selection_id"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["_on_skin", b"_on_skin"]) -> typing.Literal["on_skin"] | None: ...
-
-Global___ChartResultOutput: typing_extensions.TypeAlias = ChartResultOutput
+Global___ChartResult: typing_extensions.TypeAlias = ChartResult
 
 @typing.final
 class ChartSeries(google.protobuf.message.Message):
@@ -2008,7 +1952,7 @@ class NamedSelection(google.protobuf.message.Message):
     @property
     def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
     @property
-    def property_ids(self) -> Global___PropertyScopingOutput: ...
+    def property_ids(self) -> Global___PropertyScoping: ...
     def __init__(
         self,
         *,
@@ -2020,7 +1964,7 @@ class NamedSelection(google.protobuf.message.Message):
         bodies: collections.abc.Iterable[Global___StringMap] | None = ...,
         node_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
         element_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        property_ids: Global___PropertyScopingOutput | None = ...,
+        property_ids: Global___PropertyScoping | None = ...,
         creation_time: builtins.str | None = ...,
         location: builtins.str | None = ...,
         size: builtins.int | None = ...,
@@ -2071,7 +2015,7 @@ class NamedSelectionCreate(google.protobuf.message.Message):
     @property
     def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
     @property
-    def property_ids(self) -> Global___PropertyScopingInput: ...
+    def property_ids(self) -> Global___PropertyScoping: ...
     def __init__(
         self,
         *,
@@ -2082,7 +2026,7 @@ class NamedSelectionCreate(google.protobuf.message.Message):
         bodies: collections.abc.Iterable[Global___StringMap] | None = ...,
         node_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
         element_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        property_ids: Global___PropertyScopingInput | None = ...,
+        property_ids: Global___PropertyScoping | None = ...,
         id: builtins.str | None = ...,
         readonly: builtins.bool | None = ...,
     ) -> None: ...
@@ -2100,7 +2044,7 @@ class NamedSelectionCreate(google.protobuf.message.Message):
 Global___NamedSelectionCreate: typing_extensions.TypeAlias = NamedSelectionCreate
 
 @typing.final
-class NamedSelectionDefinitionInput(google.protobuf.message.Message):
+class NamedSelectionDefinition(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TYPE_FIELD_NUMBER: builtins.int
@@ -2123,7 +2067,7 @@ class NamedSelectionDefinitionInput(google.protobuf.message.Message):
     @property
     def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
     @property
-    def property_ids(self) -> Global___PropertyScopingInput: ...
+    def property_ids(self) -> Global___PropertyScoping: ...
     def __init__(
         self,
         *,
@@ -2134,7 +2078,7 @@ class NamedSelectionDefinitionInput(google.protobuf.message.Message):
         bodies: collections.abc.Iterable[Global___StringMap] | None = ...,
         node_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
         element_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        property_ids: Global___PropertyScopingInput | None = ...,
+        property_ids: Global___PropertyScoping | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_description", b"_description", "_name", b"_name", "description", b"description", "name", b"name", "property_ids", b"property_ids"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_description", b"_description", "_name", b"_name", "bodies", b"bodies", "description", b"description", "element_ids", b"element_ids", "name", b"name", "node_ids", b"node_ids", "property_ids", b"property_ids", "solver_named_selections", b"solver_named_selections", "type", b"type"]) -> None: ...
@@ -2143,53 +2087,7 @@ class NamedSelectionDefinitionInput(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_name", b"_name"]) -> typing.Literal["name"] | None: ...
 
-Global___NamedSelectionDefinitionInput: typing_extensions.TypeAlias = NamedSelectionDefinitionInput
-
-@typing.final
-class NamedSelectionDefinitionOutput(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TYPE_FIELD_NUMBER: builtins.int
-    NAME_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    SOLVER_NAMED_SELECTIONS_FIELD_NUMBER: builtins.int
-    BODIES_FIELD_NUMBER: builtins.int
-    NODE_IDS_FIELD_NUMBER: builtins.int
-    ELEMENT_IDS_FIELD_NUMBER: builtins.int
-    PROPERTY_IDS_FIELD_NUMBER: builtins.int
-    type: Global___NamedSelectionType.ValueType
-    name: builtins.str
-    description: builtins.str
-    @property
-    def solver_named_selections(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
-    @property
-    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___StringMap]: ...
-    @property
-    def node_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
-    @property
-    def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
-    @property
-    def property_ids(self) -> Global___PropertyScopingOutput: ...
-    def __init__(
-        self,
-        *,
-        type: Global___NamedSelectionType.ValueType = ...,
-        name: builtins.str | None = ...,
-        description: builtins.str | None = ...,
-        solver_named_selections: collections.abc.Iterable[builtins.str] | None = ...,
-        bodies: collections.abc.Iterable[Global___StringMap] | None = ...,
-        node_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        element_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        property_ids: Global___PropertyScopingOutput | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_description", b"_description", "_name", b"_name", "description", b"description", "name", b"name", "property_ids", b"property_ids"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_description", b"_description", "_name", b"_name", "bodies", b"bodies", "description", b"description", "element_ids", b"element_ids", "name", b"name", "node_ids", b"node_ids", "property_ids", b"property_ids", "solver_named_selections", b"solver_named_selections", "type", b"type"]) -> None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["_description", b"_description"]) -> typing.Literal["description"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["_name", b"_name"]) -> typing.Literal["name"] | None: ...
-
-Global___NamedSelectionDefinitionOutput: typing_extensions.TypeAlias = NamedSelectionDefinitionOutput
+Global___NamedSelectionDefinition: typing_extensions.TypeAlias = NamedSelectionDefinition
 
 @typing.final
 class NamedSelectionSerialize(google.protobuf.message.Message):
@@ -2219,7 +2117,7 @@ class NamedSelectionSerialize(google.protobuf.message.Message):
     @property
     def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
     @property
-    def property_ids(self) -> Global___PropertyScopingOutput: ...
+    def property_ids(self) -> Global___PropertyScoping: ...
     def __init__(
         self,
         *,
@@ -2231,7 +2129,7 @@ class NamedSelectionSerialize(google.protobuf.message.Message):
         bodies: collections.abc.Iterable[Global___StringMap] | None = ...,
         node_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
         element_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        property_ids: Global___PropertyScopingOutput | None = ...,
+        property_ids: Global___PropertyScoping | None = ...,
         readonly: builtins.bool | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_description", b"_description", "_name", b"_name", "_readonly", b"_readonly", "description", b"description", "name", b"name", "property_ids", b"property_ids", "readonly", b"readonly"]) -> builtins.bool: ...
@@ -2346,7 +2244,7 @@ class PlotDefinition(google.protobuf.message.Message):
     @property
     def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Field]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinitionOutput: ...
+    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
     @property
     def custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___CustomSelection]: ...
     @property
@@ -2364,7 +2262,7 @@ class PlotDefinition(google.protobuf.message.Message):
         average_by_entity: builtins.bool | None = ...,
         as_linear: builtins.bool | None = ...,
         on_skin: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinitionOutput | None = ...,
+        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
         custom_selections: collections.abc.Iterable[Global___CustomSelection] | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
@@ -2463,7 +2361,7 @@ class PlotDefinitionCreate(google.protobuf.message.Message):
     @property
     def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Field]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinitionInput: ...
+    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
     @property
     def custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___CustomSelection]: ...
     @property
@@ -2480,7 +2378,7 @@ class PlotDefinitionCreate(google.protobuf.message.Message):
         average_by_entity: builtins.bool | None = ...,
         as_linear: builtins.bool | None = ...,
         on_skin: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinitionInput | None = ...,
+        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
         custom_selections: collections.abc.Iterable[Global___CustomSelection] | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
@@ -2578,7 +2476,7 @@ class PlotDefinitionSerialize(google.protobuf.message.Message):
     @property
     def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Field]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinitionOutput: ...
+    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
     @property
     def custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___CustomSelection]: ...
     @property
@@ -2596,7 +2494,7 @@ class PlotDefinitionSerialize(google.protobuf.message.Message):
         average_by_entity: builtins.bool | None = ...,
         as_linear: builtins.bool | None = ...,
         on_skin: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinitionOutput | None = ...,
+        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
         custom_selections: collections.abc.Iterable[Global___CustomSelection] | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
@@ -2636,7 +2534,7 @@ class PlotDefinitionSerialize(google.protobuf.message.Message):
 Global___PlotDefinitionSerialize: typing_extensions.TypeAlias = PlotDefinitionSerialize
 
 @typing.final
-class PropertyScopingInput(google.protobuf.message.Message):
+class PropertyScoping(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NAME_FIELD_NUMBER: builtins.int
@@ -2652,26 +2550,7 @@ class PropertyScopingInput(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["ids", b"ids", "name", b"name"]) -> None: ...
 
-Global___PropertyScopingInput: typing_extensions.TypeAlias = PropertyScopingInput
-
-@typing.final
-class PropertyScopingOutput(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NAME_FIELD_NUMBER: builtins.int
-    IDS_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    @property
-    def ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
-    def __init__(
-        self,
-        *,
-        name: builtins.str = ...,
-        ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["ids", b"ids", "name", b"name"]) -> None: ...
-
-Global___PropertyScopingOutput: typing_extensions.TypeAlias = PropertyScopingOutput
+Global___PropertyScoping: typing_extensions.TypeAlias = PropertyScoping
 
 @typing.final
 class Range(google.protobuf.message.Message):
@@ -2866,6 +2745,7 @@ class Solution(google.protobuf.message.Message):
     CREATION_TIME_FIELD_NUMBER: builtins.int
     READY_FIELD_NUMBER: builtins.int
     ERRORS_FIELD_NUMBER: builtins.int
+    WARNINGS_FIELD_NUMBER: builtins.int
     LIVE_FIELD_NUMBER: builtins.int
     OUTDATED_FIELD_NUMBER: builtins.int
     WORKER_FIELD_NUMBER: builtins.int
@@ -2924,6 +2804,8 @@ class Solution(google.protobuf.message.Message):
     @property
     def errors(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
+    def warnings(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    @property
     def worker(self) -> Global___Worker: ...
     @property
     def solver_named_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___SolverNamedSelection]: ...
@@ -2977,6 +2859,7 @@ class Solution(google.protobuf.message.Message):
         creation_time: builtins.str | None = ...,
         ready: builtins.bool | None = ...,
         errors: collections.abc.Iterable[builtins.str] | None = ...,
+        warnings: collections.abc.Iterable[builtins.str] | None = ...,
         live: builtins.bool | None = ...,
         outdated: builtins.bool | None = ...,
         worker: Global___Worker | None = ...,
@@ -3010,7 +2893,7 @@ class Solution(google.protobuf.message.Message):
         views: collections.abc.Iterable[Global___View] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_analysis_type", b"_analysis_type", "_cache_plot_data", b"_cache_plot_data", "_creation_time", b"_creation_time", "_description", b"_description", "_distance_unit", b"_distance_unit", "_live", b"_live", "_n_elements", b"_n_elements", "_n_nodes", b"_n_nodes", "_n_results", b"_n_results", "_n_sets", b"_n_sets", "_name", b"_name", "_outdated", b"_outdated", "_physics_type", b"_physics_type", "_ready", b"_ready", "_solver_version", b"_solver_version", "_time_frequencies_unit", b"_time_frequencies_unit", "_unit_system", b"_unit_system", "analysis_type", b"analysis_type", "cache_plot_data", b"cache_plot_data", "creation_time", b"creation_time", "description", b"description", "distance_unit", b"distance_unit", "hps_files", b"hps_files", "live", b"live", "mesh_graphics_options", b"mesh_graphics_options", "n_elements", b"n_elements", "n_nodes", b"n_nodes", "n_results", b"n_results", "n_sets", b"n_sets", "name", b"name", "operation", b"operation", "outdated", b"outdated", "physics_type", b"physics_type", "ready", b"ready", "solver_version", b"solver_version", "time_frequencies_unit", b"time_frequencies_unit", "unit_system", b"unit_system", "worker", b"worker"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_analysis_type", b"_analysis_type", "_cache_plot_data", b"_cache_plot_data", "_creation_time", b"_creation_time", "_description", b"_description", "_distance_unit", b"_distance_unit", "_live", b"_live", "_n_elements", b"_n_elements", "_n_nodes", b"_n_nodes", "_n_results", b"_n_results", "_n_sets", b"_n_sets", "_name", b"_name", "_outdated", b"_outdated", "_physics_type", b"_physics_type", "_ready", b"_ready", "_solver_version", b"_solver_version", "_time_frequencies_unit", b"_time_frequencies_unit", "_unit_system", b"_unit_system", "analysis_type", b"analysis_type", "available_custom_selections", b"available_custom_selections", "available_mesh_properties", b"available_mesh_properties", "available_results", b"available_results", "available_trackers", b"available_trackers", "bodies", b"bodies", "cache_plot_data", b"cache_plot_data", "charts", b"charts", "configurable_charts", b"configurable_charts", "configurable_plots", b"configurable_plots", "creation_time", b"creation_time", "description", b"description", "distance_unit", b"distance_unit", "element_groups", b"element_groups", "errors", b"errors", "files", b"files", "hps_files", b"hps_files", "id", b"id", "live", b"live", "mesh_graphics_options", b"mesh_graphics_options", "n_elements", b"n_elements", "n_nodes", b"n_nodes", "n_results", b"n_results", "n_sets", b"n_sets", "name", b"name", "named_selections", b"named_selections", "operation", b"operation", "outdated", b"outdated", "physics_type", b"physics_type", "plots", b"plots", "ready", b"ready", "solver_named_selections", b"solver_named_selections", "solver_text_outputs", b"solver_text_outputs", "solver_version", b"solver_version", "time_frequencies", b"time_frequencies", "time_frequencies_unit", b"time_frequencies_unit", "unit_system", b"unit_system", "unsupported_element_types", b"unsupported_element_types", "views", b"views", "worker", b"worker"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["_analysis_type", b"_analysis_type", "_cache_plot_data", b"_cache_plot_data", "_creation_time", b"_creation_time", "_description", b"_description", "_distance_unit", b"_distance_unit", "_live", b"_live", "_n_elements", b"_n_elements", "_n_nodes", b"_n_nodes", "_n_results", b"_n_results", "_n_sets", b"_n_sets", "_name", b"_name", "_outdated", b"_outdated", "_physics_type", b"_physics_type", "_ready", b"_ready", "_solver_version", b"_solver_version", "_time_frequencies_unit", b"_time_frequencies_unit", "_unit_system", b"_unit_system", "analysis_type", b"analysis_type", "available_custom_selections", b"available_custom_selections", "available_mesh_properties", b"available_mesh_properties", "available_results", b"available_results", "available_trackers", b"available_trackers", "bodies", b"bodies", "cache_plot_data", b"cache_plot_data", "charts", b"charts", "configurable_charts", b"configurable_charts", "configurable_plots", b"configurable_plots", "creation_time", b"creation_time", "description", b"description", "distance_unit", b"distance_unit", "element_groups", b"element_groups", "errors", b"errors", "files", b"files", "hps_files", b"hps_files", "id", b"id", "live", b"live", "mesh_graphics_options", b"mesh_graphics_options", "n_elements", b"n_elements", "n_nodes", b"n_nodes", "n_results", b"n_results", "n_sets", b"n_sets", "name", b"name", "named_selections", b"named_selections", "operation", b"operation", "outdated", b"outdated", "physics_type", b"physics_type", "plots", b"plots", "ready", b"ready", "solver_named_selections", b"solver_named_selections", "solver_text_outputs", b"solver_text_outputs", "solver_version", b"solver_version", "time_frequencies", b"time_frequencies", "time_frequencies_unit", b"time_frequencies_unit", "unit_system", b"unit_system", "unsupported_element_types", b"unsupported_element_types", "views", b"views", "warnings", b"warnings", "worker", b"worker"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_analysis_type", b"_analysis_type"]) -> typing.Literal["analysis_type"] | None: ...
     @typing.overload
