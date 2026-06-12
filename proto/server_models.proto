@@ -113,7 +113,7 @@ message ChartDefinition {
 
   optional string name = 2;
 
-  repeated ChartResultOutput results = 3;
+  repeated ChartResult results = 3;
 
   optional bool all_sets = 4;
 
@@ -125,7 +125,7 @@ message ChartDefinition {
 
   optional bool plotly_figure = 8;
 
-  NamedSelectionDefinitionOutput mesh_scoping = 9;
+  NamedSelectionDefinition mesh_scoping = 9;
 
   optional string named_selection_id = 10;
 
@@ -143,7 +143,7 @@ message ChartDefinitionCreate {
 
   optional string name = 1;
 
-  repeated ChartResultInput results = 2;
+  repeated ChartResult results = 2;
 
   optional bool all_sets = 3;
 
@@ -155,7 +155,7 @@ message ChartDefinitionCreate {
 
   optional bool plotly_figure = 7;
 
-  NamedSelectionDefinitionInput mesh_scoping = 8;
+  NamedSelectionDefinition mesh_scoping = 8;
 
   optional string named_selection_id = 9;
 
@@ -173,7 +173,7 @@ message ChartDefinitionSerialize {
 
   optional string name = 2;
 
-  repeated ChartResultOutput results = 3;
+  repeated ChartResult results = 3;
 
   optional bool all_sets = 4;
 
@@ -185,7 +185,7 @@ message ChartDefinitionSerialize {
 
   optional bool plotly_figure = 8;
 
-  NamedSelectionDefinitionOutput mesh_scoping = 9;
+  NamedSelectionDefinition mesh_scoping = 9;
 
   optional string named_selection_id = 10;
 
@@ -197,7 +197,7 @@ message ChartDefinitionSerialize {
 
 }
 
-message ChartResultInput {
+message ChartResult {
 
   optional string name = 1;
 
@@ -211,31 +211,7 @@ message ChartResultInput {
 
   repeated Filter filters = 6;
 
-  NamedSelectionDefinitionInput mesh_scoping = 7;
-
-  optional string named_selection_id = 8;
-
-  ShellPosition shell_position = 9;
-
-  optional bool on_skin = 10;
-
-}
-
-message ChartResultOutput {
-
-  optional string name = 1;
-
-  ResultType result_type = 2;
-
-  repeated Field fields = 3;
-
-  optional string location = 4;
-
-  optional bool average_by_entity = 5;
-
-  repeated Filter filters = 6;
-
-  NamedSelectionDefinitionOutput mesh_scoping = 7;
+  NamedSelectionDefinition mesh_scoping = 7;
 
   optional string named_selection_id = 8;
 
@@ -750,7 +726,7 @@ message NamedSelection {
 
   repeated IdsScoping element_ids = 8;
 
-  PropertyScopingOutput property_ids = 9;
+  PropertyScoping property_ids = 9;
 
   optional string creation_time = 10;
 
@@ -778,7 +754,7 @@ message NamedSelectionCreate {
 
   repeated IdsScoping element_ids = 7;
 
-  PropertyScopingInput property_ids = 8;
+  PropertyScoping property_ids = 8;
 
   optional string id = 9;
 
@@ -786,7 +762,7 @@ message NamedSelectionCreate {
 
 }
 
-message NamedSelectionDefinitionInput {
+message NamedSelectionDefinition {
 
   NamedSelectionType type = 1;
 
@@ -802,27 +778,7 @@ message NamedSelectionDefinitionInput {
 
   repeated IdsScoping element_ids = 7;
 
-  PropertyScopingInput property_ids = 8;
-
-}
-
-message NamedSelectionDefinitionOutput {
-
-  NamedSelectionType type = 1;
-
-  optional string name = 2;
-
-  optional string description = 3;
-
-  repeated string solver_named_selections = 4;
-
-  repeated StringMap bodies = 5;
-
-  repeated IdsScoping node_ids = 6;
-
-  repeated IdsScoping element_ids = 7;
-
-  PropertyScopingOutput property_ids = 8;
+  PropertyScoping property_ids = 8;
 
 }
 
@@ -844,7 +800,7 @@ message NamedSelectionSerialize {
 
   repeated IdsScoping element_ids = 8;
 
-  PropertyScopingOutput property_ids = 9;
+  PropertyScoping property_ids = 9;
 
   optional bool readonly = 10;
 
@@ -902,7 +858,7 @@ message PlotDefinition {
   // Whether to process results only on the skin (exterior) of the mesh.
   optional bool on_skin = 8;
 
-  NamedSelectionDefinitionOutput mesh_scoping = 9;
+  NamedSelectionDefinition mesh_scoping = 9;
 
   optional string named_selection_id = 10;
 
@@ -947,7 +903,7 @@ message PlotDefinitionCreate {
   // Whether to process results only on the skin (exterior) of the mesh.
   optional bool on_skin = 7;
 
-  NamedSelectionDefinitionInput mesh_scoping = 8;
+  NamedSelectionDefinition mesh_scoping = 8;
 
   optional string named_selection_id = 9;
 
@@ -992,7 +948,7 @@ message PlotDefinitionSerialize {
   // Whether to process results only on the skin (exterior) of the mesh.
   optional bool on_skin = 8;
 
-  NamedSelectionDefinitionOutput mesh_scoping = 9;
+  NamedSelectionDefinition mesh_scoping = 9;
 
   optional string named_selection_id = 10;
 
@@ -1016,15 +972,7 @@ message PlotDefinitionSerialize {
 
 }
 
-message PropertyScopingInput {
-
-  string name = 1;
-
-  repeated IdsScoping ids = 2;
-
-}
-
-message PropertyScopingOutput {
+message PropertyScoping {
 
   string name = 1;
 
@@ -1175,71 +1123,73 @@ message Solution {
 
   repeated string errors = 9;
 
+  repeated string warnings = 10;
+
   // Whether the simulation is running.
-  optional bool live = 10;
+  optional bool live = 11;
 
   // Whether the solution is outdated (new data available).
-  optional bool outdated = 11;
+  optional bool outdated = 12;
 
-  Worker worker = 12;
+  Worker worker = 13;
 
-  repeated SolverNamedSelection solver_named_selections = 13;
+  repeated SolverNamedSelection solver_named_selections = 14;
 
-  repeated CustomSelectionDefinition available_custom_selections = 14;
+  repeated CustomSelectionDefinition available_custom_selections = 15;
 
-  optional int32 n_elements = 15;
+  optional int32 n_elements = 16;
 
-  optional int32 n_nodes = 16;
+  optional int32 n_nodes = 17;
 
-  optional string distance_unit = 17;
+  optional string distance_unit = 18;
 
-  repeated ElementGroup element_groups = 18;
+  repeated ElementGroup element_groups = 19;
 
-  repeated string unsupported_element_types = 19;
+  repeated string unsupported_element_types = 20;
 
-  optional string physics_type = 20;
+  optional string physics_type = 21;
 
-  optional string analysis_type = 21;
+  optional string analysis_type = 22;
 
-  optional string unit_system = 22;
+  optional string unit_system = 23;
 
-  optional int32 n_results = 23;
+  optional int32 n_results = 24;
 
-  optional string solver_version = 24;
+  optional string solver_version = 25;
 
   // Available DPF results. Not all of them are supported by plots and charts.
-  repeated AvailableResult available_results = 25;
+  repeated AvailableResult available_results = 26;
 
-  repeated TrackerType available_trackers = 26;
+  repeated TrackerType available_trackers = 27;
 
   // Mesh properties available for scoping.
-  repeated AvailableMeshProperty available_mesh_properties = 27;
+  repeated AvailableMeshProperty available_mesh_properties = 28;
 
-  optional int32 n_sets = 28;
+  optional int32 n_sets = 29;
 
-  repeated TimeFrequency time_frequencies = 29;
+  repeated TimeFrequency time_frequencies = 30;
 
-  optional string time_frequencies_unit = 30;
+  optional string time_frequencies_unit = 31;
 
-  repeated NamedSelection named_selections = 31;
+  repeated NamedSelection named_selections = 32;
 
-  MeshGraphicsOptions mesh_graphics_options = 32;
+  MeshGraphicsOptions mesh_graphics_options = 33;
 
-  repeated ConfigurablePlot configurable_plots = 33;
+  repeated ConfigurablePlot configurable_plots = 34;
 
-  repeated PlotDefinition plots = 34;
+  repeated PlotDefinition plots = 35;
 
-  repeated ConfigurableChart configurable_charts = 35;
+  repeated ConfigurableChart configurable_charts = 36;
 
-  repeated ChartDefinition charts = 36;
+  repeated ChartDefinition charts = 37;
 
-  repeated Body bodies = 37;
+  repeated Body bodies = 38;
 
-  Operation operation = 38;
+  Operation operation = 39;
 
-  repeated SolverTextOutputFile solver_text_outputs = 39;
+  repeated SolverTextOutputFile solver_text_outputs = 40;
 
-  repeated View views = 40;
+  repeated View views = 41;
 
 }
 
