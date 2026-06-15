@@ -7,7 +7,7 @@ import base_pb2 as base__pb2
 import server_models_pb2 as server__models__pb2
 import solution_pb2 as solution__pb2
 
-GRPC_GENERATED_VERSION = '1.76.0'
+GRPC_GENERATED_VERSION = '1.81.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -27,7 +27,7 @@ if _version_not_supported:
     )
 
 
-class SolutionServiceStub(object):
+class SolutionServiceStub:
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -108,7 +108,7 @@ class SolutionServiceStub(object):
                 _registered_method=True)
 
 
-class SolutionServiceServicer(object):
+class SolutionServiceServicer:
     """Missing associated documentation comment in .proto file."""
 
     def Create(self, request, context):
@@ -276,7 +276,7 @@ def add_SolutionServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class SolutionService(object):
+class SolutionService:
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
