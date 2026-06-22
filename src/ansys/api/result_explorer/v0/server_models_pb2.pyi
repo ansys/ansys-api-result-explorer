@@ -198,28 +198,27 @@ class _ResultTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     RESULT_TYPE_NODAL_STRESS: _ResultType.ValueType  # 2
     RESULT_TYPE_ELASTIC_STRAIN: _ResultType.ValueType  # 3
     RESULT_TYPE_NODAL_ELASTIC_STRAIN: _ResultType.ValueType  # 4
-    RESULT_TYPE_EQUIVALENT_NODAL_ELASTIC_STRAIN: _ResultType.ValueType  # 5
-    RESULT_TYPE_PLASTIC_STRAIN: _ResultType.ValueType  # 6
-    RESULT_TYPE_NODAL_PLASTIC_STRAIN: _ResultType.ValueType  # 7
-    RESULT_TYPE_EQUIVALENT_NODAL_PLASTIC_STRAIN: _ResultType.ValueType  # 8
-    RESULT_TYPE_TEMPERATURE: _ResultType.ValueType  # 9
-    RESULT_TYPE_HEAT_FLUX: _ResultType.ValueType  # 10
-    RESULT_TYPE_EQUIVALENT_PLASTIC_STRAIN: _ResultType.ValueType  # 11
-    RESULT_TYPE_VELOCITY: _ResultType.ValueType  # 12
-    RESULT_TYPE_ACCELERATION: _ResultType.ValueType  # 13
-    RESULT_TYPE_USER_DEFINED: _ResultType.ValueType  # 14
-    RESULT_TYPE_GLOBAL_ENERGY: _ResultType.ValueType  # 15
-    RESULT_TYPE_CONTACT: _ResultType.ValueType  # 16
-    RESULT_TYPE_FAILURE: _ResultType.ValueType  # 17
-    RESULT_TYPE_ELECTRIC_POTENTIAL: _ResultType.ValueType  # 18
-    RESULT_TYPE_ELECTRIC_FIELD: _ResultType.ValueType  # 19
-    RESULT_TYPE_ELECTRIC_FLUX_DENSITY: _ResultType.ValueType  # 20
-    RESULT_TYPE_NEWTON_RAPHSON_RESIDUAL: _ResultType.ValueType  # 21
-    RESULT_TYPE_STRUCTURAL_TEMPERATURE: _ResultType.ValueType  # 22
-    RESULT_TYPE_THERMAL_STRAIN: _ResultType.ValueType  # 23
-    RESULT_TYPE_STRAIN_ENERGY: _ResultType.ValueType  # 24
-    RESULT_TYPE_KINETIC_ENERGY: _ResultType.ValueType  # 25
-    RESULT_TYPE_BEAM_RESULTS: _ResultType.ValueType  # 26
+    RESULT_TYPE_PLASTIC_STRAIN: _ResultType.ValueType  # 5
+    RESULT_TYPE_NODAL_PLASTIC_STRAIN: _ResultType.ValueType  # 6
+    RESULT_TYPE_EQUIVALENT_NODAL_PLASTIC_STRAIN: _ResultType.ValueType  # 7
+    RESULT_TYPE_TEMPERATURE: _ResultType.ValueType  # 8
+    RESULT_TYPE_HEAT_FLUX: _ResultType.ValueType  # 9
+    RESULT_TYPE_EQUIVALENT_PLASTIC_STRAIN: _ResultType.ValueType  # 10
+    RESULT_TYPE_VELOCITY: _ResultType.ValueType  # 11
+    RESULT_TYPE_ACCELERATION: _ResultType.ValueType  # 12
+    RESULT_TYPE_USER_DEFINED: _ResultType.ValueType  # 13
+    RESULT_TYPE_GLOBAL_ENERGY: _ResultType.ValueType  # 14
+    RESULT_TYPE_CONTACT: _ResultType.ValueType  # 15
+    RESULT_TYPE_FAILURE: _ResultType.ValueType  # 16
+    RESULT_TYPE_ELECTRIC_POTENTIAL: _ResultType.ValueType  # 17
+    RESULT_TYPE_ELECTRIC_FIELD: _ResultType.ValueType  # 18
+    RESULT_TYPE_ELECTRIC_FLUX_DENSITY: _ResultType.ValueType  # 19
+    RESULT_TYPE_NEWTON_RAPHSON_RESIDUAL: _ResultType.ValueType  # 20
+    RESULT_TYPE_STRUCTURAL_TEMPERATURE: _ResultType.ValueType  # 21
+    RESULT_TYPE_THERMAL_STRAIN: _ResultType.ValueType  # 22
+    RESULT_TYPE_STRAIN_ENERGY: _ResultType.ValueType  # 23
+    RESULT_TYPE_KINETIC_ENERGY: _ResultType.ValueType  # 24
+    RESULT_TYPE_BEAM_RESULTS: _ResultType.ValueType  # 25
 
 class ResultType(_ResultType, metaclass=_ResultTypeEnumTypeWrapper): ...
 
@@ -228,28 +227,27 @@ RESULT_TYPE_STRESS: ResultType.ValueType  # 1
 RESULT_TYPE_NODAL_STRESS: ResultType.ValueType  # 2
 RESULT_TYPE_ELASTIC_STRAIN: ResultType.ValueType  # 3
 RESULT_TYPE_NODAL_ELASTIC_STRAIN: ResultType.ValueType  # 4
-RESULT_TYPE_EQUIVALENT_NODAL_ELASTIC_STRAIN: ResultType.ValueType  # 5
-RESULT_TYPE_PLASTIC_STRAIN: ResultType.ValueType  # 6
-RESULT_TYPE_NODAL_PLASTIC_STRAIN: ResultType.ValueType  # 7
-RESULT_TYPE_EQUIVALENT_NODAL_PLASTIC_STRAIN: ResultType.ValueType  # 8
-RESULT_TYPE_TEMPERATURE: ResultType.ValueType  # 9
-RESULT_TYPE_HEAT_FLUX: ResultType.ValueType  # 10
-RESULT_TYPE_EQUIVALENT_PLASTIC_STRAIN: ResultType.ValueType  # 11
-RESULT_TYPE_VELOCITY: ResultType.ValueType  # 12
-RESULT_TYPE_ACCELERATION: ResultType.ValueType  # 13
-RESULT_TYPE_USER_DEFINED: ResultType.ValueType  # 14
-RESULT_TYPE_GLOBAL_ENERGY: ResultType.ValueType  # 15
-RESULT_TYPE_CONTACT: ResultType.ValueType  # 16
-RESULT_TYPE_FAILURE: ResultType.ValueType  # 17
-RESULT_TYPE_ELECTRIC_POTENTIAL: ResultType.ValueType  # 18
-RESULT_TYPE_ELECTRIC_FIELD: ResultType.ValueType  # 19
-RESULT_TYPE_ELECTRIC_FLUX_DENSITY: ResultType.ValueType  # 20
-RESULT_TYPE_NEWTON_RAPHSON_RESIDUAL: ResultType.ValueType  # 21
-RESULT_TYPE_STRUCTURAL_TEMPERATURE: ResultType.ValueType  # 22
-RESULT_TYPE_THERMAL_STRAIN: ResultType.ValueType  # 23
-RESULT_TYPE_STRAIN_ENERGY: ResultType.ValueType  # 24
-RESULT_TYPE_KINETIC_ENERGY: ResultType.ValueType  # 25
-RESULT_TYPE_BEAM_RESULTS: ResultType.ValueType  # 26
+RESULT_TYPE_PLASTIC_STRAIN: ResultType.ValueType  # 5
+RESULT_TYPE_NODAL_PLASTIC_STRAIN: ResultType.ValueType  # 6
+RESULT_TYPE_EQUIVALENT_NODAL_PLASTIC_STRAIN: ResultType.ValueType  # 7
+RESULT_TYPE_TEMPERATURE: ResultType.ValueType  # 8
+RESULT_TYPE_HEAT_FLUX: ResultType.ValueType  # 9
+RESULT_TYPE_EQUIVALENT_PLASTIC_STRAIN: ResultType.ValueType  # 10
+RESULT_TYPE_VELOCITY: ResultType.ValueType  # 11
+RESULT_TYPE_ACCELERATION: ResultType.ValueType  # 12
+RESULT_TYPE_USER_DEFINED: ResultType.ValueType  # 13
+RESULT_TYPE_GLOBAL_ENERGY: ResultType.ValueType  # 14
+RESULT_TYPE_CONTACT: ResultType.ValueType  # 15
+RESULT_TYPE_FAILURE: ResultType.ValueType  # 16
+RESULT_TYPE_ELECTRIC_POTENTIAL: ResultType.ValueType  # 17
+RESULT_TYPE_ELECTRIC_FIELD: ResultType.ValueType  # 18
+RESULT_TYPE_ELECTRIC_FLUX_DENSITY: ResultType.ValueType  # 19
+RESULT_TYPE_NEWTON_RAPHSON_RESIDUAL: ResultType.ValueType  # 20
+RESULT_TYPE_STRUCTURAL_TEMPERATURE: ResultType.ValueType  # 21
+RESULT_TYPE_THERMAL_STRAIN: ResultType.ValueType  # 22
+RESULT_TYPE_STRAIN_ENERGY: ResultType.ValueType  # 23
+RESULT_TYPE_KINETIC_ENERGY: ResultType.ValueType  # 24
+RESULT_TYPE_BEAM_RESULTS: ResultType.ValueType  # 25
 Global___ResultType: typing_extensions.TypeAlias = ResultType
 
 class _ShellPosition:
