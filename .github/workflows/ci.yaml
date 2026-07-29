@@ -19,7 +19,7 @@ jobs:
     name: "Code style"
     runs-on: ubuntu-latest
     steps:
-      - uses: ansys/actions/code-style@v10.3.2
+      - uses: ansys/actions/code-style@v10.3.5
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -86,7 +86,7 @@ jobs:
     steps:
      
       - name: "Build library source and wheel artifacts"
-        uses: ansys/actions/build-library@v10.3.2
+        uses: ansys/actions/build-library@v10.3.5
         with:
           library-name: ${{ env.PACKAGE_NAME }}
 
