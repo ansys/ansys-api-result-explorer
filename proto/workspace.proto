@@ -66,6 +66,33 @@ message Viewport {
   optional SyncOptions sync_options = 13;
   optional float size = 14;
   optional bool hidden = 15;
+  repeated DisplayOption display_options = 17;
+}
+
+message DisplayOptionValue {
+  oneof kind {
+    string string_value = 1;
+    double number_value = 2;
+    bool bool_value = 3;
+    google.protobuf.Struct object_value = 4;
+
+    base.StringList string_list_value = 10;
+    base.NumberList number_list_value = 11;
+    base.BoolList bool_list_value = 12;
+    google.protobuf.ListValue object_list_value = 13;
+  }
+}
+
+message DisplayOption {
+  string id = 1;
+  string label = 2;
+  DisplayOptionValue value = 3;
+  repeated DisplayOptionValue available_values = 4;
+}
+
+message UpdateDisplayOption {
+  string id = 1;
+  DisplayOptionValue value = 2;
 }
 
 message ViewportList {
@@ -79,11 +106,10 @@ message UpdateViewportRequest {
   // fields to update
   optional string solution_id = 3; // if empty, no solution assigned
   optional string view_id = 4; // if empty, no view assigned
-  optional google.protobuf.Struct metadata = 5;
   optional SyncOptions sync_options = 6;
   optional float size = 7;
   optional bool hidden = 8;
-  optional google.protobuf.Struct display_options = 9;
+  repeated UpdateDisplayOption display_options = 9;
 
   // request options
   bool wait = 20; // wait for the update to be applied before returning
