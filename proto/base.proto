@@ -24,3 +24,15 @@ message Empty {
 message ResourceId {
   string id = 1;
 }
+
+message StringList {
+  repeated string values = 1;
+}
+
+message NumberList {
+  repeated double values = 1;
+}
+
+message BoolList {
+  repeated bool values = 1;
+}

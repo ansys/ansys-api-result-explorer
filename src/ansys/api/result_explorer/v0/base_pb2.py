@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nbase.proto\x12!ansys.api.result_explorer.v0.base\"\x07\n\x05\x45mpty\"\x18\n\nResourceId\x12\n\n\x02id\x18\x01 \x01(\tb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nbase.proto\x12!ansys.api.result_explorer.v0.base\"\x07\n\x05\x45mpty\"\x18\n\nResourceId\x12\n\n\x02id\x18\x01 \x01(\t\"\x1c\n\nStringList\x12\x0e\n\x06values\x18\x01 \x03(\t\"\x1c\n\nNumberList\x12\x0e\n\x06values\x18\x01 \x03(\x01\"\x1a\n\x08\x42oolList\x12\x0e\n\x06values\x18\x01 \x03(\x08\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,4 +35,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_EMPTY']._serialized_end=56
   _globals['_RESOURCEID']._serialized_start=58
   _globals['_RESOURCEID']._serialized_end=82
+  _globals['_STRINGLIST']._serialized_start=84
+  _globals['_STRINGLIST']._serialized_end=112
+  _globals['_NUMBERLIST']._serialized_start=114
+  _globals['_NUMBERLIST']._serialized_end=142
+  _globals['_BOOLLIST']._serialized_start=144
+  _globals['_BOOLLIST']._serialized_end=170
 # @@protoc_insertion_point(module_scope)
