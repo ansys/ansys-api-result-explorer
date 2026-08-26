@@ -203,7 +203,8 @@ class Viewport(google.protobuf.message.Message):
     SYNC_OPTIONS_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
     HIDDEN_FIELD_NUMBER: builtins.int
-    DISPLAY_OPTIONS_FIELD_NUMBER: builtins.int
+    SETTINGS_FIELD_NUMBER: builtins.int
+    SETTING_OPTIONS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """unique identifier of the viewport"""
     ready: builtins.bool
@@ -220,7 +221,11 @@ class Viewport(google.protobuf.message.Message):
     @property
     def sync_options(self) -> Global___SyncOptions: ...
     @property
-    def display_options(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___DisplayOption]: ...
+    def settings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___SettingOption]: ...
+    @property
+    def setting_options(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___SettingOption]:
+        """read-only: available values for constrained settings"""
+
     def __init__(
         self,
         *,
@@ -233,10 +238,11 @@ class Viewport(google.protobuf.message.Message):
         sync_options: Global___SyncOptions | None = ...,
         size: builtins.float | None = ...,
         hidden: builtins.bool | None = ...,
-        display_options: collections.abc.Iterable[Global___DisplayOption] | None = ...,
+        settings: collections.abc.Iterable[Global___SettingOption] | None = ...,
+        setting_options: collections.abc.Iterable[Global___SettingOption] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "hidden", b"hidden", "metadata", b"metadata", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "display_options", b"display_options", "errors", b"errors", "hidden", b"hidden", "id", b"id", "metadata", b"metadata", "ready", b"ready", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "errors", b"errors", "hidden", b"hidden", "id", b"id", "metadata", b"metadata", "ready", b"ready", "setting_options", b"setting_options", "settings", b"settings", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_hidden", b"_hidden"]) -> typing.Literal["hidden"] | None: ...
     @typing.overload
@@ -253,7 +259,7 @@ class Viewport(google.protobuf.message.Message):
 Global___Viewport: typing_extensions.TypeAlias = Viewport
 
 @typing.final
-class DisplayOptionValue(google.protobuf.message.Message):
+class SettingValue(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     STRING_VALUE_FIELD_NUMBER: builtins.int
@@ -293,54 +299,27 @@ class DisplayOptionValue(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["bool_list_value", b"bool_list_value", "bool_value", b"bool_value", "kind", b"kind", "number_list_value", b"number_list_value", "number_value", b"number_value", "object_list_value", b"object_list_value", "object_value", b"object_value", "string_list_value", b"string_list_value", "string_value", b"string_value"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["kind", b"kind"]) -> typing.Literal["string_value", "number_value", "bool_value", "object_value", "string_list_value", "number_list_value", "bool_list_value", "object_list_value"] | None: ...
 
-Global___DisplayOptionValue: typing_extensions.TypeAlias = DisplayOptionValue
+Global___SettingValue: typing_extensions.TypeAlias = SettingValue
 
 @typing.final
-class DisplayOption(google.protobuf.message.Message):
+class SettingOption(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
-    LABEL_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
     VALUE_FIELD_NUMBER: builtins.int
-    AVAILABLE_VALUES_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    label: builtins.str
+    key: builtins.str
     @property
-    def value(self) -> Global___DisplayOptionValue: ...
-    @property
-    def available_values(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___DisplayOptionValue]: ...
+    def value(self) -> Global___SettingValue: ...
     def __init__(
         self,
         *,
-        id: builtins.str = ...,
-        label: builtins.str = ...,
-        value: Global___DisplayOptionValue | None = ...,
-        available_values: collections.abc.Iterable[Global___DisplayOptionValue] | None = ...,
+        key: builtins.str = ...,
+        value: Global___SettingValue | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["available_values", b"available_values", "id", b"id", "label", b"label", "value", b"value"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-Global___DisplayOption: typing_extensions.TypeAlias = DisplayOption
-
-@typing.final
-class UpdateDisplayOption(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ID_FIELD_NUMBER: builtins.int
-    VALUE_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    @property
-    def value(self) -> Global___DisplayOptionValue: ...
-    def __init__(
-        self,
-        *,
-        id: builtins.str = ...,
-        value: Global___DisplayOptionValue | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "value", b"value"]) -> None: ...
-
-Global___UpdateDisplayOption: typing_extensions.TypeAlias = UpdateDisplayOption
+Global___SettingOption: typing_extensions.TypeAlias = SettingOption
 
 @typing.final
 class ViewportList(google.protobuf.message.Message):
@@ -368,7 +347,7 @@ class UpdateViewportRequest(google.protobuf.message.Message):
     SYNC_OPTIONS_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
     HIDDEN_FIELD_NUMBER: builtins.int
-    DISPLAY_OPTIONS_FIELD_NUMBER: builtins.int
+    SETTINGS_FIELD_NUMBER: builtins.int
     WAIT_FIELD_NUMBER: builtins.int
     viewport_id: builtins.str
     """id of the viewport to update"""
@@ -387,7 +366,7 @@ class UpdateViewportRequest(google.protobuf.message.Message):
     @property
     def sync_options(self) -> Global___SyncOptions: ...
     @property
-    def display_options(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___UpdateDisplayOption]: ...
+    def settings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___SettingOption]: ...
     def __init__(
         self,
         *,
@@ -397,11 +376,11 @@ class UpdateViewportRequest(google.protobuf.message.Message):
         sync_options: Global___SyncOptions | None = ...,
         size: builtins.float | None = ...,
         hidden: builtins.bool | None = ...,
-        display_options: collections.abc.Iterable[Global___UpdateDisplayOption] | None = ...,
+        settings: collections.abc.Iterable[Global___SettingOption] | None = ...,
         wait: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_hidden", b"_hidden", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "hidden", b"hidden", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_hidden", b"_hidden", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "display_options", b"display_options", "hidden", b"hidden", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id", "viewport_id", b"viewport_id", "wait", b"wait"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["_hidden", b"_hidden", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "hidden", b"hidden", "settings", b"settings", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id", "viewport_id", b"viewport_id", "wait", b"wait"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_hidden", b"_hidden"]) -> typing.Literal["hidden"] | None: ...
     @typing.overload
