@@ -66,10 +66,11 @@ message Viewport {
   optional SyncOptions sync_options = 13;
   optional float size = 14;
   optional bool hidden = 15;
-  repeated DisplayOption display_options = 17;
+  repeated SettingOption settings = 17;
+  repeated SettingOption setting_options = 18; // read-only: available values for constrained settings
 }
 
-message DisplayOptionValue {
+message SettingValue {
   oneof kind {
     string string_value = 1;
     double number_value = 2;
@@ -83,16 +84,9 @@ message DisplayOptionValue {
   }
 }
 
-message DisplayOption {
-  string id = 1;
-  string label = 2;
-  DisplayOptionValue value = 3;
-  repeated DisplayOptionValue available_values = 4;
-}
-
-message UpdateDisplayOption {
-  string id = 1;
-  DisplayOptionValue value = 2;
+message SettingOption {
+  string key = 1;
+  SettingValue value = 2;
 }
 
 message ViewportList {
@@ -109,7 +103,7 @@ message UpdateViewportRequest {
   optional SyncOptions sync_options = 6;
   optional float size = 7;
   optional bool hidden = 8;
-  repeated UpdateDisplayOption display_options = 9;
+  repeated SettingOption settings = 9;
 
   // request options
   bool wait = 20; // wait for the update to be applied before returning
@@ -165,7 +159,7 @@ message WorkspaceImportRequest {
     string result_provider_name = 2;
     string file_path = 3;
   }
-  
+
   string template = 1;
   string workspace_name = 2;
   repeated SolutionInfo solutions = 3;
