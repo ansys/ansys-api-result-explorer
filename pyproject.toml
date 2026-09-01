@@ -6,6 +6,9 @@ requires = [ "flit-core>=3.12.0,<5" ]
 name = "ansys-api-result-explorer"
 version = "0.2.dev0"
 description = "Result Explorer gRPC Interface Package."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = [ "LICENSE" ]
 maintainers = [ { name = "Synopsys, Inc. and ANSYS, Inc." } ]
 authors = [ { name = "Synopsys, Inc. and ANSYS, Inc." } ]
 requires-python = ">=3.10,<4"
@@ -24,7 +27,6 @@ dependencies = [
 urls.Homepage = "https://github.com/ansys/ansys-api-result-explorer"
 urls.Source = "https://github.com/ansys/ansys-api-result-explorer"
 urls.Tracker = "https://github.com/ansys/ansys-api-result-explorer/issues"
-repository = "https://github.com/ansys/ansys-api-result-explorer"
 
 [dependency-groups]
 dev = [
