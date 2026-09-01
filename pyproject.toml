@@ -1,6 +1,6 @@
 [build-system]
 build-backend = "flit_core.buildapi"
-requires = [ "flit-core>=3.12.0,<4" ]
+requires = [ "flit-core>=3.12.0,<5" ]
 
 [project]
 name = "ansys-api-result-explorer"
