@@ -18,158 +18,126 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-from collections import abc as _abc
-from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf.internal import containers as _containers
-import builtins as _builtins
-import server_models_pb2 as _server_models_pb2
-import sys
-import typing as _typing
+import builtins
+import collections.abc
+import google.protobuf.descriptor
+import google.protobuf.internal.containers
+import google.protobuf.message
+import server_models_pb2
+import typing
 
-if sys.version_info >= (3, 11):
-    from typing import TypeAlias as _TypeAlias, Never as _Never
-else:
-    from typing_extensions import TypeAlias as _TypeAlias, Never as _Never
+DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
-DESCRIPTOR: _descriptor.FileDescriptor
+@typing.final
+class FilesystemRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-@_typing.final
-class FilesystemRequest(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
-
-    RESULT_PROVIDER_NAME_FIELD_NUMBER: _builtins.int
-    result_provider_name: _builtins.str
+    RESULT_PROVIDER_NAME_FIELD_NUMBER: builtins.int
+    result_provider_name: builtins.str
     def __init__(
         self,
         *,
-        result_provider_name: _builtins.str = ...,
+        result_provider_name: builtins.str = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["result_provider_name", b"result_provider_name"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    def WhichOneof(self, oneof_group: _Never) -> None: ...
+    def ClearField(self, field_name: typing.Literal["result_provider_name", b"result_provider_name"]) -> None: ...
 
-Global___FilesystemRequest: _TypeAlias = FilesystemRequest  # noqa: Y015
+global___FilesystemRequest = FilesystemRequest
 
-@_typing.final
-class LsRequest(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class LsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    RESULT_PROVIDER_NAME_FIELD_NUMBER: _builtins.int
-    PATH_FIELD_NUMBER: _builtins.int
-    MAX_DEPTH_FIELD_NUMBER: _builtins.int
-    result_provider_name: _builtins.str
-    path: _builtins.str
-    max_depth: _builtins.int
+    RESULT_PROVIDER_NAME_FIELD_NUMBER: builtins.int
+    PATH_FIELD_NUMBER: builtins.int
+    MAX_DEPTH_FIELD_NUMBER: builtins.int
+    result_provider_name: builtins.str
+    path: builtins.str
+    max_depth: builtins.int
     def __init__(
         self,
         *,
-        result_provider_name: _builtins.str = ...,
-        path: _builtins.str = ...,
-        max_depth: _builtins.int | None = ...,
+        result_provider_name: builtins.str = ...,
+        path: builtins.str = ...,
+        max_depth: builtins.int | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_max_depth", b"_max_depth", "max_depth", b"max_depth"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_max_depth", b"_max_depth", "max_depth", b"max_depth", "path", b"path", "result_provider_name", b"result_provider_name"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType__max_depth: _TypeAlias = _typing.Literal["max_depth"]  # noqa: Y015
-    _WhichOneofArgType__max_depth: _TypeAlias = _typing.Literal["_max_depth", b"_max_depth"]  # noqa: Y015
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__max_depth) -> _WhichOneofReturnType__max_depth | None: ...
+    def HasField(self, field_name: typing.Literal["_max_depth", b"_max_depth", "max_depth", b"max_depth"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_max_depth", b"_max_depth", "max_depth", b"max_depth", "path", b"path", "result_provider_name", b"result_provider_name"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["_max_depth", b"_max_depth"]) -> typing.Literal["max_depth"] | None: ...
 
-Global___LsRequest: _TypeAlias = LsRequest  # noqa: Y015
+global___LsRequest = LsRequest
 
-@_typing.final
-class FsItems(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class FsItems(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ITEMS_FIELD_NUMBER: _builtins.int
-    @_builtins.property
-    def items(self) -> _containers.RepeatedCompositeFieldContainer[_server_models_pb2.FSItem]: ...
+    ITEMS_FIELD_NUMBER: builtins.int
+    @property
+    def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[server_models_pb2.FSItem]: ...
     def __init__(
         self,
         *,
-        items: _abc.Iterable[_server_models_pb2.FSItem] | None = ...,
+        items: collections.abc.Iterable[server_models_pb2.FSItem] | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["items", b"items"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    def WhichOneof(self, oneof_group: _Never) -> None: ...
+    def ClearField(self, field_name: typing.Literal["items", b"items"]) -> None: ...
 
-Global___FsItems: _TypeAlias = FsItems  # noqa: Y015
+global___FsItems = FsItems
 
-@_typing.final
-class TailRequest(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class TailRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    RESULT_PROVIDER_NAME_FIELD_NUMBER: _builtins.int
-    PATH_FIELD_NUMBER: _builtins.int
-    LINES_OFFSET_FIELD_NUMBER: _builtins.int
-    BYTES_OFFSET_FIELD_NUMBER: _builtins.int
-    result_provider_name: _builtins.str
-    path: _builtins.str
-    lines_offset: _builtins.int
-    bytes_offset: _builtins.int
+    RESULT_PROVIDER_NAME_FIELD_NUMBER: builtins.int
+    PATH_FIELD_NUMBER: builtins.int
+    LINES_OFFSET_FIELD_NUMBER: builtins.int
+    BYTES_OFFSET_FIELD_NUMBER: builtins.int
+    result_provider_name: builtins.str
+    path: builtins.str
+    lines_offset: builtins.int
+    bytes_offset: builtins.int
     def __init__(
         self,
         *,
-        result_provider_name: _builtins.str = ...,
-        path: _builtins.str = ...,
-        lines_offset: _builtins.int | None = ...,
-        bytes_offset: _builtins.int | None = ...,
+        result_provider_name: builtins.str = ...,
+        path: builtins.str = ...,
+        lines_offset: builtins.int | None = ...,
+        bytes_offset: builtins.int | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_bytes_offset", b"_bytes_offset", "_lines_offset", b"_lines_offset", "bytes_offset", b"bytes_offset", "lines_offset", b"lines_offset"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_bytes_offset", b"_bytes_offset", "_lines_offset", b"_lines_offset", "bytes_offset", b"bytes_offset", "lines_offset", b"lines_offset", "path", b"path", "result_provider_name", b"result_provider_name"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType__bytes_offset: _TypeAlias = _typing.Literal["bytes_offset"]  # noqa: Y015
-    _WhichOneofArgType__bytes_offset: _TypeAlias = _typing.Literal["_bytes_offset", b"_bytes_offset"]  # noqa: Y015
-    _WhichOneofReturnType__lines_offset: _TypeAlias = _typing.Literal["lines_offset"]  # noqa: Y015
-    _WhichOneofArgType__lines_offset: _TypeAlias = _typing.Literal["_lines_offset", b"_lines_offset"]  # noqa: Y015
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__bytes_offset) -> _WhichOneofReturnType__bytes_offset | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__lines_offset) -> _WhichOneofReturnType__lines_offset | None: ...
+    def HasField(self, field_name: typing.Literal["_bytes_offset", b"_bytes_offset", "_lines_offset", b"_lines_offset", "bytes_offset", b"bytes_offset", "lines_offset", b"lines_offset"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_bytes_offset", b"_bytes_offset", "_lines_offset", b"_lines_offset", "bytes_offset", b"bytes_offset", "lines_offset", b"lines_offset", "path", b"path", "result_provider_name", b"result_provider_name"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_bytes_offset", b"_bytes_offset"]) -> typing.Literal["bytes_offset"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_lines_offset", b"_lines_offset"]) -> typing.Literal["lines_offset"] | None: ...
 
-Global___TailRequest: _TypeAlias = TailRequest  # noqa: Y015
+global___TailRequest = TailRequest
 
-@_typing.final
-class FileContent(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class FileContent(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    CONTENT_FIELD_NUMBER: _builtins.int
-    content: _builtins.str
+    CONTENT_FIELD_NUMBER: builtins.int
+    content: builtins.str
     def __init__(
         self,
         *,
-        content: _builtins.str = ...,
+        content: builtins.str = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["content", b"content"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    def WhichOneof(self, oneof_group: _Never) -> None: ...
+    def ClearField(self, field_name: typing.Literal["content", b"content"]) -> None: ...
 
-Global___FileContent: _TypeAlias = FileContent  # noqa: Y015
+global___FileContent = FileContent
 
-@_typing.final
-class HpsFsItems(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class HpsFsItems(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ITEMS_FIELD_NUMBER: _builtins.int
-    @_builtins.property
-    def items(self) -> _containers.RepeatedCompositeFieldContainer[_server_models_pb2.HpsFSItem]: ...
+    ITEMS_FIELD_NUMBER: builtins.int
+    @property
+    def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[server_models_pb2.HpsFSItem]: ...
     def __init__(
         self,
         *,
-        items: _abc.Iterable[_server_models_pb2.HpsFSItem] | None = ...,
+        items: collections.abc.Iterable[server_models_pb2.HpsFSItem] | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["items", b"items"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    def WhichOneof(self, oneof_group: _Never) -> None: ...
+    def ClearField(self, field_name: typing.Literal["items", b"items"]) -> None: ...
 
-Global___HpsFsItems: _TypeAlias = HpsFsItems  # noqa: Y015
+global___HpsFsItems = HpsFsItems

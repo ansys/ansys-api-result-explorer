@@ -18,159 +18,239 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-from collections import abc as _abc
-from grpc import aio as _aio
-import abc as _abc_1
-import base_pb2 as _base_pb2
-import grpc as _grpc
-import sys
-import typing as _typing
-import workspace_pb2 as _workspace_pb2
+import abc
+import base_pb2
+import collections.abc
+import grpc
+import grpc.aio
+import typing
+import workspace_pb2
 
-if sys.version_info >= (3, 11):
-    from typing import Self as _Self
-else:
-    from typing_extensions import Self as _Self
+_T = typing.TypeVar("_T")
 
-_T = _typing.TypeVar("_T")
+class _MaybeAsyncIterator(collections.abc.AsyncIterator[_T], collections.abc.Iterator[_T], metaclass=abc.ABCMeta): ...
 
-class _MaybeAsyncIterator(_abc.AsyncIterator[_T], _abc.Iterator[_T], metaclass=_abc_1.ABCMeta): ...
-
-class _ServicerContext(_grpc.ServicerContext, _aio.ServicerContext):  # type: ignore[misc, type-arg]
+class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type: ignore[misc, type-arg]
     ...
 
-GRPC_GENERATED_VERSION: str
-GRPC_VERSION: str
-
 class WorkspaceServiceStub:
-    @_typing.overload
-    def __new__(cls, channel: _grpc.Channel) -> _Self: ...
-    @_typing.overload
-    def __new__(cls, channel: _aio.Channel) -> WorkspaceServiceAsyncStub: ...
-    Create: _grpc.UnaryUnaryMultiCallable[_workspace_pb2.WorkspaceCreate, _workspace_pb2.Workspace]
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    Create: grpc.UnaryUnaryMultiCallable[
+        workspace_pb2.WorkspaceCreate,
+        workspace_pb2.Workspace,
+    ]
     """Workspace management"""
-    List: _grpc.UnaryUnaryMultiCallable[_base_pb2.Empty, _workspace_pb2.WorkspaceList]
-    Get: _grpc.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _workspace_pb2.Workspace]
-    Delete: _grpc.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _base_pb2.Empty]
-    Update: _grpc.UnaryUnaryMultiCallable[_workspace_pb2.WorkspaceUpdateRequest, _workspace_pb2.Workspace]
-    ListViewports: _grpc.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _workspace_pb2.ViewportList]
-    """Viewport management"""
-    CreateViewport: _grpc.UnaryUnaryMultiCallable[_workspace_pb2.CreateViewportRequest, _workspace_pb2.Viewport]
-    DeleteViewport: _grpc.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _base_pb2.Empty]
-    UpdateViewport: _grpc.UnaryUnaryMultiCallable[_workspace_pb2.UpdateViewportRequest, _workspace_pb2.Viewport]
-    CreateSnapshot: _grpc.UnaryUnaryMultiCallable[_workspace_pb2.CreateSnapshotRequest, _workspace_pb2.Snapshot]
-    """Snapshot"""
-    ExportWorkspace: _grpc.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _workspace_pb2.WorkspaceTemplate]
-    """Export/Import template"""
-    ImportWorkspace: _grpc.UnaryUnaryMultiCallable[_workspace_pb2.WorkspaceImportRequest, _base_pb2.ResourceId]
 
-@_typing.type_check_only
-class WorkspaceServiceAsyncStub(WorkspaceServiceStub):
-    def __init__(self, channel: _aio.Channel) -> None: ...
-    Create: _aio.UnaryUnaryMultiCallable[_workspace_pb2.WorkspaceCreate, _workspace_pb2.Workspace]  # type: ignore[assignment]
+    List: grpc.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        workspace_pb2.WorkspaceList,
+    ]
+
+    Get: grpc.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        workspace_pb2.Workspace,
+    ]
+
+    Delete: grpc.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        base_pb2.Empty,
+    ]
+
+    Update: grpc.UnaryUnaryMultiCallable[
+        workspace_pb2.WorkspaceUpdateRequest,
+        workspace_pb2.Workspace,
+    ]
+
+    ListViewports: grpc.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        workspace_pb2.ViewportList,
+    ]
+    """Viewport management"""
+
+    CreateViewport: grpc.UnaryUnaryMultiCallable[
+        workspace_pb2.CreateViewportRequest,
+        workspace_pb2.Viewport,
+    ]
+
+    DeleteViewport: grpc.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        base_pb2.Empty,
+    ]
+
+    UpdateViewport: grpc.UnaryUnaryMultiCallable[
+        workspace_pb2.UpdateViewportRequest,
+        workspace_pb2.Viewport,
+    ]
+
+    CreateSnapshot: grpc.UnaryUnaryMultiCallable[
+        workspace_pb2.CreateSnapshotRequest,
+        workspace_pb2.Snapshot,
+    ]
+    """Snapshot"""
+
+    ExportWorkspace: grpc.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        workspace_pb2.WorkspaceTemplate,
+    ]
+    """Export/Import template"""
+
+    ImportWorkspace: grpc.UnaryUnaryMultiCallable[
+        workspace_pb2.WorkspaceImportRequest,
+        base_pb2.ResourceId,
+    ]
+
+class WorkspaceServiceAsyncStub:
+    Create: grpc.aio.UnaryUnaryMultiCallable[
+        workspace_pb2.WorkspaceCreate,
+        workspace_pb2.Workspace,
+    ]
     """Workspace management"""
-    List: _aio.UnaryUnaryMultiCallable[_base_pb2.Empty, _workspace_pb2.WorkspaceList]  # type: ignore[assignment]
-    Get: _aio.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _workspace_pb2.Workspace]  # type: ignore[assignment]
-    Delete: _aio.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _base_pb2.Empty]  # type: ignore[assignment]
-    Update: _aio.UnaryUnaryMultiCallable[_workspace_pb2.WorkspaceUpdateRequest, _workspace_pb2.Workspace]  # type: ignore[assignment]
-    ListViewports: _aio.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _workspace_pb2.ViewportList]  # type: ignore[assignment]
-    """Viewport management"""
-    CreateViewport: _aio.UnaryUnaryMultiCallable[_workspace_pb2.CreateViewportRequest, _workspace_pb2.Viewport]  # type: ignore[assignment]
-    DeleteViewport: _aio.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _base_pb2.Empty]  # type: ignore[assignment]
-    UpdateViewport: _aio.UnaryUnaryMultiCallable[_workspace_pb2.UpdateViewportRequest, _workspace_pb2.Viewport]  # type: ignore[assignment]
-    CreateSnapshot: _aio.UnaryUnaryMultiCallable[_workspace_pb2.CreateSnapshotRequest, _workspace_pb2.Snapshot]  # type: ignore[assignment]
-    """Snapshot"""
-    ExportWorkspace: _aio.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _workspace_pb2.WorkspaceTemplate]  # type: ignore[assignment]
-    """Export/Import template"""
-    ImportWorkspace: _aio.UnaryUnaryMultiCallable[_workspace_pb2.WorkspaceImportRequest, _base_pb2.ResourceId]  # type: ignore[assignment]
 
-class WorkspaceServiceServicer(metaclass=_abc_1.ABCMeta):
-    @_abc_1.abstractmethod
+    List: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        workspace_pb2.WorkspaceList,
+    ]
+
+    Get: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        workspace_pb2.Workspace,
+    ]
+
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        base_pb2.Empty,
+    ]
+
+    Update: grpc.aio.UnaryUnaryMultiCallable[
+        workspace_pb2.WorkspaceUpdateRequest,
+        workspace_pb2.Workspace,
+    ]
+
+    ListViewports: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        workspace_pb2.ViewportList,
+    ]
+    """Viewport management"""
+
+    CreateViewport: grpc.aio.UnaryUnaryMultiCallable[
+        workspace_pb2.CreateViewportRequest,
+        workspace_pb2.Viewport,
+    ]
+
+    DeleteViewport: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        base_pb2.Empty,
+    ]
+
+    UpdateViewport: grpc.aio.UnaryUnaryMultiCallable[
+        workspace_pb2.UpdateViewportRequest,
+        workspace_pb2.Viewport,
+    ]
+
+    CreateSnapshot: grpc.aio.UnaryUnaryMultiCallable[
+        workspace_pb2.CreateSnapshotRequest,
+        workspace_pb2.Snapshot,
+    ]
+    """Snapshot"""
+
+    ExportWorkspace: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        workspace_pb2.WorkspaceTemplate,
+    ]
+    """Export/Import template"""
+
+    ImportWorkspace: grpc.aio.UnaryUnaryMultiCallable[
+        workspace_pb2.WorkspaceImportRequest,
+        base_pb2.ResourceId,
+    ]
+
+class WorkspaceServiceServicer(metaclass=abc.ABCMeta):
+    @abc.abstractmethod
     def Create(
         self,
-        request: _workspace_pb2.WorkspaceCreate,
+        request: workspace_pb2.WorkspaceCreate,
         context: _ServicerContext,
-    ) -> _typing.Union[_workspace_pb2.Workspace, _abc.Awaitable[_workspace_pb2.Workspace]]:
+    ) -> typing.Union[workspace_pb2.Workspace, collections.abc.Awaitable[workspace_pb2.Workspace]]:
         """Workspace management"""
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def List(
         self,
-        request: _base_pb2.Empty,
+        request: base_pb2.Empty,
         context: _ServicerContext,
-    ) -> _typing.Union[_workspace_pb2.WorkspaceList, _abc.Awaitable[_workspace_pb2.WorkspaceList]]: ...
+    ) -> typing.Union[workspace_pb2.WorkspaceList, collections.abc.Awaitable[workspace_pb2.WorkspaceList]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def Get(
         self,
-        request: _base_pb2.ResourceId,
+        request: base_pb2.ResourceId,
         context: _ServicerContext,
-    ) -> _typing.Union[_workspace_pb2.Workspace, _abc.Awaitable[_workspace_pb2.Workspace]]: ...
+    ) -> typing.Union[workspace_pb2.Workspace, collections.abc.Awaitable[workspace_pb2.Workspace]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def Delete(
         self,
-        request: _base_pb2.ResourceId,
+        request: base_pb2.ResourceId,
         context: _ServicerContext,
-    ) -> _typing.Union[_base_pb2.Empty, _abc.Awaitable[_base_pb2.Empty]]: ...
+    ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def Update(
         self,
-        request: _workspace_pb2.WorkspaceUpdateRequest,
+        request: workspace_pb2.WorkspaceUpdateRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_workspace_pb2.Workspace, _abc.Awaitable[_workspace_pb2.Workspace]]: ...
+    ) -> typing.Union[workspace_pb2.Workspace, collections.abc.Awaitable[workspace_pb2.Workspace]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def ListViewports(
         self,
-        request: _base_pb2.ResourceId,
+        request: base_pb2.ResourceId,
         context: _ServicerContext,
-    ) -> _typing.Union[_workspace_pb2.ViewportList, _abc.Awaitable[_workspace_pb2.ViewportList]]:
+    ) -> typing.Union[workspace_pb2.ViewportList, collections.abc.Awaitable[workspace_pb2.ViewportList]]:
         """Viewport management"""
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def CreateViewport(
         self,
-        request: _workspace_pb2.CreateViewportRequest,
+        request: workspace_pb2.CreateViewportRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_workspace_pb2.Viewport, _abc.Awaitable[_workspace_pb2.Viewport]]: ...
+    ) -> typing.Union[workspace_pb2.Viewport, collections.abc.Awaitable[workspace_pb2.Viewport]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def DeleteViewport(
         self,
-        request: _base_pb2.ResourceId,
+        request: base_pb2.ResourceId,
         context: _ServicerContext,
-    ) -> _typing.Union[_base_pb2.Empty, _abc.Awaitable[_base_pb2.Empty]]: ...
+    ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def UpdateViewport(
         self,
-        request: _workspace_pb2.UpdateViewportRequest,
+        request: workspace_pb2.UpdateViewportRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_workspace_pb2.Viewport, _abc.Awaitable[_workspace_pb2.Viewport]]: ...
+    ) -> typing.Union[workspace_pb2.Viewport, collections.abc.Awaitable[workspace_pb2.Viewport]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def CreateSnapshot(
         self,
-        request: _workspace_pb2.CreateSnapshotRequest,
+        request: workspace_pb2.CreateSnapshotRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_workspace_pb2.Snapshot, _abc.Awaitable[_workspace_pb2.Snapshot]]:
+    ) -> typing.Union[workspace_pb2.Snapshot, collections.abc.Awaitable[workspace_pb2.Snapshot]]:
         """Snapshot"""
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def ExportWorkspace(
         self,
-        request: _base_pb2.ResourceId,
+        request: base_pb2.ResourceId,
         context: _ServicerContext,
-    ) -> _typing.Union[_workspace_pb2.WorkspaceTemplate, _abc.Awaitable[_workspace_pb2.WorkspaceTemplate]]:
+    ) -> typing.Union[workspace_pb2.WorkspaceTemplate, collections.abc.Awaitable[workspace_pb2.WorkspaceTemplate]]:
         """Export/Import template"""
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def ImportWorkspace(
         self,
-        request: _workspace_pb2.WorkspaceImportRequest,
+        request: workspace_pb2.WorkspaceImportRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_base_pb2.ResourceId, _abc.Awaitable[_base_pb2.ResourceId]]: ...
+    ) -> typing.Union[base_pb2.ResourceId, collections.abc.Awaitable[base_pb2.ResourceId]]: ...
 
-def add_WorkspaceServiceServicer_to_server(servicer: WorkspaceServiceServicer, server: _typing.Union[_grpc.Server, _aio.Server]) -> None: ...
+def add_WorkspaceServiceServicer_to_server(servicer: WorkspaceServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

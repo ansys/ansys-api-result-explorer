@@ -18,120 +18,176 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-from collections import abc as _abc
-from grpc import aio as _aio
-import abc as _abc_1
-import app_pb2 as _app_pb2
-import base_pb2 as _base_pb2
-import grpc as _grpc
-import sys
-import typing as _typing
+import abc
+import app_pb2
+import base_pb2
+import collections.abc
+import grpc
+import grpc.aio
+import typing
 
-if sys.version_info >= (3, 11):
-    from typing import Self as _Self
-else:
-    from typing_extensions import Self as _Self
+_T = typing.TypeVar("_T")
 
-_T = _typing.TypeVar("_T")
+class _MaybeAsyncIterator(collections.abc.AsyncIterator[_T], collections.abc.Iterator[_T], metaclass=abc.ABCMeta): ...
 
-class _MaybeAsyncIterator(_abc.AsyncIterator[_T], _abc.Iterator[_T], metaclass=_abc_1.ABCMeta): ...
-
-class _ServicerContext(_grpc.ServicerContext, _aio.ServicerContext):  # type: ignore[misc, type-arg]
+class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type: ignore[misc, type-arg]
     ...
 
-GRPC_GENERATED_VERSION: str
-GRPC_VERSION: str
-
 class AppServiceStub:
-    @_typing.overload
-    def __new__(cls, channel: _grpc.Channel) -> _Self: ...
-    @_typing.overload
-    def __new__(cls, channel: _aio.Channel) -> AppServiceAsyncStub: ...
-    GetAppInfo: _grpc.UnaryUnaryMultiCallable[_base_pb2.Empty, _app_pb2.AppInfo]
-    GetAppSettings: _grpc.UnaryUnaryMultiCallable[_base_pb2.Empty, _app_pb2.AppSettings]
-    UpdateAppSettings: _grpc.UnaryUnaryMultiCallable[_app_pb2.AppSettings, _app_pb2.AppSettings]
-    ListResultProviders: _grpc.UnaryUnaryMultiCallable[_base_pb2.Empty, _app_pb2.ResultProviderList]
-    CreateResultProvider: _grpc.UnaryUnaryMultiCallable[_app_pb2.CreateResultProviderRequest, _app_pb2.ResultProvider]
-    DeleteResultProvider: _grpc.UnaryUnaryMultiCallable[_app_pb2.DeleteResultProviderRequest, _base_pb2.Empty]
-    AuthenticateResultProvider: _grpc.UnaryUnaryMultiCallable[_app_pb2.AuthenticateResultProviderRequest, _base_pb2.Empty]
-    SaveSession: _grpc.UnaryUnaryMultiCallable[_base_pb2.Empty, _app_pb2.Session]
-    OpenSession: _grpc.UnaryUnaryMultiCallable[_app_pb2.Session, _base_pb2.Empty]
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    GetAppInfo: grpc.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        app_pb2.AppInfo,
+    ]
 
-@_typing.type_check_only
-class AppServiceAsyncStub(AppServiceStub):
-    def __init__(self, channel: _aio.Channel) -> None: ...
-    GetAppInfo: _aio.UnaryUnaryMultiCallable[_base_pb2.Empty, _app_pb2.AppInfo]  # type: ignore[assignment]
-    GetAppSettings: _aio.UnaryUnaryMultiCallable[_base_pb2.Empty, _app_pb2.AppSettings]  # type: ignore[assignment]
-    UpdateAppSettings: _aio.UnaryUnaryMultiCallable[_app_pb2.AppSettings, _app_pb2.AppSettings]  # type: ignore[assignment]
-    ListResultProviders: _aio.UnaryUnaryMultiCallable[_base_pb2.Empty, _app_pb2.ResultProviderList]  # type: ignore[assignment]
-    CreateResultProvider: _aio.UnaryUnaryMultiCallable[_app_pb2.CreateResultProviderRequest, _app_pb2.ResultProvider]  # type: ignore[assignment]
-    DeleteResultProvider: _aio.UnaryUnaryMultiCallable[_app_pb2.DeleteResultProviderRequest, _base_pb2.Empty]  # type: ignore[assignment]
-    AuthenticateResultProvider: _aio.UnaryUnaryMultiCallable[_app_pb2.AuthenticateResultProviderRequest, _base_pb2.Empty]  # type: ignore[assignment]
-    SaveSession: _aio.UnaryUnaryMultiCallable[_base_pb2.Empty, _app_pb2.Session]  # type: ignore[assignment]
-    OpenSession: _aio.UnaryUnaryMultiCallable[_app_pb2.Session, _base_pb2.Empty]  # type: ignore[assignment]
+    GetAppSettings: grpc.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        app_pb2.AppSettings,
+    ]
 
-class AppServiceServicer(metaclass=_abc_1.ABCMeta):
-    @_abc_1.abstractmethod
+    UpdateAppSettings: grpc.UnaryUnaryMultiCallable[
+        app_pb2.AppSettings,
+        app_pb2.AppSettings,
+    ]
+
+    ListResultProviders: grpc.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        app_pb2.ResultProviderList,
+    ]
+
+    CreateResultProvider: grpc.UnaryUnaryMultiCallable[
+        app_pb2.CreateResultProviderRequest,
+        app_pb2.ResultProvider,
+    ]
+
+    DeleteResultProvider: grpc.UnaryUnaryMultiCallable[
+        app_pb2.DeleteResultProviderRequest,
+        base_pb2.Empty,
+    ]
+
+    AuthenticateResultProvider: grpc.UnaryUnaryMultiCallable[
+        app_pb2.AuthenticateResultProviderRequest,
+        base_pb2.Empty,
+    ]
+
+    SaveSession: grpc.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        app_pb2.Session,
+    ]
+
+    OpenSession: grpc.UnaryUnaryMultiCallable[
+        app_pb2.Session,
+        base_pb2.Empty,
+    ]
+
+class AppServiceAsyncStub:
+    GetAppInfo: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        app_pb2.AppInfo,
+    ]
+
+    GetAppSettings: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        app_pb2.AppSettings,
+    ]
+
+    UpdateAppSettings: grpc.aio.UnaryUnaryMultiCallable[
+        app_pb2.AppSettings,
+        app_pb2.AppSettings,
+    ]
+
+    ListResultProviders: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        app_pb2.ResultProviderList,
+    ]
+
+    CreateResultProvider: grpc.aio.UnaryUnaryMultiCallable[
+        app_pb2.CreateResultProviderRequest,
+        app_pb2.ResultProvider,
+    ]
+
+    DeleteResultProvider: grpc.aio.UnaryUnaryMultiCallable[
+        app_pb2.DeleteResultProviderRequest,
+        base_pb2.Empty,
+    ]
+
+    AuthenticateResultProvider: grpc.aio.UnaryUnaryMultiCallable[
+        app_pb2.AuthenticateResultProviderRequest,
+        base_pb2.Empty,
+    ]
+
+    SaveSession: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        app_pb2.Session,
+    ]
+
+    OpenSession: grpc.aio.UnaryUnaryMultiCallable[
+        app_pb2.Session,
+        base_pb2.Empty,
+    ]
+
+class AppServiceServicer(metaclass=abc.ABCMeta):
+    @abc.abstractmethod
     def GetAppInfo(
         self,
-        request: _base_pb2.Empty,
+        request: base_pb2.Empty,
         context: _ServicerContext,
-    ) -> _typing.Union[_app_pb2.AppInfo, _abc.Awaitable[_app_pb2.AppInfo]]: ...
+    ) -> typing.Union[app_pb2.AppInfo, collections.abc.Awaitable[app_pb2.AppInfo]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def GetAppSettings(
         self,
-        request: _base_pb2.Empty,
+        request: base_pb2.Empty,
         context: _ServicerContext,
-    ) -> _typing.Union[_app_pb2.AppSettings, _abc.Awaitable[_app_pb2.AppSettings]]: ...
+    ) -> typing.Union[app_pb2.AppSettings, collections.abc.Awaitable[app_pb2.AppSettings]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def UpdateAppSettings(
         self,
-        request: _app_pb2.AppSettings,
+        request: app_pb2.AppSettings,
         context: _ServicerContext,
-    ) -> _typing.Union[_app_pb2.AppSettings, _abc.Awaitable[_app_pb2.AppSettings]]: ...
+    ) -> typing.Union[app_pb2.AppSettings, collections.abc.Awaitable[app_pb2.AppSettings]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def ListResultProviders(
         self,
-        request: _base_pb2.Empty,
+        request: base_pb2.Empty,
         context: _ServicerContext,
-    ) -> _typing.Union[_app_pb2.ResultProviderList, _abc.Awaitable[_app_pb2.ResultProviderList]]: ...
+    ) -> typing.Union[app_pb2.ResultProviderList, collections.abc.Awaitable[app_pb2.ResultProviderList]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def CreateResultProvider(
         self,
-        request: _app_pb2.CreateResultProviderRequest,
+        request: app_pb2.CreateResultProviderRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_app_pb2.ResultProvider, _abc.Awaitable[_app_pb2.ResultProvider]]: ...
+    ) -> typing.Union[app_pb2.ResultProvider, collections.abc.Awaitable[app_pb2.ResultProvider]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def DeleteResultProvider(
         self,
-        request: _app_pb2.DeleteResultProviderRequest,
+        request: app_pb2.DeleteResultProviderRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_base_pb2.Empty, _abc.Awaitable[_base_pb2.Empty]]: ...
+    ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def AuthenticateResultProvider(
         self,
-        request: _app_pb2.AuthenticateResultProviderRequest,
+        request: app_pb2.AuthenticateResultProviderRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_base_pb2.Empty, _abc.Awaitable[_base_pb2.Empty]]: ...
+    ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def SaveSession(
         self,
-        request: _base_pb2.Empty,
+        request: base_pb2.Empty,
         context: _ServicerContext,
-    ) -> _typing.Union[_app_pb2.Session, _abc.Awaitable[_app_pb2.Session]]: ...
+    ) -> typing.Union[app_pb2.Session, collections.abc.Awaitable[app_pb2.Session]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def OpenSession(
         self,
-        request: _app_pb2.Session,
+        request: app_pb2.Session,
         context: _ServicerContext,
-    ) -> _typing.Union[_base_pb2.Empty, _abc.Awaitable[_base_pb2.Empty]]: ...
+    ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
 
-def add_AppServiceServicer_to_server(servicer: AppServiceServicer, server: _typing.Union[_grpc.Server, _aio.Server]) -> None: ...
+def add_AppServiceServicer_to_server(servicer: AppServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

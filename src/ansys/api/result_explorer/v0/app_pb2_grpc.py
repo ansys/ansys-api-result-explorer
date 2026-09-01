@@ -6,7 +6,7 @@ import warnings
 import app_pb2 as app__pb2
 import base_pb2 as base__pb2
 
-GRPC_GENERATED_VERSION = '1.81.1'
+GRPC_GENERATED_VERSION = '1.71.2'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -19,14 +19,14 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + ' but the generated code in app_pb2_grpc.py depends on'
+        + f' but the generated code in app_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class AppServiceStub:
+class AppServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -82,7 +82,7 @@ class AppServiceStub:
                 _registered_method=True)
 
 
-class AppServiceServicer:
+class AppServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def GetAppInfo(self, request, context):
@@ -195,7 +195,7 @@ def add_AppServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class AppService:
+class AppService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod

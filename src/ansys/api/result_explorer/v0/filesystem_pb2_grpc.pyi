@@ -18,37 +18,32 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-from collections import abc as _abc
-from grpc import aio as _aio
-import abc as _abc_1
-import filesystem_pb2 as _filesystem_pb2
-import grpc as _grpc
-import server_models_pb2 as _server_models_pb2
-import sys
-import typing as _typing
+import abc
+import collections.abc
+import filesystem_pb2
+import grpc
+import grpc.aio
+import server_models_pb2
+import typing
 
-if sys.version_info >= (3, 11):
-    from typing import Self as _Self
-else:
-    from typing_extensions import Self as _Self
+_T = typing.TypeVar("_T")
 
-_T = _typing.TypeVar("_T")
+class _MaybeAsyncIterator(collections.abc.AsyncIterator[_T], collections.abc.Iterator[_T], metaclass=abc.ABCMeta): ...
 
-class _MaybeAsyncIterator(_abc.AsyncIterator[_T], _abc.Iterator[_T], metaclass=_abc_1.ABCMeta): ...
-
-class _ServicerContext(_grpc.ServicerContext, _aio.ServicerContext):  # type: ignore[misc, type-arg]
+class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type: ignore[misc, type-arg]
     ...
 
-GRPC_GENERATED_VERSION: str
-GRPC_VERSION: str
-
 class FilesystemServiceStub:
-    @_typing.overload
-    def __new__(cls, channel: _grpc.Channel) -> _Self: ...
-    @_typing.overload
-    def __new__(cls, channel: _aio.Channel) -> FilesystemServiceAsyncStub: ...
-    Ls: _grpc.UnaryUnaryMultiCallable[_filesystem_pb2.LsRequest, _filesystem_pb2.FsItems]
-    Pwd: _grpc.UnaryUnaryMultiCallable[_filesystem_pb2.FilesystemRequest, _server_models_pb2.FSPath]
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    Ls: grpc.UnaryUnaryMultiCallable[
+        filesystem_pb2.LsRequest,
+        filesystem_pb2.FsItems,
+    ]
+
+    Pwd: grpc.UnaryUnaryMultiCallable[
+        filesystem_pb2.FilesystemRequest,
+        server_models_pb2.FSPath,
+    ]
     """would be needed for routing directly to the server
     {
       option (google.api.http) = {
@@ -56,15 +51,32 @@ class FilesystemServiceStub:
       };
     }
     """
-    Home: _grpc.UnaryUnaryMultiCallable[_filesystem_pb2.FilesystemRequest, _server_models_pb2.FSPath]
-    Stat: _grpc.UnaryUnaryMultiCallable[_filesystem_pb2.FilesystemRequest, _server_models_pb2.FSItem]
-    Tail: _grpc.UnaryUnaryMultiCallable[_filesystem_pb2.TailRequest, _filesystem_pb2.FileContent]
 
-@_typing.type_check_only
-class FilesystemServiceAsyncStub(FilesystemServiceStub):
-    def __init__(self, channel: _aio.Channel) -> None: ...
-    Ls: _aio.UnaryUnaryMultiCallable[_filesystem_pb2.LsRequest, _filesystem_pb2.FsItems]  # type: ignore[assignment]
-    Pwd: _aio.UnaryUnaryMultiCallable[_filesystem_pb2.FilesystemRequest, _server_models_pb2.FSPath]  # type: ignore[assignment]
+    Home: grpc.UnaryUnaryMultiCallable[
+        filesystem_pb2.FilesystemRequest,
+        server_models_pb2.FSPath,
+    ]
+
+    Stat: grpc.UnaryUnaryMultiCallable[
+        filesystem_pb2.FilesystemRequest,
+        server_models_pb2.FSItem,
+    ]
+
+    Tail: grpc.UnaryUnaryMultiCallable[
+        filesystem_pb2.TailRequest,
+        filesystem_pb2.FileContent,
+    ]
+
+class FilesystemServiceAsyncStub:
+    Ls: grpc.aio.UnaryUnaryMultiCallable[
+        filesystem_pb2.LsRequest,
+        filesystem_pb2.FsItems,
+    ]
+
+    Pwd: grpc.aio.UnaryUnaryMultiCallable[
+        filesystem_pb2.FilesystemRequest,
+        server_models_pb2.FSPath,
+    ]
     """would be needed for routing directly to the server
     {
       option (google.api.http) = {
@@ -72,24 +84,36 @@ class FilesystemServiceAsyncStub(FilesystemServiceStub):
       };
     }
     """
-    Home: _aio.UnaryUnaryMultiCallable[_filesystem_pb2.FilesystemRequest, _server_models_pb2.FSPath]  # type: ignore[assignment]
-    Stat: _aio.UnaryUnaryMultiCallable[_filesystem_pb2.FilesystemRequest, _server_models_pb2.FSItem]  # type: ignore[assignment]
-    Tail: _aio.UnaryUnaryMultiCallable[_filesystem_pb2.TailRequest, _filesystem_pb2.FileContent]  # type: ignore[assignment]
 
-class FilesystemServiceServicer(metaclass=_abc_1.ABCMeta):
-    @_abc_1.abstractmethod
+    Home: grpc.aio.UnaryUnaryMultiCallable[
+        filesystem_pb2.FilesystemRequest,
+        server_models_pb2.FSPath,
+    ]
+
+    Stat: grpc.aio.UnaryUnaryMultiCallable[
+        filesystem_pb2.FilesystemRequest,
+        server_models_pb2.FSItem,
+    ]
+
+    Tail: grpc.aio.UnaryUnaryMultiCallable[
+        filesystem_pb2.TailRequest,
+        filesystem_pb2.FileContent,
+    ]
+
+class FilesystemServiceServicer(metaclass=abc.ABCMeta):
+    @abc.abstractmethod
     def Ls(
         self,
-        request: _filesystem_pb2.LsRequest,
+        request: filesystem_pb2.LsRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_filesystem_pb2.FsItems, _abc.Awaitable[_filesystem_pb2.FsItems]]: ...
+    ) -> typing.Union[filesystem_pb2.FsItems, collections.abc.Awaitable[filesystem_pb2.FsItems]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def Pwd(
         self,
-        request: _filesystem_pb2.FilesystemRequest,
+        request: filesystem_pb2.FilesystemRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.FSPath, _abc.Awaitable[_server_models_pb2.FSPath]]:
+    ) -> typing.Union[server_models_pb2.FSPath, collections.abc.Awaitable[server_models_pb2.FSPath]]:
         """would be needed for routing directly to the server
         {
           option (google.api.http) = {
@@ -98,47 +122,48 @@ class FilesystemServiceServicer(metaclass=_abc_1.ABCMeta):
         }
         """
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def Home(
         self,
-        request: _filesystem_pb2.FilesystemRequest,
+        request: filesystem_pb2.FilesystemRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.FSPath, _abc.Awaitable[_server_models_pb2.FSPath]]: ...
+    ) -> typing.Union[server_models_pb2.FSPath, collections.abc.Awaitable[server_models_pb2.FSPath]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def Stat(
         self,
-        request: _filesystem_pb2.FilesystemRequest,
+        request: filesystem_pb2.FilesystemRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.FSItem, _abc.Awaitable[_server_models_pb2.FSItem]]: ...
+    ) -> typing.Union[server_models_pb2.FSItem, collections.abc.Awaitable[server_models_pb2.FSItem]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def Tail(
         self,
-        request: _filesystem_pb2.TailRequest,
+        request: filesystem_pb2.TailRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_filesystem_pb2.FileContent, _abc.Awaitable[_filesystem_pb2.FileContent]]: ...
+    ) -> typing.Union[filesystem_pb2.FileContent, collections.abc.Awaitable[filesystem_pb2.FileContent]]: ...
 
-def add_FilesystemServiceServicer_to_server(servicer: FilesystemServiceServicer, server: _typing.Union[_grpc.Server, _aio.Server]) -> None: ...
+def add_FilesystemServiceServicer_to_server(servicer: FilesystemServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
 
 class HpsFilesystemServiceStub:
-    @_typing.overload
-    def __new__(cls, channel: _grpc.Channel) -> _Self: ...
-    @_typing.overload
-    def __new__(cls, channel: _aio.Channel) -> HpsFilesystemServiceAsyncStub: ...
-    Ls: _grpc.UnaryUnaryMultiCallable[_filesystem_pb2.LsRequest, _filesystem_pb2.HpsFsItems]
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    Ls: grpc.UnaryUnaryMultiCallable[
+        filesystem_pb2.LsRequest,
+        filesystem_pb2.HpsFsItems,
+    ]
 
-@_typing.type_check_only
-class HpsFilesystemServiceAsyncStub(HpsFilesystemServiceStub):
-    def __init__(self, channel: _aio.Channel) -> None: ...
-    Ls: _aio.UnaryUnaryMultiCallable[_filesystem_pb2.LsRequest, _filesystem_pb2.HpsFsItems]  # type: ignore[assignment]
+class HpsFilesystemServiceAsyncStub:
+    Ls: grpc.aio.UnaryUnaryMultiCallable[
+        filesystem_pb2.LsRequest,
+        filesystem_pb2.HpsFsItems,
+    ]
 
-class HpsFilesystemServiceServicer(metaclass=_abc_1.ABCMeta):
-    @_abc_1.abstractmethod
+class HpsFilesystemServiceServicer(metaclass=abc.ABCMeta):
+    @abc.abstractmethod
     def Ls(
         self,
-        request: _filesystem_pb2.LsRequest,
+        request: filesystem_pb2.LsRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_filesystem_pb2.HpsFsItems, _abc.Awaitable[_filesystem_pb2.HpsFsItems]]: ...
+    ) -> typing.Union[filesystem_pb2.HpsFsItems, collections.abc.Awaitable[filesystem_pb2.HpsFsItems]]: ...
 
-def add_HpsFilesystemServiceServicer_to_server(servicer: HpsFilesystemServiceServicer, server: _typing.Union[_grpc.Server, _aio.Server]) -> None: ...
+def add_HpsFilesystemServiceServicer_to_server(servicer: HpsFilesystemServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

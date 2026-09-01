@@ -6,7 +6,7 @@ import warnings
 import base_pb2 as base__pb2
 import workspace_pb2 as workspace__pb2
 
-GRPC_GENERATED_VERSION = '1.81.1'
+GRPC_GENERATED_VERSION = '1.71.2'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -19,14 +19,14 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + ' but the generated code in workspace_pb2_grpc.py depends on'
+        + f' but the generated code in workspace_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class WorkspaceServiceStub:
+class WorkspaceServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -97,7 +97,7 @@ class WorkspaceServiceStub:
                 _registered_method=True)
 
 
-class WorkspaceServiceServicer:
+class WorkspaceServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Create(self, request, context):
@@ -247,7 +247,7 @@ def add_WorkspaceServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class WorkspaceService:
+class WorkspaceService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod

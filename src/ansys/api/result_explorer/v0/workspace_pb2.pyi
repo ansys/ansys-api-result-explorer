@@ -18,29 +18,29 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-from collections import abc as _abc
-from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import struct_pb2 as _struct_pb2
-from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
-import builtins as _builtins
+import builtins
+import collections.abc
+import google.protobuf.descriptor
+import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
+import google.protobuf.message
+import google.protobuf.struct_pb2
 import sys
-import typing as _typing
+import typing
 
-if sys.version_info >= (3, 11):
-    from typing import TypeAlias as _TypeAlias, Never as _Never
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
 else:
-    from typing_extensions import TypeAlias as _TypeAlias, Never as _Never
+    import typing_extensions
 
-DESCRIPTOR: _descriptor.FileDescriptor
+DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 class _ViewportDirection:
-    ValueType = _typing.NewType("ValueType", _builtins.int)
-    V: _TypeAlias = ValueType  # noqa: Y015
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
 
-class _ViewportDirectionEnumTypeWrapper(_enum_type_wrapper._EnumTypeWrapper[_ViewportDirection.ValueType], _builtins.type):
-    DESCRIPTOR: _descriptor.EnumDescriptor
+class _ViewportDirectionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ViewportDirection.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     VIEWPORT_DIRECTION_UNSPECIFIED: _ViewportDirection.ValueType  # 0
     VIEWPORT_DIRECTION_RIGHT: _ViewportDirection.ValueType  # 1
     VIEWPORT_DIRECTION_BOTTOM: _ViewportDirection.ValueType  # 2
@@ -50,616 +50,493 @@ class ViewportDirection(_ViewportDirection, metaclass=_ViewportDirectionEnumType
 VIEWPORT_DIRECTION_UNSPECIFIED: ViewportDirection.ValueType  # 0
 VIEWPORT_DIRECTION_RIGHT: ViewportDirection.ValueType  # 1
 VIEWPORT_DIRECTION_BOTTOM: ViewportDirection.ValueType  # 2
-Global___ViewportDirection: _TypeAlias = ViewportDirection  # noqa: Y015
+global___ViewportDirection = ViewportDirection
 
-@_typing.final
-class WorkspaceCreate(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class WorkspaceCreate(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    NAME_FIELD_NUMBER: _builtins.int
-    name: _builtins.str
+    NAME_FIELD_NUMBER: builtins.int
+    name: builtins.str
     def __init__(
         self,
         *,
-        name: _builtins.str = ...,
+        name: builtins.str = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["name", b"name"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    def WhichOneof(self, oneof_group: _Never) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
 
-Global___WorkspaceCreate: _TypeAlias = WorkspaceCreate  # noqa: Y015
+global___WorkspaceCreate = WorkspaceCreate
 
-@_typing.final
-class SyncOptions(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class SyncOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    CAMERA_FIELD_NUMBER: _builtins.int
-    TIME_FREQ_FIELD_NUMBER: _builtins.int
-    LEGEND_FIELD_NUMBER: _builtins.int
-    PROBE_ENTITY_FIELD_NUMBER: _builtins.int
-    PROBE_LOCATION_FIELD_NUMBER: _builtins.int
-    camera: _builtins.bool
-    time_freq: _builtins.bool
-    legend: _builtins.bool
-    probe_entity: _builtins.bool
-    probe_location: _builtins.bool
+    CAMERA_FIELD_NUMBER: builtins.int
+    TIME_FREQ_FIELD_NUMBER: builtins.int
+    LEGEND_FIELD_NUMBER: builtins.int
+    PROBE_ENTITY_FIELD_NUMBER: builtins.int
+    PROBE_LOCATION_FIELD_NUMBER: builtins.int
+    camera: builtins.bool
+    time_freq: builtins.bool
+    legend: builtins.bool
+    probe_entity: builtins.bool
+    probe_location: builtins.bool
     def __init__(
         self,
         *,
-        camera: _builtins.bool | None = ...,
-        time_freq: _builtins.bool | None = ...,
-        legend: _builtins.bool | None = ...,
-        probe_entity: _builtins.bool | None = ...,
-        probe_location: _builtins.bool | None = ...,
+        camera: builtins.bool | None = ...,
+        time_freq: builtins.bool | None = ...,
+        legend: builtins.bool | None = ...,
+        probe_entity: builtins.bool | None = ...,
+        probe_location: builtins.bool | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_camera", b"_camera", "_legend", b"_legend", "_probe_entity", b"_probe_entity", "_probe_location", b"_probe_location", "_time_freq", b"_time_freq", "camera", b"camera", "legend", b"legend", "probe_entity", b"probe_entity", "probe_location", b"probe_location", "time_freq", b"time_freq"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_camera", b"_camera", "_legend", b"_legend", "_probe_entity", b"_probe_entity", "_probe_location", b"_probe_location", "_time_freq", b"_time_freq", "camera", b"camera", "legend", b"legend", "probe_entity", b"probe_entity", "probe_location", b"probe_location", "time_freq", b"time_freq"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType__camera: _TypeAlias = _typing.Literal["camera"]  # noqa: Y015
-    _WhichOneofArgType__camera: _TypeAlias = _typing.Literal["_camera", b"_camera"]  # noqa: Y015
-    _WhichOneofReturnType__legend: _TypeAlias = _typing.Literal["legend"]  # noqa: Y015
-    _WhichOneofArgType__legend: _TypeAlias = _typing.Literal["_legend", b"_legend"]  # noqa: Y015
-    _WhichOneofReturnType__probe_entity: _TypeAlias = _typing.Literal["probe_entity"]  # noqa: Y015
-    _WhichOneofArgType__probe_entity: _TypeAlias = _typing.Literal["_probe_entity", b"_probe_entity"]  # noqa: Y015
-    _WhichOneofReturnType__probe_location: _TypeAlias = _typing.Literal["probe_location"]  # noqa: Y015
-    _WhichOneofArgType__probe_location: _TypeAlias = _typing.Literal["_probe_location", b"_probe_location"]  # noqa: Y015
-    _WhichOneofReturnType__time_freq: _TypeAlias = _typing.Literal["time_freq"]  # noqa: Y015
-    _WhichOneofArgType__time_freq: _TypeAlias = _typing.Literal["_time_freq", b"_time_freq"]  # noqa: Y015
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__camera) -> _WhichOneofReturnType__camera | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__legend) -> _WhichOneofReturnType__legend | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__probe_entity) -> _WhichOneofReturnType__probe_entity | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__probe_location) -> _WhichOneofReturnType__probe_location | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__time_freq) -> _WhichOneofReturnType__time_freq | None: ...
+    def HasField(self, field_name: typing.Literal["_camera", b"_camera", "_legend", b"_legend", "_probe_entity", b"_probe_entity", "_probe_location", b"_probe_location", "_time_freq", b"_time_freq", "camera", b"camera", "legend", b"legend", "probe_entity", b"probe_entity", "probe_location", b"probe_location", "time_freq", b"time_freq"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_camera", b"_camera", "_legend", b"_legend", "_probe_entity", b"_probe_entity", "_probe_location", b"_probe_location", "_time_freq", b"_time_freq", "camera", b"camera", "legend", b"legend", "probe_entity", b"probe_entity", "probe_location", b"probe_location", "time_freq", b"time_freq"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_camera", b"_camera"]) -> typing.Literal["camera"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_legend", b"_legend"]) -> typing.Literal["legend"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_probe_entity", b"_probe_entity"]) -> typing.Literal["probe_entity"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_probe_location", b"_probe_location"]) -> typing.Literal["probe_location"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_time_freq", b"_time_freq"]) -> typing.Literal["time_freq"] | None: ...
 
-Global___SyncOptions: _TypeAlias = SyncOptions  # noqa: Y015
+global___SyncOptions = SyncOptions
 
-@_typing.final
-class Workspace(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class Workspace(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: _builtins.int
-    NAME_FIELD_NUMBER: _builtins.int
-    SYNC_OPTIONS_FIELD_NUMBER: _builtins.int
-    VIEWPORT_IDS_FIELD_NUMBER: _builtins.int
-    FULLSCREEN_VIEWPORT_ID_FIELD_NUMBER: _builtins.int
-    id: _builtins.str
-    name: _builtins.str
-    fullscreen_viewport_id: _builtins.str
-    @_builtins.property
-    def sync_options(self) -> Global___SyncOptions: ...
-    @_builtins.property
-    def viewport_ids(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
+    ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    SYNC_OPTIONS_FIELD_NUMBER: builtins.int
+    VIEWPORT_IDS_FIELD_NUMBER: builtins.int
+    FULLSCREEN_VIEWPORT_ID_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    name: builtins.str
+    fullscreen_viewport_id: builtins.str
+    @property
+    def sync_options(self) -> global___SyncOptions: ...
+    @property
+    def viewport_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     def __init__(
         self,
         *,
-        id: _builtins.str = ...,
-        name: _builtins.str = ...,
-        sync_options: Global___SyncOptions | None = ...,
-        viewport_ids: _abc.Iterable[_builtins.str] | None = ...,
-        fullscreen_viewport_id: _builtins.str | None = ...,
+        id: builtins.str = ...,
+        name: builtins.str = ...,
+        sync_options: global___SyncOptions | None = ...,
+        viewport_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        fullscreen_viewport_id: builtins.str | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id", "_sync_options", b"_sync_options", "fullscreen_viewport_id", b"fullscreen_viewport_id", "sync_options", b"sync_options"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id", "_sync_options", b"_sync_options", "fullscreen_viewport_id", b"fullscreen_viewport_id", "id", b"id", "name", b"name", "sync_options", b"sync_options", "viewport_ids", b"viewport_ids"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType__fullscreen_viewport_id: _TypeAlias = _typing.Literal["fullscreen_viewport_id"]  # noqa: Y015
-    _WhichOneofArgType__fullscreen_viewport_id: _TypeAlias = _typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id"]  # noqa: Y015
-    _WhichOneofReturnType__sync_options: _TypeAlias = _typing.Literal["sync_options"]  # noqa: Y015
-    _WhichOneofArgType__sync_options: _TypeAlias = _typing.Literal["_sync_options", b"_sync_options"]  # noqa: Y015
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__fullscreen_viewport_id) -> _WhichOneofReturnType__fullscreen_viewport_id | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__sync_options) -> _WhichOneofReturnType__sync_options | None: ...
+    def HasField(self, field_name: typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id", "_sync_options", b"_sync_options", "fullscreen_viewport_id", b"fullscreen_viewport_id", "sync_options", b"sync_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id", "_sync_options", b"_sync_options", "fullscreen_viewport_id", b"fullscreen_viewport_id", "id", b"id", "name", b"name", "sync_options", b"sync_options", "viewport_ids", b"viewport_ids"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id"]) -> typing.Literal["fullscreen_viewport_id"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_sync_options", b"_sync_options"]) -> typing.Literal["sync_options"] | None: ...
 
-Global___Workspace: _TypeAlias = Workspace  # noqa: Y015
+global___Workspace = Workspace
 
-@_typing.final
-class WorkspaceUpdateRequest(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class WorkspaceUpdateRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    WORKSPACE_ID_FIELD_NUMBER: _builtins.int
-    NAME_FIELD_NUMBER: _builtins.int
-    SYNC_OPTIONS_FIELD_NUMBER: _builtins.int
-    FULLSCREEN_VIEWPORT_ID_FIELD_NUMBER: _builtins.int
-    workspace_id: _builtins.str
+    WORKSPACE_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    SYNC_OPTIONS_FIELD_NUMBER: builtins.int
+    FULLSCREEN_VIEWPORT_ID_FIELD_NUMBER: builtins.int
+    workspace_id: builtins.str
     """id of the workspace to update"""
-    name: _builtins.str
-    fullscreen_viewport_id: _builtins.str
+    name: builtins.str
+    fullscreen_viewport_id: builtins.str
     """if empty, exit full screen"""
-    @_builtins.property
-    def sync_options(self) -> Global___SyncOptions: ...
+    @property
+    def sync_options(self) -> global___SyncOptions: ...
     def __init__(
         self,
         *,
-        workspace_id: _builtins.str = ...,
-        name: _builtins.str | None = ...,
-        sync_options: Global___SyncOptions | None = ...,
-        fullscreen_viewport_id: _builtins.str | None = ...,
+        workspace_id: builtins.str = ...,
+        name: builtins.str | None = ...,
+        sync_options: global___SyncOptions | None = ...,
+        fullscreen_viewport_id: builtins.str | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id", "_name", b"_name", "_sync_options", b"_sync_options", "fullscreen_viewport_id", b"fullscreen_viewport_id", "name", b"name", "sync_options", b"sync_options"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id", "_name", b"_name", "_sync_options", b"_sync_options", "fullscreen_viewport_id", b"fullscreen_viewport_id", "name", b"name", "sync_options", b"sync_options", "workspace_id", b"workspace_id"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType__fullscreen_viewport_id: _TypeAlias = _typing.Literal["fullscreen_viewport_id"]  # noqa: Y015
-    _WhichOneofArgType__fullscreen_viewport_id: _TypeAlias = _typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id"]  # noqa: Y015
-    _WhichOneofReturnType__name: _TypeAlias = _typing.Literal["name"]  # noqa: Y015
-    _WhichOneofArgType__name: _TypeAlias = _typing.Literal["_name", b"_name"]  # noqa: Y015
-    _WhichOneofReturnType__sync_options: _TypeAlias = _typing.Literal["sync_options"]  # noqa: Y015
-    _WhichOneofArgType__sync_options: _TypeAlias = _typing.Literal["_sync_options", b"_sync_options"]  # noqa: Y015
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__fullscreen_viewport_id) -> _WhichOneofReturnType__fullscreen_viewport_id | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__name) -> _WhichOneofReturnType__name | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__sync_options) -> _WhichOneofReturnType__sync_options | None: ...
+    def HasField(self, field_name: typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id", "_name", b"_name", "_sync_options", b"_sync_options", "fullscreen_viewport_id", b"fullscreen_viewport_id", "name", b"name", "sync_options", b"sync_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id", "_name", b"_name", "_sync_options", b"_sync_options", "fullscreen_viewport_id", b"fullscreen_viewport_id", "name", b"name", "sync_options", b"sync_options", "workspace_id", b"workspace_id"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_fullscreen_viewport_id", b"_fullscreen_viewport_id"]) -> typing.Literal["fullscreen_viewport_id"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_name", b"_name"]) -> typing.Literal["name"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_sync_options", b"_sync_options"]) -> typing.Literal["sync_options"] | None: ...
 
-Global___WorkspaceUpdateRequest: _TypeAlias = WorkspaceUpdateRequest  # noqa: Y015
+global___WorkspaceUpdateRequest = WorkspaceUpdateRequest
 
-@_typing.final
-class WorkspaceList(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class WorkspaceList(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    WORKSPACES_FIELD_NUMBER: _builtins.int
-    @_builtins.property
-    def workspaces(self) -> _containers.RepeatedCompositeFieldContainer[Global___Workspace]: ...
+    WORKSPACES_FIELD_NUMBER: builtins.int
+    @property
+    def workspaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Workspace]: ...
     def __init__(
         self,
         *,
-        workspaces: _abc.Iterable[Global___Workspace] | None = ...,
+        workspaces: collections.abc.Iterable[global___Workspace] | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["workspaces", b"workspaces"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    def WhichOneof(self, oneof_group: _Never) -> None: ...
+    def ClearField(self, field_name: typing.Literal["workspaces", b"workspaces"]) -> None: ...
 
-Global___WorkspaceList: _TypeAlias = WorkspaceList  # noqa: Y015
+global___WorkspaceList = WorkspaceList
 
-@_typing.final
-class Viewport(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class Viewport(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: _builtins.int
-    READY_FIELD_NUMBER: _builtins.int
-    ERRORS_FIELD_NUMBER: _builtins.int
-    SOLUTION_ID_FIELD_NUMBER: _builtins.int
-    VIEW_ID_FIELD_NUMBER: _builtins.int
-    METADATA_FIELD_NUMBER: _builtins.int
-    SYNC_OPTIONS_FIELD_NUMBER: _builtins.int
-    SIZE_FIELD_NUMBER: _builtins.int
-    HIDDEN_FIELD_NUMBER: _builtins.int
-    id: _builtins.str
+    ID_FIELD_NUMBER: builtins.int
+    READY_FIELD_NUMBER: builtins.int
+    ERRORS_FIELD_NUMBER: builtins.int
+    SOLUTION_ID_FIELD_NUMBER: builtins.int
+    VIEW_ID_FIELD_NUMBER: builtins.int
+    METADATA_FIELD_NUMBER: builtins.int
+    SYNC_OPTIONS_FIELD_NUMBER: builtins.int
+    SIZE_FIELD_NUMBER: builtins.int
+    HIDDEN_FIELD_NUMBER: builtins.int
+    id: builtins.str
     """unique identifier of the viewport"""
-    ready: _builtins.bool
+    ready: builtins.bool
     """status of the viewport"""
-    solution_id: _builtins.str
+    solution_id: builtins.str
     """viewport configuration"""
-    view_id: _builtins.str
-    size: _builtins.float
-    hidden: _builtins.bool
-    @_builtins.property
-    def errors(self) -> _containers.RepeatedScalarFieldContainer[_builtins.str]: ...
-    @_builtins.property
-    def metadata(self) -> _struct_pb2.Struct: ...
-    @_builtins.property
-    def sync_options(self) -> Global___SyncOptions: ...
+    view_id: builtins.str
+    size: builtins.float
+    hidden: builtins.bool
+    @property
+    def errors(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    @property
+    def metadata(self) -> google.protobuf.struct_pb2.Struct: ...
+    @property
+    def sync_options(self) -> global___SyncOptions: ...
     def __init__(
         self,
         *,
-        id: _builtins.str = ...,
-        ready: _builtins.bool = ...,
-        errors: _abc.Iterable[_builtins.str] | None = ...,
-        solution_id: _builtins.str | None = ...,
-        view_id: _builtins.str | None = ...,
-        metadata: _struct_pb2.Struct | None = ...,
-        sync_options: Global___SyncOptions | None = ...,
-        size: _builtins.float | None = ...,
-        hidden: _builtins.bool | None = ...,
+        id: builtins.str = ...,
+        ready: builtins.bool = ...,
+        errors: collections.abc.Iterable[builtins.str] | None = ...,
+        solution_id: builtins.str | None = ...,
+        view_id: builtins.str | None = ...,
+        metadata: google.protobuf.struct_pb2.Struct | None = ...,
+        sync_options: global___SyncOptions | None = ...,
+        size: builtins.float | None = ...,
+        hidden: builtins.bool | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "hidden", b"hidden", "metadata", b"metadata", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "errors", b"errors", "hidden", b"hidden", "id", b"id", "metadata", b"metadata", "ready", b"ready", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType__hidden: _TypeAlias = _typing.Literal["hidden"]  # noqa: Y015
-    _WhichOneofArgType__hidden: _TypeAlias = _typing.Literal["_hidden", b"_hidden"]  # noqa: Y015
-    _WhichOneofReturnType__metadata: _TypeAlias = _typing.Literal["metadata"]  # noqa: Y015
-    _WhichOneofArgType__metadata: _TypeAlias = _typing.Literal["_metadata", b"_metadata"]  # noqa: Y015
-    _WhichOneofReturnType__size: _TypeAlias = _typing.Literal["size"]  # noqa: Y015
-    _WhichOneofArgType__size: _TypeAlias = _typing.Literal["_size", b"_size"]  # noqa: Y015
-    _WhichOneofReturnType__solution_id: _TypeAlias = _typing.Literal["solution_id"]  # noqa: Y015
-    _WhichOneofArgType__solution_id: _TypeAlias = _typing.Literal["_solution_id", b"_solution_id"]  # noqa: Y015
-    _WhichOneofReturnType__sync_options: _TypeAlias = _typing.Literal["sync_options"]  # noqa: Y015
-    _WhichOneofArgType__sync_options: _TypeAlias = _typing.Literal["_sync_options", b"_sync_options"]  # noqa: Y015
-    _WhichOneofReturnType__view_id: _TypeAlias = _typing.Literal["view_id"]  # noqa: Y015
-    _WhichOneofArgType__view_id: _TypeAlias = _typing.Literal["_view_id", b"_view_id"]  # noqa: Y015
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__hidden) -> _WhichOneofReturnType__hidden | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__metadata) -> _WhichOneofReturnType__metadata | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__size) -> _WhichOneofReturnType__size | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__solution_id) -> _WhichOneofReturnType__solution_id | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__sync_options) -> _WhichOneofReturnType__sync_options | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__view_id) -> _WhichOneofReturnType__view_id | None: ...
+    def HasField(self, field_name: typing.Literal["_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "hidden", b"hidden", "metadata", b"metadata", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "errors", b"errors", "hidden", b"hidden", "id", b"id", "metadata", b"metadata", "ready", b"ready", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_hidden", b"_hidden"]) -> typing.Literal["hidden"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_metadata", b"_metadata"]) -> typing.Literal["metadata"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_size", b"_size"]) -> typing.Literal["size"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_solution_id", b"_solution_id"]) -> typing.Literal["solution_id"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_sync_options", b"_sync_options"]) -> typing.Literal["sync_options"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_view_id", b"_view_id"]) -> typing.Literal["view_id"] | None: ...
 
-Global___Viewport: _TypeAlias = Viewport  # noqa: Y015
+global___Viewport = Viewport
 
-@_typing.final
-class ViewportList(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class ViewportList(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    VIEWPORTS_FIELD_NUMBER: _builtins.int
-    @_builtins.property
-    def viewports(self) -> _containers.RepeatedCompositeFieldContainer[Global___Viewport]: ...
+    VIEWPORTS_FIELD_NUMBER: builtins.int
+    @property
+    def viewports(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Viewport]: ...
     def __init__(
         self,
         *,
-        viewports: _abc.Iterable[Global___Viewport] | None = ...,
+        viewports: collections.abc.Iterable[global___Viewport] | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["viewports", b"viewports"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    def WhichOneof(self, oneof_group: _Never) -> None: ...
+    def ClearField(self, field_name: typing.Literal["viewports", b"viewports"]) -> None: ...
 
-Global___ViewportList: _TypeAlias = ViewportList  # noqa: Y015
+global___ViewportList = ViewportList
 
-@_typing.final
-class UpdateViewportRequest(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class UpdateViewportRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    VIEWPORT_ID_FIELD_NUMBER: _builtins.int
-    SOLUTION_ID_FIELD_NUMBER: _builtins.int
-    VIEW_ID_FIELD_NUMBER: _builtins.int
-    METADATA_FIELD_NUMBER: _builtins.int
-    SYNC_OPTIONS_FIELD_NUMBER: _builtins.int
-    SIZE_FIELD_NUMBER: _builtins.int
-    HIDDEN_FIELD_NUMBER: _builtins.int
-    DISPLAY_OPTIONS_FIELD_NUMBER: _builtins.int
-    WAIT_FIELD_NUMBER: _builtins.int
-    viewport_id: _builtins.str
+    VIEWPORT_ID_FIELD_NUMBER: builtins.int
+    SOLUTION_ID_FIELD_NUMBER: builtins.int
+    VIEW_ID_FIELD_NUMBER: builtins.int
+    METADATA_FIELD_NUMBER: builtins.int
+    SYNC_OPTIONS_FIELD_NUMBER: builtins.int
+    SIZE_FIELD_NUMBER: builtins.int
+    HIDDEN_FIELD_NUMBER: builtins.int
+    DISPLAY_OPTIONS_FIELD_NUMBER: builtins.int
+    WAIT_FIELD_NUMBER: builtins.int
+    viewport_id: builtins.str
     """id of the viewport to update"""
-    solution_id: _builtins.str
+    solution_id: builtins.str
     """fields to update
     if empty, no solution assigned
     """
-    view_id: _builtins.str
+    view_id: builtins.str
     """if empty, no view assigned"""
-    size: _builtins.float
-    hidden: _builtins.bool
-    wait: _builtins.bool
+    size: builtins.float
+    hidden: builtins.bool
+    wait: builtins.bool
     """request options
     wait for the update to be applied before returning
     """
-    @_builtins.property
-    def metadata(self) -> _struct_pb2.Struct: ...
-    @_builtins.property
-    def sync_options(self) -> Global___SyncOptions: ...
-    @_builtins.property
-    def display_options(self) -> _struct_pb2.Struct: ...
+    @property
+    def metadata(self) -> google.protobuf.struct_pb2.Struct: ...
+    @property
+    def sync_options(self) -> global___SyncOptions: ...
+    @property
+    def display_options(self) -> google.protobuf.struct_pb2.Struct: ...
     def __init__(
         self,
         *,
-        viewport_id: _builtins.str = ...,
-        solution_id: _builtins.str | None = ...,
-        view_id: _builtins.str | None = ...,
-        metadata: _struct_pb2.Struct | None = ...,
-        sync_options: Global___SyncOptions | None = ...,
-        size: _builtins.float | None = ...,
-        hidden: _builtins.bool | None = ...,
-        display_options: _struct_pb2.Struct | None = ...,
-        wait: _builtins.bool = ...,
+        viewport_id: builtins.str = ...,
+        solution_id: builtins.str | None = ...,
+        view_id: builtins.str | None = ...,
+        metadata: google.protobuf.struct_pb2.Struct | None = ...,
+        sync_options: global___SyncOptions | None = ...,
+        size: builtins.float | None = ...,
+        hidden: builtins.bool | None = ...,
+        display_options: google.protobuf.struct_pb2.Struct | None = ...,
+        wait: builtins.bool = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_display_options", b"_display_options", "_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "display_options", b"display_options", "hidden", b"hidden", "metadata", b"metadata", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_display_options", b"_display_options", "_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "display_options", b"display_options", "hidden", b"hidden", "metadata", b"metadata", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id", "viewport_id", b"viewport_id", "wait", b"wait"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType__display_options: _TypeAlias = _typing.Literal["display_options"]  # noqa: Y015
-    _WhichOneofArgType__display_options: _TypeAlias = _typing.Literal["_display_options", b"_display_options"]  # noqa: Y015
-    _WhichOneofReturnType__hidden: _TypeAlias = _typing.Literal["hidden"]  # noqa: Y015
-    _WhichOneofArgType__hidden: _TypeAlias = _typing.Literal["_hidden", b"_hidden"]  # noqa: Y015
-    _WhichOneofReturnType__metadata: _TypeAlias = _typing.Literal["metadata"]  # noqa: Y015
-    _WhichOneofArgType__metadata: _TypeAlias = _typing.Literal["_metadata", b"_metadata"]  # noqa: Y015
-    _WhichOneofReturnType__size: _TypeAlias = _typing.Literal["size"]  # noqa: Y015
-    _WhichOneofArgType__size: _TypeAlias = _typing.Literal["_size", b"_size"]  # noqa: Y015
-    _WhichOneofReturnType__solution_id: _TypeAlias = _typing.Literal["solution_id"]  # noqa: Y015
-    _WhichOneofArgType__solution_id: _TypeAlias = _typing.Literal["_solution_id", b"_solution_id"]  # noqa: Y015
-    _WhichOneofReturnType__sync_options: _TypeAlias = _typing.Literal["sync_options"]  # noqa: Y015
-    _WhichOneofArgType__sync_options: _TypeAlias = _typing.Literal["_sync_options", b"_sync_options"]  # noqa: Y015
-    _WhichOneofReturnType__view_id: _TypeAlias = _typing.Literal["view_id"]  # noqa: Y015
-    _WhichOneofArgType__view_id: _TypeAlias = _typing.Literal["_view_id", b"_view_id"]  # noqa: Y015
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__display_options) -> _WhichOneofReturnType__display_options | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__hidden) -> _WhichOneofReturnType__hidden | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__metadata) -> _WhichOneofReturnType__metadata | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__size) -> _WhichOneofReturnType__size | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__solution_id) -> _WhichOneofReturnType__solution_id | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__sync_options) -> _WhichOneofReturnType__sync_options | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__view_id) -> _WhichOneofReturnType__view_id | None: ...
+    def HasField(self, field_name: typing.Literal["_display_options", b"_display_options", "_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "display_options", b"display_options", "hidden", b"hidden", "metadata", b"metadata", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_display_options", b"_display_options", "_hidden", b"_hidden", "_metadata", b"_metadata", "_size", b"_size", "_solution_id", b"_solution_id", "_sync_options", b"_sync_options", "_view_id", b"_view_id", "display_options", b"display_options", "hidden", b"hidden", "metadata", b"metadata", "size", b"size", "solution_id", b"solution_id", "sync_options", b"sync_options", "view_id", b"view_id", "viewport_id", b"viewport_id", "wait", b"wait"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_display_options", b"_display_options"]) -> typing.Literal["display_options"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_hidden", b"_hidden"]) -> typing.Literal["hidden"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_metadata", b"_metadata"]) -> typing.Literal["metadata"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_size", b"_size"]) -> typing.Literal["size"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_solution_id", b"_solution_id"]) -> typing.Literal["solution_id"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_sync_options", b"_sync_options"]) -> typing.Literal["sync_options"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_view_id", b"_view_id"]) -> typing.Literal["view_id"] | None: ...
 
-Global___UpdateViewportRequest: _TypeAlias = UpdateViewportRequest  # noqa: Y015
+global___UpdateViewportRequest = UpdateViewportRequest
 
-@_typing.final
-class CreateViewportRequest(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class CreateViewportRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    WORKSPACE_ID_FIELD_NUMBER: _builtins.int
-    VIEWPORT_ID_FIELD_NUMBER: _builtins.int
-    DIRECTION_FIELD_NUMBER: _builtins.int
-    SIZE_FIELD_NUMBER: _builtins.int
-    workspace_id: _builtins.str
-    viewport_id: _builtins.str
-    direction: Global___ViewportDirection.ValueType
-    size: _builtins.float
+    WORKSPACE_ID_FIELD_NUMBER: builtins.int
+    VIEWPORT_ID_FIELD_NUMBER: builtins.int
+    DIRECTION_FIELD_NUMBER: builtins.int
+    SIZE_FIELD_NUMBER: builtins.int
+    workspace_id: builtins.str
+    viewport_id: builtins.str
+    direction: global___ViewportDirection.ValueType
+    size: builtins.float
     def __init__(
         self,
         *,
-        workspace_id: _builtins.str = ...,
-        viewport_id: _builtins.str = ...,
-        direction: Global___ViewportDirection.ValueType = ...,
-        size: _builtins.float | None = ...,
+        workspace_id: builtins.str = ...,
+        viewport_id: builtins.str = ...,
+        direction: global___ViewportDirection.ValueType = ...,
+        size: builtins.float | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_size", b"_size", "size", b"size"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_size", b"_size", "direction", b"direction", "size", b"size", "viewport_id", b"viewport_id", "workspace_id", b"workspace_id"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType__size: _TypeAlias = _typing.Literal["size"]  # noqa: Y015
-    _WhichOneofArgType__size: _TypeAlias = _typing.Literal["_size", b"_size"]  # noqa: Y015
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__size) -> _WhichOneofReturnType__size | None: ...
+    def HasField(self, field_name: typing.Literal["_size", b"_size", "size", b"size"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_size", b"_size", "direction", b"direction", "size", b"size", "viewport_id", b"viewport_id", "workspace_id", b"workspace_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["_size", b"_size"]) -> typing.Literal["size"] | None: ...
 
-Global___CreateViewportRequest: _TypeAlias = CreateViewportRequest  # noqa: Y015
+global___CreateViewportRequest = CreateViewportRequest
 
-@_typing.final
-class SnapshotSettings(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class SnapshotSettings(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    BACKGROUND_COLOR_FIELD_NUMBER: _builtins.int
-    TRANSPARENT_BACKGROUND_FIELD_NUMBER: _builtins.int
-    SHOW_LOGO_FIELD_NUMBER: _builtins.int
-    TEXT_COLOR_FIELD_NUMBER: _builtins.int
-    METADATA_TEXT_SIZE_FIELD_NUMBER: _builtins.int
-    SHOW_LEGEND_FIELD_NUMBER: _builtins.int
-    SHOW_RESULT_PICKER_FIELD_NUMBER: _builtins.int
-    SHOW_SOLUTION_NAME_FIELD_NUMBER: _builtins.int
-    SOLUTION_NAME_FIELD_NUMBER: _builtins.int
-    SHOW_TIME_STAMP_FIELD_NUMBER: _builtins.int
-    SCALE_LOGO_WITH_METADATA_FIELD_NUMBER: _builtins.int
-    HEIGHT_FIELD_NUMBER: _builtins.int
-    WIDTH_FIELD_NUMBER: _builtins.int
-    background_color: _builtins.str
-    transparent_background: _builtins.bool
-    show_logo: _builtins.bool
-    text_color: _builtins.str
-    metadata_text_size: _builtins.int
+    BACKGROUND_COLOR_FIELD_NUMBER: builtins.int
+    TRANSPARENT_BACKGROUND_FIELD_NUMBER: builtins.int
+    SHOW_LOGO_FIELD_NUMBER: builtins.int
+    TEXT_COLOR_FIELD_NUMBER: builtins.int
+    METADATA_TEXT_SIZE_FIELD_NUMBER: builtins.int
+    SHOW_LEGEND_FIELD_NUMBER: builtins.int
+    SHOW_RESULT_PICKER_FIELD_NUMBER: builtins.int
+    SHOW_SOLUTION_NAME_FIELD_NUMBER: builtins.int
+    SOLUTION_NAME_FIELD_NUMBER: builtins.int
+    SHOW_TIME_STAMP_FIELD_NUMBER: builtins.int
+    SCALE_LOGO_WITH_METADATA_FIELD_NUMBER: builtins.int
+    HEIGHT_FIELD_NUMBER: builtins.int
+    WIDTH_FIELD_NUMBER: builtins.int
+    background_color: builtins.str
+    transparent_background: builtins.bool
+    show_logo: builtins.bool
+    text_color: builtins.str
+    metadata_text_size: builtins.int
     """LogoColor logo_color = 5; // todo: good example to discuss enum usage"""
-    show_legend: _builtins.bool
-    show_result_picker: _builtins.bool
-    show_solution_name: _builtins.bool
-    solution_name: _builtins.str
-    show_time_stamp: _builtins.bool
-    scale_logo_with_metadata: _builtins.bool
-    height: _builtins.int
-    width: _builtins.int
+    show_legend: builtins.bool
+    show_result_picker: builtins.bool
+    show_solution_name: builtins.bool
+    solution_name: builtins.str
+    show_time_stamp: builtins.bool
+    scale_logo_with_metadata: builtins.bool
+    height: builtins.int
+    width: builtins.int
     def __init__(
         self,
         *,
-        background_color: _builtins.str | None = ...,
-        transparent_background: _builtins.bool | None = ...,
-        show_logo: _builtins.bool | None = ...,
-        text_color: _builtins.str | None = ...,
-        metadata_text_size: _builtins.int | None = ...,
-        show_legend: _builtins.bool | None = ...,
-        show_result_picker: _builtins.bool | None = ...,
-        show_solution_name: _builtins.bool | None = ...,
-        solution_name: _builtins.str | None = ...,
-        show_time_stamp: _builtins.bool | None = ...,
-        scale_logo_with_metadata: _builtins.bool | None = ...,
-        height: _builtins.int | None = ...,
-        width: _builtins.int | None = ...,
+        background_color: builtins.str | None = ...,
+        transparent_background: builtins.bool | None = ...,
+        show_logo: builtins.bool | None = ...,
+        text_color: builtins.str | None = ...,
+        metadata_text_size: builtins.int | None = ...,
+        show_legend: builtins.bool | None = ...,
+        show_result_picker: builtins.bool | None = ...,
+        show_solution_name: builtins.bool | None = ...,
+        solution_name: builtins.str | None = ...,
+        show_time_stamp: builtins.bool | None = ...,
+        scale_logo_with_metadata: builtins.bool | None = ...,
+        height: builtins.int | None = ...,
+        width: builtins.int | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_background_color", b"_background_color", "_height", b"_height", "_metadata_text_size", b"_metadata_text_size", "_scale_logo_with_metadata", b"_scale_logo_with_metadata", "_show_legend", b"_show_legend", "_show_logo", b"_show_logo", "_show_result_picker", b"_show_result_picker", "_show_solution_name", b"_show_solution_name", "_show_time_stamp", b"_show_time_stamp", "_solution_name", b"_solution_name", "_text_color", b"_text_color", "_transparent_background", b"_transparent_background", "_width", b"_width", "background_color", b"background_color", "height", b"height", "metadata_text_size", b"metadata_text_size", "scale_logo_with_metadata", b"scale_logo_with_metadata", "show_legend", b"show_legend", "show_logo", b"show_logo", "show_result_picker", b"show_result_picker", "show_solution_name", b"show_solution_name", "show_time_stamp", b"show_time_stamp", "solution_name", b"solution_name", "text_color", b"text_color", "transparent_background", b"transparent_background", "width", b"width"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_background_color", b"_background_color", "_height", b"_height", "_metadata_text_size", b"_metadata_text_size", "_scale_logo_with_metadata", b"_scale_logo_with_metadata", "_show_legend", b"_show_legend", "_show_logo", b"_show_logo", "_show_result_picker", b"_show_result_picker", "_show_solution_name", b"_show_solution_name", "_show_time_stamp", b"_show_time_stamp", "_solution_name", b"_solution_name", "_text_color", b"_text_color", "_transparent_background", b"_transparent_background", "_width", b"_width", "background_color", b"background_color", "height", b"height", "metadata_text_size", b"metadata_text_size", "scale_logo_with_metadata", b"scale_logo_with_metadata", "show_legend", b"show_legend", "show_logo", b"show_logo", "show_result_picker", b"show_result_picker", "show_solution_name", b"show_solution_name", "show_time_stamp", b"show_time_stamp", "solution_name", b"solution_name", "text_color", b"text_color", "transparent_background", b"transparent_background", "width", b"width"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType__background_color: _TypeAlias = _typing.Literal["background_color"]  # noqa: Y015
-    _WhichOneofArgType__background_color: _TypeAlias = _typing.Literal["_background_color", b"_background_color"]  # noqa: Y015
-    _WhichOneofReturnType__height: _TypeAlias = _typing.Literal["height"]  # noqa: Y015
-    _WhichOneofArgType__height: _TypeAlias = _typing.Literal["_height", b"_height"]  # noqa: Y015
-    _WhichOneofReturnType__metadata_text_size: _TypeAlias = _typing.Literal["metadata_text_size"]  # noqa: Y015
-    _WhichOneofArgType__metadata_text_size: _TypeAlias = _typing.Literal["_metadata_text_size", b"_metadata_text_size"]  # noqa: Y015
-    _WhichOneofReturnType__scale_logo_with_metadata: _TypeAlias = _typing.Literal["scale_logo_with_metadata"]  # noqa: Y015
-    _WhichOneofArgType__scale_logo_with_metadata: _TypeAlias = _typing.Literal["_scale_logo_with_metadata", b"_scale_logo_with_metadata"]  # noqa: Y015
-    _WhichOneofReturnType__show_legend: _TypeAlias = _typing.Literal["show_legend"]  # noqa: Y015
-    _WhichOneofArgType__show_legend: _TypeAlias = _typing.Literal["_show_legend", b"_show_legend"]  # noqa: Y015
-    _WhichOneofReturnType__show_logo: _TypeAlias = _typing.Literal["show_logo"]  # noqa: Y015
-    _WhichOneofArgType__show_logo: _TypeAlias = _typing.Literal["_show_logo", b"_show_logo"]  # noqa: Y015
-    _WhichOneofReturnType__show_result_picker: _TypeAlias = _typing.Literal["show_result_picker"]  # noqa: Y015
-    _WhichOneofArgType__show_result_picker: _TypeAlias = _typing.Literal["_show_result_picker", b"_show_result_picker"]  # noqa: Y015
-    _WhichOneofReturnType__show_solution_name: _TypeAlias = _typing.Literal["show_solution_name"]  # noqa: Y015
-    _WhichOneofArgType__show_solution_name: _TypeAlias = _typing.Literal["_show_solution_name", b"_show_solution_name"]  # noqa: Y015
-    _WhichOneofReturnType__show_time_stamp: _TypeAlias = _typing.Literal["show_time_stamp"]  # noqa: Y015
-    _WhichOneofArgType__show_time_stamp: _TypeAlias = _typing.Literal["_show_time_stamp", b"_show_time_stamp"]  # noqa: Y015
-    _WhichOneofReturnType__solution_name: _TypeAlias = _typing.Literal["solution_name"]  # noqa: Y015
-    _WhichOneofArgType__solution_name: _TypeAlias = _typing.Literal["_solution_name", b"_solution_name"]  # noqa: Y015
-    _WhichOneofReturnType__text_color: _TypeAlias = _typing.Literal["text_color"]  # noqa: Y015
-    _WhichOneofArgType__text_color: _TypeAlias = _typing.Literal["_text_color", b"_text_color"]  # noqa: Y015
-    _WhichOneofReturnType__transparent_background: _TypeAlias = _typing.Literal["transparent_background"]  # noqa: Y015
-    _WhichOneofArgType__transparent_background: _TypeAlias = _typing.Literal["_transparent_background", b"_transparent_background"]  # noqa: Y015
-    _WhichOneofReturnType__width: _TypeAlias = _typing.Literal["width"]  # noqa: Y015
-    _WhichOneofArgType__width: _TypeAlias = _typing.Literal["_width", b"_width"]  # noqa: Y015
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__background_color) -> _WhichOneofReturnType__background_color | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__height) -> _WhichOneofReturnType__height | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__metadata_text_size) -> _WhichOneofReturnType__metadata_text_size | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__scale_logo_with_metadata) -> _WhichOneofReturnType__scale_logo_with_metadata | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__show_legend) -> _WhichOneofReturnType__show_legend | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__show_logo) -> _WhichOneofReturnType__show_logo | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__show_result_picker) -> _WhichOneofReturnType__show_result_picker | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__show_solution_name) -> _WhichOneofReturnType__show_solution_name | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__show_time_stamp) -> _WhichOneofReturnType__show_time_stamp | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__solution_name) -> _WhichOneofReturnType__solution_name | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__text_color) -> _WhichOneofReturnType__text_color | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__transparent_background) -> _WhichOneofReturnType__transparent_background | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__width) -> _WhichOneofReturnType__width | None: ...
+    def HasField(self, field_name: typing.Literal["_background_color", b"_background_color", "_height", b"_height", "_metadata_text_size", b"_metadata_text_size", "_scale_logo_with_metadata", b"_scale_logo_with_metadata", "_show_legend", b"_show_legend", "_show_logo", b"_show_logo", "_show_result_picker", b"_show_result_picker", "_show_solution_name", b"_show_solution_name", "_show_time_stamp", b"_show_time_stamp", "_solution_name", b"_solution_name", "_text_color", b"_text_color", "_transparent_background", b"_transparent_background", "_width", b"_width", "background_color", b"background_color", "height", b"height", "metadata_text_size", b"metadata_text_size", "scale_logo_with_metadata", b"scale_logo_with_metadata", "show_legend", b"show_legend", "show_logo", b"show_logo", "show_result_picker", b"show_result_picker", "show_solution_name", b"show_solution_name", "show_time_stamp", b"show_time_stamp", "solution_name", b"solution_name", "text_color", b"text_color", "transparent_background", b"transparent_background", "width", b"width"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_background_color", b"_background_color", "_height", b"_height", "_metadata_text_size", b"_metadata_text_size", "_scale_logo_with_metadata", b"_scale_logo_with_metadata", "_show_legend", b"_show_legend", "_show_logo", b"_show_logo", "_show_result_picker", b"_show_result_picker", "_show_solution_name", b"_show_solution_name", "_show_time_stamp", b"_show_time_stamp", "_solution_name", b"_solution_name", "_text_color", b"_text_color", "_transparent_background", b"_transparent_background", "_width", b"_width", "background_color", b"background_color", "height", b"height", "metadata_text_size", b"metadata_text_size", "scale_logo_with_metadata", b"scale_logo_with_metadata", "show_legend", b"show_legend", "show_logo", b"show_logo", "show_result_picker", b"show_result_picker", "show_solution_name", b"show_solution_name", "show_time_stamp", b"show_time_stamp", "solution_name", b"solution_name", "text_color", b"text_color", "transparent_background", b"transparent_background", "width", b"width"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_background_color", b"_background_color"]) -> typing.Literal["background_color"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_height", b"_height"]) -> typing.Literal["height"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_metadata_text_size", b"_metadata_text_size"]) -> typing.Literal["metadata_text_size"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_scale_logo_with_metadata", b"_scale_logo_with_metadata"]) -> typing.Literal["scale_logo_with_metadata"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_show_legend", b"_show_legend"]) -> typing.Literal["show_legend"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_show_logo", b"_show_logo"]) -> typing.Literal["show_logo"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_show_result_picker", b"_show_result_picker"]) -> typing.Literal["show_result_picker"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_show_solution_name", b"_show_solution_name"]) -> typing.Literal["show_solution_name"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_show_time_stamp", b"_show_time_stamp"]) -> typing.Literal["show_time_stamp"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_solution_name", b"_solution_name"]) -> typing.Literal["solution_name"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_text_color", b"_text_color"]) -> typing.Literal["text_color"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_transparent_background", b"_transparent_background"]) -> typing.Literal["transparent_background"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_width", b"_width"]) -> typing.Literal["width"] | None: ...
 
-Global___SnapshotSettings: _TypeAlias = SnapshotSettings  # noqa: Y015
+global___SnapshotSettings = SnapshotSettings
 
-@_typing.final
-class CreateSnapshotRequest(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class CreateSnapshotRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    VIEWPORT_ID_FIELD_NUMBER: _builtins.int
-    SETTINGS_FIELD_NUMBER: _builtins.int
-    viewport_id: _builtins.str
-    @_builtins.property
-    def settings(self) -> Global___SnapshotSettings: ...
+    VIEWPORT_ID_FIELD_NUMBER: builtins.int
+    SETTINGS_FIELD_NUMBER: builtins.int
+    viewport_id: builtins.str
+    @property
+    def settings(self) -> global___SnapshotSettings: ...
     def __init__(
         self,
         *,
-        viewport_id: _builtins.str = ...,
-        settings: Global___SnapshotSettings | None = ...,
+        viewport_id: builtins.str = ...,
+        settings: global___SnapshotSettings | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["settings", b"settings"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["settings", b"settings", "viewport_id", b"viewport_id"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    def WhichOneof(self, oneof_group: _Never) -> None: ...
+    def HasField(self, field_name: typing.Literal["settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["settings", b"settings", "viewport_id", b"viewport_id"]) -> None: ...
 
-Global___CreateSnapshotRequest: _TypeAlias = CreateSnapshotRequest  # noqa: Y015
+global___CreateSnapshotRequest = CreateSnapshotRequest
 
-@_typing.final
-class Snapshot(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class Snapshot(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    DATA_FIELD_NUMBER: _builtins.int
-    data: _builtins.bytes
+    DATA_FIELD_NUMBER: builtins.int
+    data: builtins.bytes
     def __init__(
         self,
         *,
-        data: _builtins.bytes = ...,
+        data: builtins.bytes = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["data", b"data"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    def WhichOneof(self, oneof_group: _Never) -> None: ...
+    def ClearField(self, field_name: typing.Literal["data", b"data"]) -> None: ...
 
-Global___Snapshot: _TypeAlias = Snapshot  # noqa: Y015
+global___Snapshot = Snapshot
 
-@_typing.final
-class WorkspaceTemplate(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class WorkspaceTemplate(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    DATA_FIELD_NUMBER: _builtins.int
-    data: _builtins.str
+    DATA_FIELD_NUMBER: builtins.int
+    data: builtins.str
     def __init__(
         self,
         *,
-        data: _builtins.str = ...,
+        data: builtins.str = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["data", b"data"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    def WhichOneof(self, oneof_group: _Never) -> None: ...
+    def ClearField(self, field_name: typing.Literal["data", b"data"]) -> None: ...
 
-Global___WorkspaceTemplate: _TypeAlias = WorkspaceTemplate  # noqa: Y015
+global___WorkspaceTemplate = WorkspaceTemplate
 
-@_typing.final
-class WorkspaceImportRequest(_message.Message):
-    DESCRIPTOR: _descriptor.Descriptor
+@typing.final
+class WorkspaceImportRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    @_typing.final
-    class SolutionInfo(_message.Message):
-        DESCRIPTOR: _descriptor.Descriptor
+    @typing.final
+    class SolutionInfo(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        NAME_FIELD_NUMBER: _builtins.int
-        RESULT_PROVIDER_NAME_FIELD_NUMBER: _builtins.int
-        FILE_PATH_FIELD_NUMBER: _builtins.int
-        name: _builtins.str
-        result_provider_name: _builtins.str
-        file_path: _builtins.str
+        NAME_FIELD_NUMBER: builtins.int
+        RESULT_PROVIDER_NAME_FIELD_NUMBER: builtins.int
+        FILE_PATH_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        result_provider_name: builtins.str
+        file_path: builtins.str
         def __init__(
             self,
             *,
-            name: _builtins.str = ...,
-            result_provider_name: _builtins.str = ...,
-            file_path: _builtins.str = ...,
+            name: builtins.str = ...,
+            result_provider_name: builtins.str = ...,
+            file_path: builtins.str = ...,
         ) -> None: ...
-        _HasFieldArgType: _TypeAlias = _Never  # noqa: Y015
-        def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-        _ClearFieldArgType: _TypeAlias = _typing.Literal["file_path", b"file_path", "name", b"name", "result_provider_name", b"result_provider_name"]  # noqa: Y015
-        def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-        def WhichOneof(self, oneof_group: _Never) -> None: ...
+        def ClearField(self, field_name: typing.Literal["file_path", b"file_path", "name", b"name", "result_provider_name", b"result_provider_name"]) -> None: ...
 
-    TEMPLATE_FIELD_NUMBER: _builtins.int
-    WORKSPACE_NAME_FIELD_NUMBER: _builtins.int
-    SOLUTIONS_FIELD_NUMBER: _builtins.int
-    USE_CAMERA_POSITION_FIELD_NUMBER: _builtins.int
-    USE_TIME_FREQ_FIELD_NUMBER: _builtins.int
-    USE_BODY_VISIBILITY_FIELD_NUMBER: _builtins.int
-    template: _builtins.str
-    workspace_name: _builtins.str
-    use_camera_position: _builtins.bool
+    TEMPLATE_FIELD_NUMBER: builtins.int
+    WORKSPACE_NAME_FIELD_NUMBER: builtins.int
+    SOLUTIONS_FIELD_NUMBER: builtins.int
+    USE_CAMERA_POSITION_FIELD_NUMBER: builtins.int
+    USE_TIME_FREQ_FIELD_NUMBER: builtins.int
+    USE_BODY_VISIBILITY_FIELD_NUMBER: builtins.int
+    template: builtins.str
+    workspace_name: builtins.str
+    use_camera_position: builtins.bool
     """options"""
-    use_time_freq: _builtins.bool
-    use_body_visibility: _builtins.bool
-    @_builtins.property
-    def solutions(self) -> _containers.RepeatedCompositeFieldContainer[Global___WorkspaceImportRequest.SolutionInfo]: ...
+    use_time_freq: builtins.bool
+    use_body_visibility: builtins.bool
+    @property
+    def solutions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WorkspaceImportRequest.SolutionInfo]: ...
     def __init__(
         self,
         *,
-        template: _builtins.str = ...,
-        workspace_name: _builtins.str = ...,
-        solutions: _abc.Iterable[Global___WorkspaceImportRequest.SolutionInfo] | None = ...,
-        use_camera_position: _builtins.bool | None = ...,
-        use_time_freq: _builtins.bool | None = ...,
-        use_body_visibility: _builtins.bool | None = ...,
+        template: builtins.str = ...,
+        workspace_name: builtins.str = ...,
+        solutions: collections.abc.Iterable[global___WorkspaceImportRequest.SolutionInfo] | None = ...,
+        use_camera_position: builtins.bool | None = ...,
+        use_time_freq: builtins.bool | None = ...,
+        use_body_visibility: builtins.bool | None = ...,
     ) -> None: ...
-    _HasFieldArgType: _TypeAlias = _typing.Literal["_use_body_visibility", b"_use_body_visibility", "_use_camera_position", b"_use_camera_position", "_use_time_freq", b"_use_time_freq", "use_body_visibility", b"use_body_visibility", "use_camera_position", b"use_camera_position", "use_time_freq", b"use_time_freq"]  # noqa: Y015
-    def HasField(self, field_name: _HasFieldArgType) -> _builtins.bool: ...
-    _ClearFieldArgType: _TypeAlias = _typing.Literal["_use_body_visibility", b"_use_body_visibility", "_use_camera_position", b"_use_camera_position", "_use_time_freq", b"_use_time_freq", "solutions", b"solutions", "template", b"template", "use_body_visibility", b"use_body_visibility", "use_camera_position", b"use_camera_position", "use_time_freq", b"use_time_freq", "workspace_name", b"workspace_name"]  # noqa: Y015
-    def ClearField(self, field_name: _ClearFieldArgType) -> None: ...
-    _WhichOneofReturnType__use_body_visibility: _TypeAlias = _typing.Literal["use_body_visibility"]  # noqa: Y015
-    _WhichOneofArgType__use_body_visibility: _TypeAlias = _typing.Literal["_use_body_visibility", b"_use_body_visibility"]  # noqa: Y015
-    _WhichOneofReturnType__use_camera_position: _TypeAlias = _typing.Literal["use_camera_position"]  # noqa: Y015
-    _WhichOneofArgType__use_camera_position: _TypeAlias = _typing.Literal["_use_camera_position", b"_use_camera_position"]  # noqa: Y015
-    _WhichOneofReturnType__use_time_freq: _TypeAlias = _typing.Literal["use_time_freq"]  # noqa: Y015
-    _WhichOneofArgType__use_time_freq: _TypeAlias = _typing.Literal["_use_time_freq", b"_use_time_freq"]  # noqa: Y015
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__use_body_visibility) -> _WhichOneofReturnType__use_body_visibility | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__use_camera_position) -> _WhichOneofReturnType__use_camera_position | None: ...
-    @_typing.overload
-    def WhichOneof(self, oneof_group: _WhichOneofArgType__use_time_freq) -> _WhichOneofReturnType__use_time_freq | None: ...
+    def HasField(self, field_name: typing.Literal["_use_body_visibility", b"_use_body_visibility", "_use_camera_position", b"_use_camera_position", "_use_time_freq", b"_use_time_freq", "use_body_visibility", b"use_body_visibility", "use_camera_position", b"use_camera_position", "use_time_freq", b"use_time_freq"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_use_body_visibility", b"_use_body_visibility", "_use_camera_position", b"_use_camera_position", "_use_time_freq", b"_use_time_freq", "solutions", b"solutions", "template", b"template", "use_body_visibility", b"use_body_visibility", "use_camera_position", b"use_camera_position", "use_time_freq", b"use_time_freq", "workspace_name", b"workspace_name"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_use_body_visibility", b"_use_body_visibility"]) -> typing.Literal["use_body_visibility"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_use_camera_position", b"_use_camera_position"]) -> typing.Literal["use_camera_position"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_use_time_freq", b"_use_time_freq"]) -> typing.Literal["use_time_freq"] | None: ...
 
-Global___WorkspaceImportRequest: _TypeAlias = WorkspaceImportRequest  # noqa: Y015
+global___WorkspaceImportRequest = WorkspaceImportRequest

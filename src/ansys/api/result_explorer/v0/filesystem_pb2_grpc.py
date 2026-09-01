@@ -6,7 +6,7 @@ import warnings
 import filesystem_pb2 as filesystem__pb2
 import server_models_pb2 as server__models__pb2
 
-GRPC_GENERATED_VERSION = '1.81.1'
+GRPC_GENERATED_VERSION = '1.71.2'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -19,14 +19,14 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + ' but the generated code in filesystem_pb2_grpc.py depends on'
+        + f' but the generated code in filesystem_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class FilesystemServiceStub:
+class FilesystemServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -62,7 +62,7 @@ class FilesystemServiceStub:
                 _registered_method=True)
 
 
-class FilesystemServiceServicer:
+class FilesystemServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Ls(self, request, context):
@@ -137,7 +137,7 @@ def add_FilesystemServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class FilesystemService:
+class FilesystemService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -276,7 +276,7 @@ class FilesystemService:
             _registered_method=True)
 
 
-class HpsFilesystemServiceStub:
+class HpsFilesystemServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -292,7 +292,7 @@ class HpsFilesystemServiceStub:
                 _registered_method=True)
 
 
-class HpsFilesystemServiceServicer:
+class HpsFilesystemServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Ls(self, request, context):
@@ -317,7 +317,7 @@ def add_HpsFilesystemServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class HpsFilesystemService:
+class HpsFilesystemService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod

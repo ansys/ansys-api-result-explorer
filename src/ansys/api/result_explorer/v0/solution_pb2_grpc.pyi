@@ -18,166 +18,262 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-from collections import abc as _abc
-from grpc import aio as _aio
-import abc as _abc_1
-import base_pb2 as _base_pb2
-import grpc as _grpc
-import server_models_pb2 as _server_models_pb2
-import solution_pb2 as _solution_pb2
-import sys
-import typing as _typing
+import abc
+import base_pb2
+import collections.abc
+import grpc
+import grpc.aio
+import server_models_pb2
+import solution_pb2
+import typing
 
-if sys.version_info >= (3, 11):
-    from typing import Self as _Self
-else:
-    from typing_extensions import Self as _Self
+_T = typing.TypeVar("_T")
 
-_T = _typing.TypeVar("_T")
+class _MaybeAsyncIterator(collections.abc.AsyncIterator[_T], collections.abc.Iterator[_T], metaclass=abc.ABCMeta): ...
 
-class _MaybeAsyncIterator(_abc.AsyncIterator[_T], _abc.Iterator[_T], metaclass=_abc_1.ABCMeta): ...
-
-class _ServicerContext(_grpc.ServicerContext, _aio.ServicerContext):  # type: ignore[misc, type-arg]
+class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type: ignore[misc, type-arg]
     ...
 
-GRPC_GENERATED_VERSION: str
-GRPC_VERSION: str
-
 class SolutionServiceStub:
-    @_typing.overload
-    def __new__(cls, channel: _grpc.Channel) -> _Self: ...
-    @_typing.overload
-    def __new__(cls, channel: _aio.Channel) -> SolutionServiceAsyncStub: ...
-    Create: _grpc.UnaryUnaryMultiCallable[_solution_pb2.SolutionCreate, _server_models_pb2.Solution]
-    Delete: _grpc.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _base_pb2.Empty]
-    List: _grpc.UnaryUnaryMultiCallable[_base_pb2.Empty, _solution_pb2.SolutionList]
-    Get: _grpc.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _server_models_pb2.Solution]
-    UpdateMeshOptions: _grpc.UnaryUnaryMultiCallable[_solution_pb2.UpdateMeshOptionsRequest, _server_models_pb2.MeshGraphicsOptions]
-    CreatePlotDefinition: _grpc.UnaryUnaryMultiCallable[_solution_pb2.CreatePlotDefinitionRequest, _server_models_pb2.PlotDefinition]
-    UpdatePlotDefinition: _grpc.UnaryUnaryMultiCallable[_solution_pb2.UpdatePlotDefinitionRequest, _server_models_pb2.PlotDefinition]
-    DeletePlotDefinition: _grpc.UnaryUnaryMultiCallable[_solution_pb2.DeletePlotDefinitionRequest, _base_pb2.Empty]
-    CreateChartDefinition: _grpc.UnaryUnaryMultiCallable[_solution_pb2.CreateChartDefinitionRequest, _server_models_pb2.ChartDefinition]
-    UpdateChartDefinition: _grpc.UnaryUnaryMultiCallable[_solution_pb2.UpdateChartDefinitionRequest, _server_models_pb2.ChartDefinition]
-    DeleteChartDefinition: _grpc.UnaryUnaryMultiCallable[_solution_pb2.DeleteChartDefinitionRequest, _base_pb2.Empty]
-    CreateNamedSelection: _grpc.UnaryUnaryMultiCallable[_solution_pb2.CreateNamedSelectionRequest, _server_models_pb2.NamedSelection]
-    DeleteNamedSelection: _grpc.UnaryUnaryMultiCallable[_solution_pb2.DeleteNamedSelectionRequest, _base_pb2.Empty]
-    UpdateNamedSelection: _grpc.UnaryUnaryMultiCallable[_solution_pb2.UpdateNamedSelectionRequest, _server_models_pb2.NamedSelection]
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    Create: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.SolutionCreate,
+        server_models_pb2.Solution,
+    ]
 
-@_typing.type_check_only
-class SolutionServiceAsyncStub(SolutionServiceStub):
-    def __init__(self, channel: _aio.Channel) -> None: ...
-    Create: _aio.UnaryUnaryMultiCallable[_solution_pb2.SolutionCreate, _server_models_pb2.Solution]  # type: ignore[assignment]
-    Delete: _aio.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _base_pb2.Empty]  # type: ignore[assignment]
-    List: _aio.UnaryUnaryMultiCallable[_base_pb2.Empty, _solution_pb2.SolutionList]  # type: ignore[assignment]
-    Get: _aio.UnaryUnaryMultiCallable[_base_pb2.ResourceId, _server_models_pb2.Solution]  # type: ignore[assignment]
-    UpdateMeshOptions: _aio.UnaryUnaryMultiCallable[_solution_pb2.UpdateMeshOptionsRequest, _server_models_pb2.MeshGraphicsOptions]  # type: ignore[assignment]
-    CreatePlotDefinition: _aio.UnaryUnaryMultiCallable[_solution_pb2.CreatePlotDefinitionRequest, _server_models_pb2.PlotDefinition]  # type: ignore[assignment]
-    UpdatePlotDefinition: _aio.UnaryUnaryMultiCallable[_solution_pb2.UpdatePlotDefinitionRequest, _server_models_pb2.PlotDefinition]  # type: ignore[assignment]
-    DeletePlotDefinition: _aio.UnaryUnaryMultiCallable[_solution_pb2.DeletePlotDefinitionRequest, _base_pb2.Empty]  # type: ignore[assignment]
-    CreateChartDefinition: _aio.UnaryUnaryMultiCallable[_solution_pb2.CreateChartDefinitionRequest, _server_models_pb2.ChartDefinition]  # type: ignore[assignment]
-    UpdateChartDefinition: _aio.UnaryUnaryMultiCallable[_solution_pb2.UpdateChartDefinitionRequest, _server_models_pb2.ChartDefinition]  # type: ignore[assignment]
-    DeleteChartDefinition: _aio.UnaryUnaryMultiCallable[_solution_pb2.DeleteChartDefinitionRequest, _base_pb2.Empty]  # type: ignore[assignment]
-    CreateNamedSelection: _aio.UnaryUnaryMultiCallable[_solution_pb2.CreateNamedSelectionRequest, _server_models_pb2.NamedSelection]  # type: ignore[assignment]
-    DeleteNamedSelection: _aio.UnaryUnaryMultiCallable[_solution_pb2.DeleteNamedSelectionRequest, _base_pb2.Empty]  # type: ignore[assignment]
-    UpdateNamedSelection: _aio.UnaryUnaryMultiCallable[_solution_pb2.UpdateNamedSelectionRequest, _server_models_pb2.NamedSelection]  # type: ignore[assignment]
+    Delete: grpc.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        base_pb2.Empty,
+    ]
 
-class SolutionServiceServicer(metaclass=_abc_1.ABCMeta):
-    @_abc_1.abstractmethod
+    List: grpc.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        solution_pb2.SolutionList,
+    ]
+
+    Get: grpc.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        server_models_pb2.Solution,
+    ]
+
+    UpdateMeshOptions: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.UpdateMeshOptionsRequest,
+        server_models_pb2.MeshGraphicsOptions,
+    ]
+
+    CreatePlotDefinition: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.CreatePlotDefinitionRequest,
+        server_models_pb2.PlotDefinition,
+    ]
+
+    UpdatePlotDefinition: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.UpdatePlotDefinitionRequest,
+        server_models_pb2.PlotDefinition,
+    ]
+
+    DeletePlotDefinition: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.DeletePlotDefinitionRequest,
+        base_pb2.Empty,
+    ]
+
+    CreateChartDefinition: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.CreateChartDefinitionRequest,
+        server_models_pb2.ChartDefinition,
+    ]
+
+    UpdateChartDefinition: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.UpdateChartDefinitionRequest,
+        server_models_pb2.ChartDefinition,
+    ]
+
+    DeleteChartDefinition: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.DeleteChartDefinitionRequest,
+        base_pb2.Empty,
+    ]
+
+    CreateNamedSelection: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.CreateNamedSelectionRequest,
+        server_models_pb2.NamedSelection,
+    ]
+
+    DeleteNamedSelection: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.DeleteNamedSelectionRequest,
+        base_pb2.Empty,
+    ]
+
+    UpdateNamedSelection: grpc.UnaryUnaryMultiCallable[
+        solution_pb2.UpdateNamedSelectionRequest,
+        server_models_pb2.NamedSelection,
+    ]
+
+class SolutionServiceAsyncStub:
+    Create: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.SolutionCreate,
+        server_models_pb2.Solution,
+    ]
+
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        base_pb2.Empty,
+    ]
+
+    List: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.Empty,
+        solution_pb2.SolutionList,
+    ]
+
+    Get: grpc.aio.UnaryUnaryMultiCallable[
+        base_pb2.ResourceId,
+        server_models_pb2.Solution,
+    ]
+
+    UpdateMeshOptions: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.UpdateMeshOptionsRequest,
+        server_models_pb2.MeshGraphicsOptions,
+    ]
+
+    CreatePlotDefinition: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.CreatePlotDefinitionRequest,
+        server_models_pb2.PlotDefinition,
+    ]
+
+    UpdatePlotDefinition: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.UpdatePlotDefinitionRequest,
+        server_models_pb2.PlotDefinition,
+    ]
+
+    DeletePlotDefinition: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.DeletePlotDefinitionRequest,
+        base_pb2.Empty,
+    ]
+
+    CreateChartDefinition: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.CreateChartDefinitionRequest,
+        server_models_pb2.ChartDefinition,
+    ]
+
+    UpdateChartDefinition: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.UpdateChartDefinitionRequest,
+        server_models_pb2.ChartDefinition,
+    ]
+
+    DeleteChartDefinition: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.DeleteChartDefinitionRequest,
+        base_pb2.Empty,
+    ]
+
+    CreateNamedSelection: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.CreateNamedSelectionRequest,
+        server_models_pb2.NamedSelection,
+    ]
+
+    DeleteNamedSelection: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.DeleteNamedSelectionRequest,
+        base_pb2.Empty,
+    ]
+
+    UpdateNamedSelection: grpc.aio.UnaryUnaryMultiCallable[
+        solution_pb2.UpdateNamedSelectionRequest,
+        server_models_pb2.NamedSelection,
+    ]
+
+class SolutionServiceServicer(metaclass=abc.ABCMeta):
+    @abc.abstractmethod
     def Create(
         self,
-        request: _solution_pb2.SolutionCreate,
+        request: solution_pb2.SolutionCreate,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.Solution, _abc.Awaitable[_server_models_pb2.Solution]]: ...
+    ) -> typing.Union[server_models_pb2.Solution, collections.abc.Awaitable[server_models_pb2.Solution]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def Delete(
         self,
-        request: _base_pb2.ResourceId,
+        request: base_pb2.ResourceId,
         context: _ServicerContext,
-    ) -> _typing.Union[_base_pb2.Empty, _abc.Awaitable[_base_pb2.Empty]]: ...
+    ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def List(
         self,
-        request: _base_pb2.Empty,
+        request: base_pb2.Empty,
         context: _ServicerContext,
-    ) -> _typing.Union[_solution_pb2.SolutionList, _abc.Awaitable[_solution_pb2.SolutionList]]: ...
+    ) -> typing.Union[solution_pb2.SolutionList, collections.abc.Awaitable[solution_pb2.SolutionList]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def Get(
         self,
-        request: _base_pb2.ResourceId,
+        request: base_pb2.ResourceId,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.Solution, _abc.Awaitable[_server_models_pb2.Solution]]: ...
+    ) -> typing.Union[server_models_pb2.Solution, collections.abc.Awaitable[server_models_pb2.Solution]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def UpdateMeshOptions(
         self,
-        request: _solution_pb2.UpdateMeshOptionsRequest,
+        request: solution_pb2.UpdateMeshOptionsRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.MeshGraphicsOptions, _abc.Awaitable[_server_models_pb2.MeshGraphicsOptions]]: ...
+    ) -> typing.Union[server_models_pb2.MeshGraphicsOptions, collections.abc.Awaitable[server_models_pb2.MeshGraphicsOptions]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def CreatePlotDefinition(
         self,
-        request: _solution_pb2.CreatePlotDefinitionRequest,
+        request: solution_pb2.CreatePlotDefinitionRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.PlotDefinition, _abc.Awaitable[_server_models_pb2.PlotDefinition]]: ...
+    ) -> typing.Union[server_models_pb2.PlotDefinition, collections.abc.Awaitable[server_models_pb2.PlotDefinition]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def UpdatePlotDefinition(
         self,
-        request: _solution_pb2.UpdatePlotDefinitionRequest,
+        request: solution_pb2.UpdatePlotDefinitionRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.PlotDefinition, _abc.Awaitable[_server_models_pb2.PlotDefinition]]: ...
+    ) -> typing.Union[server_models_pb2.PlotDefinition, collections.abc.Awaitable[server_models_pb2.PlotDefinition]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def DeletePlotDefinition(
         self,
-        request: _solution_pb2.DeletePlotDefinitionRequest,
+        request: solution_pb2.DeletePlotDefinitionRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_base_pb2.Empty, _abc.Awaitable[_base_pb2.Empty]]: ...
+    ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def CreateChartDefinition(
         self,
-        request: _solution_pb2.CreateChartDefinitionRequest,
+        request: solution_pb2.CreateChartDefinitionRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.ChartDefinition, _abc.Awaitable[_server_models_pb2.ChartDefinition]]: ...
+    ) -> typing.Union[server_models_pb2.ChartDefinition, collections.abc.Awaitable[server_models_pb2.ChartDefinition]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def UpdateChartDefinition(
         self,
-        request: _solution_pb2.UpdateChartDefinitionRequest,
+        request: solution_pb2.UpdateChartDefinitionRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.ChartDefinition, _abc.Awaitable[_server_models_pb2.ChartDefinition]]: ...
+    ) -> typing.Union[server_models_pb2.ChartDefinition, collections.abc.Awaitable[server_models_pb2.ChartDefinition]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def DeleteChartDefinition(
         self,
-        request: _solution_pb2.DeleteChartDefinitionRequest,
+        request: solution_pb2.DeleteChartDefinitionRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_base_pb2.Empty, _abc.Awaitable[_base_pb2.Empty]]: ...
+    ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def CreateNamedSelection(
         self,
-        request: _solution_pb2.CreateNamedSelectionRequest,
+        request: solution_pb2.CreateNamedSelectionRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.NamedSelection, _abc.Awaitable[_server_models_pb2.NamedSelection]]: ...
+    ) -> typing.Union[server_models_pb2.NamedSelection, collections.abc.Awaitable[server_models_pb2.NamedSelection]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def DeleteNamedSelection(
         self,
-        request: _solution_pb2.DeleteNamedSelectionRequest,
+        request: solution_pb2.DeleteNamedSelectionRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_base_pb2.Empty, _abc.Awaitable[_base_pb2.Empty]]: ...
+    ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
 
-    @_abc_1.abstractmethod
+    @abc.abstractmethod
     def UpdateNamedSelection(
         self,
-        request: _solution_pb2.UpdateNamedSelectionRequest,
+        request: solution_pb2.UpdateNamedSelectionRequest,
         context: _ServicerContext,
-    ) -> _typing.Union[_server_models_pb2.NamedSelection, _abc.Awaitable[_server_models_pb2.NamedSelection]]: ...
+    ) -> typing.Union[server_models_pb2.NamedSelection, collections.abc.Awaitable[server_models_pb2.NamedSelection]]: ...
 
-def add_SolutionServiceServicer_to_server(servicer: SolutionServiceServicer, server: _typing.Union[_grpc.Server, _aio.Server]) -> None: ...
+def add_SolutionServiceServicer_to_server(servicer: SolutionServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
