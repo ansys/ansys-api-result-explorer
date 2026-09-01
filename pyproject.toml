@@ -22,7 +22,7 @@ classifiers = [
 ]
 dependencies = [
   "grpcio",
-  "protobuf<7",
+  "protobuf",
 ]
 urls.Documentation = "https://github.com/ansys/ansys-api-result-explorer#readme"
 urls.Homepage = "https://github.com/ansys/ansys-api-result-explorer"

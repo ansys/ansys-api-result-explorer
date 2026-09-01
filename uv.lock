@@ -25,7 +25,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "grpcio" },
-    { name = "protobuf", specifier = "<7" },
+    { name = "protobuf" },
 ]
 
 [package.metadata.requires-dev]
