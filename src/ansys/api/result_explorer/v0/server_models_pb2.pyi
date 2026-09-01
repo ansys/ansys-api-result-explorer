@@ -42,7 +42,7 @@ class AuthType(_AuthType, metaclass=_AuthTypeEnumTypeWrapper): ...
 AUTH_TYPE_NONE: AuthType.ValueType  # 0
 AUTH_TYPE_CUSTOM_TOKEN: AuthType.ValueType  # 1
 AUTH_TYPE_OIDC: AuthType.ValueType  # 2
-Global___AuthType: typing_extensions.TypeAlias = AuthType
+global___AuthType = AuthType
 
 class _ChunkingStrategy:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -59,7 +59,7 @@ class ChunkingStrategy(_ChunkingStrategy, metaclass=_ChunkingStrategyEnumTypeWra
 CHUNKING_STRATEGY_AUTO: ChunkingStrategy.ValueType  # 0
 CHUNKING_STRATEGY_LARGE: ChunkingStrategy.ValueType  # 1
 CHUNKING_STRATEGY_SMALL: ChunkingStrategy.ValueType  # 2
-Global___ChunkingStrategy: typing_extensions.TypeAlias = ChunkingStrategy
+global___ChunkingStrategy = ChunkingStrategy
 
 class _ElementGroup:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -90,7 +90,7 @@ ELEMENT_GROUP_MPC: ElementGroup.ValueType  # 6
 ELEMENT_GROUP_INTERFACE: ElementGroup.ValueType  # 7
 ELEMENT_GROUP_MISC_: ElementGroup.ValueType  # 8
 ELEMENT_GROUP_MIXED: ElementGroup.ValueType  # 9
-Global___ElementGroup: typing_extensions.TypeAlias = ElementGroup
+global___ElementGroup = ElementGroup
 
 class _Filter:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -107,7 +107,7 @@ class Filter(_Filter, metaclass=_FilterEnumTypeWrapper): ...
 FILTER_MIN: Filter.ValueType  # 0
 FILTER_MAX: Filter.ValueType  # 1
 FILTER_AVERAGE: Filter.ValueType  # 2
-Global___Filter: typing_extensions.TypeAlias = Filter
+global___Filter = Filter
 
 class _License:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -120,7 +120,7 @@ class _LicenseEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTy
 class License(_License, metaclass=_LicenseEnumTypeWrapper): ...
 
 LICENSE_STRUCT_EXP: License.ValueType  # 0
-Global___License: typing_extensions.TypeAlias = License
+global___License = License
 
 class _MeshPropertyEnum:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -145,7 +145,7 @@ MESH_PROPERTY_ENUM_ELSHAPE: MeshPropertyEnum.ValueType  # 3
 MESH_PROPERTY_ENUM_MAPDL_ELEMENT_TYPE_ID: MeshPropertyEnum.ValueType  # 4
 MESH_PROPERTY_ENUM_MAT: MeshPropertyEnum.ValueType  # 5
 MESH_PROPERTY_ENUM_SECTION: MeshPropertyEnum.ValueType  # 6
-Global___MeshPropertyEnum: typing_extensions.TypeAlias = MeshPropertyEnum
+global___MeshPropertyEnum = MeshPropertyEnum
 
 class _NamedSelectionType:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -166,7 +166,7 @@ NAMED_SELECTION_TYPE_BODY: NamedSelectionType.ValueType  # 1
 NAMED_SELECTION_TYPE_NODE: NamedSelectionType.ValueType  # 2
 NAMED_SELECTION_TYPE_ELEMENT: NamedSelectionType.ValueType  # 3
 NAMED_SELECTION_TYPE_MESH_PROPERTY: NamedSelectionType.ValueType  # 4
-Global___NamedSelectionType: typing_extensions.TypeAlias = NamedSelectionType
+global___NamedSelectionType = NamedSelectionType
 
 class _OptionType:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -185,7 +185,7 @@ OPTION_TYPE_INT: OptionType.ValueType  # 0
 OPTION_TYPE_STR: OptionType.ValueType  # 1
 OPTION_TYPE_FLOAT: OptionType.ValueType  # 2
 OPTION_TYPE_BOOL: OptionType.ValueType  # 3
-Global___OptionType: typing_extensions.TypeAlias = OptionType
+global___OptionType = OptionType
 
 class _ResultType:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -248,7 +248,7 @@ RESULT_TYPE_THERMAL_STRAIN: ResultType.ValueType  # 22
 RESULT_TYPE_STRAIN_ENERGY: ResultType.ValueType  # 23
 RESULT_TYPE_KINETIC_ENERGY: ResultType.ValueType  # 24
 RESULT_TYPE_BEAM_RESULTS: ResultType.ValueType  # 25
-Global___ResultType: typing_extensions.TypeAlias = ResultType
+global___ResultType = ResultType
 
 class _ShellPosition:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -267,7 +267,7 @@ SHELL_POSITION_TOP: ShellPosition.ValueType  # 0
 SHELL_POSITION_MIDDLE: ShellPosition.ValueType  # 1
 SHELL_POSITION_BOTTOM: ShellPosition.ValueType  # 2
 SHELL_POSITION_ALL: ShellPosition.ValueType  # 3
-Global___ShellPosition: typing_extensions.TypeAlias = ShellPosition
+global___ShellPosition = ShellPosition
 
 class _SolverTextOutputType:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -286,7 +286,7 @@ SOLVER_TEXT_OUTPUT_TYPE_OUTPUT: SolverTextOutputType.ValueType  # 0
 SOLVER_TEXT_OUTPUT_TYPE_ERROR: SolverTextOutputType.ValueType  # 1
 SOLVER_TEXT_OUTPUT_TYPE_CONVERGENCE: SolverTextOutputType.ValueType  # 2
 SOLVER_TEXT_OUTPUT_TYPE_CONTACT: SolverTextOutputType.ValueType  # 3
-Global___SolverTextOutputType: typing_extensions.TypeAlias = SolverTextOutputType
+global___SolverTextOutputType = SolverTextOutputType
 
 class _TrackerType:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -301,7 +301,7 @@ class TrackerType(_TrackerType, metaclass=_TrackerTypeEnumTypeWrapper): ...
 
 TRACKER_TYPE_CONVERGENCE: TrackerType.ValueType  # 0
 TRACKER_TYPE_CONTACT: TrackerType.ValueType  # 1
-Global___TrackerType: typing_extensions.TypeAlias = TrackerType
+global___TrackerType = TrackerType
 
 class _ViewType:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -324,7 +324,7 @@ VIEW_TYPE_CHART: ViewType.ValueType  # 2
 VIEW_TYPE_CONVERGENCE_TRACKERS: ViewType.ValueType  # 3
 VIEW_TYPE_CONTACT_TRACKERS: ViewType.ValueType  # 4
 VIEW_TYPE_LOGS: ViewType.ValueType  # 5
-Global___ViewType: typing_extensions.TypeAlias = ViewType
+global___ViewType = ViewType
 
 class _WsUpdateMessageType:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -337,7 +337,7 @@ class _WsUpdateMessageTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wra
 class WsUpdateMessageType(_WsUpdateMessageType, metaclass=_WsUpdateMessageTypeEnumTypeWrapper): ...
 
 WS_UPDATE_MESSAGE_TYPE_NEW_DATA: WsUpdateMessageType.ValueType  # 0
-Global___WsUpdateMessageType: typing_extensions.TypeAlias = WsUpdateMessageType
+global___WsUpdateMessageType = WsUpdateMessageType
 
 @typing.final
 class AvailableMeshProperty(google.protobuf.message.Message):
@@ -358,7 +358,7 @@ class AvailableMeshProperty(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["id", b"id", "label", b"label", "tooltip", b"tooltip"]) -> None: ...
 
-Global___AvailableMeshProperty: typing_extensions.TypeAlias = AvailableMeshProperty
+global___AvailableMeshProperty = AvailableMeshProperty
 
 @typing.final
 class AvailableResult(google.protobuf.message.Message):
@@ -385,7 +385,7 @@ class AvailableResult(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["n_components", b"n_components", "name", b"name", "native_location", b"native_location", "physical_name", b"physical_name", "units", b"units"]) -> None: ...
 
-Global___AvailableResult: typing_extensions.TypeAlias = AvailableResult
+global___AvailableResult = AvailableResult
 
 @typing.final
 class AveragingMeshProperties(google.protobuf.message.Message):
@@ -394,18 +394,18 @@ class AveragingMeshProperties(google.protobuf.message.Message):
     AVAILABLE_FIELD_NUMBER: builtins.int
     DEFAULTS_FIELD_NUMBER: builtins.int
     @property
-    def available(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___AvailableMeshProperty]: ...
+    def available(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AvailableMeshProperty]: ...
     @property
     def defaults(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     def __init__(
         self,
         *,
-        available: collections.abc.Iterable[Global___AvailableMeshProperty] | None = ...,
+        available: collections.abc.Iterable[global___AvailableMeshProperty] | None = ...,
         defaults: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["available", b"available", "defaults", b"defaults"]) -> None: ...
 
-Global___AveragingMeshProperties: typing_extensions.TypeAlias = AveragingMeshProperties
+global___AveragingMeshProperties = AveragingMeshProperties
 
 @typing.final
 class Body(google.protobuf.message.Message):
@@ -437,7 +437,7 @@ class Body(google.protobuf.message.Message):
     name: builtins.str
     """Name of the body."""
     size: builtins.int
-    element_group: Global___ElementGroup.ValueType
+    element_group: global___ElementGroup.ValueType
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels of the body. They represent a unique combination of label name and label value that identifies the body in the FE model."""
@@ -451,14 +451,14 @@ class Body(google.protobuf.message.Message):
         name: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         size: builtins.int | None = ...,
-        element_group: Global___ElementGroup.ValueType = ...,
+        element_group: global___ElementGroup.ValueType = ...,
         element_types: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_size", b"_size", "size", b"size"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_size", b"_size", "element_group", b"element_group", "element_types", b"element_types", "id", b"id", "labels", b"labels", "name", b"name", "size", b"size"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_size", b"_size"]) -> typing.Literal["size"] | None: ...
 
-Global___Body: typing_extensions.TypeAlias = Body
+global___Body = Body
 
 @typing.final
 class BuildInfo(google.protobuf.message.Message):
@@ -490,7 +490,7 @@ class BuildInfo(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["_dpf_client_version", b"_dpf_client_version", "branch", b"branch", "build_date", b"build_date", "dpf_client_version", b"dpf_client_version", "revision", b"revision", "short_revision", b"short_revision", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_dpf_client_version", b"_dpf_client_version"]) -> typing.Literal["dpf_client_version"] | None: ...
 
-Global___BuildInfo: typing_extensions.TypeAlias = BuildInfo
+global___BuildInfo = BuildInfo
 
 @typing.final
 class ChartData(google.protobuf.message.Message):
@@ -498,15 +498,15 @@ class ChartData(google.protobuf.message.Message):
 
     SERIES_FIELD_NUMBER: builtins.int
     @property
-    def series(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartSeries]: ...
+    def series(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ChartSeries]: ...
     def __init__(
         self,
         *,
-        series: collections.abc.Iterable[Global___ChartSeries] | None = ...,
+        series: collections.abc.Iterable[global___ChartSeries] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["series", b"series"]) -> None: ...
 
-Global___ChartData: typing_extensions.TypeAlias = ChartData
+global___ChartData = ChartData
 
 @typing.final
 class ChartDefinition(google.protobuf.message.Message):
@@ -520,12 +520,12 @@ class ChartDefinition(google.protobuf.message.Message):
         VALUE_FIELD_NUMBER: builtins.int
         key: builtins.str
         @property
-        def value(self) -> Global___CustomOptionsValue: ...
+        def value(self) -> global___CustomOptionsValue: ...
         def __init__(
             self,
             *,
             key: builtins.str = ...,
-            value: Global___CustomOptionsValue | None = ...,
+            value: global___CustomOptionsValue | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
@@ -555,27 +555,27 @@ class ChartDefinition(google.protobuf.message.Message):
     creation_time: builtins.str
     supports_monitoring: builtins.bool
     @property
-    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartResult]: ...
+    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ChartResult]: ...
     @property
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
+    def mesh_scoping(self) -> global___NamedSelectionDefinition: ...
     @property
-    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, Global___CustomOptionsValue]: ...
+    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___CustomOptionsValue]: ...
     def __init__(
         self,
         *,
         id: builtins.str = ...,
         name: builtins.str | None = ...,
-        results: collections.abc.Iterable[Global___ChartResult] | None = ...,
+        results: collections.abc.Iterable[global___ChartResult] | None = ...,
         all_sets: builtins.bool | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
         user_defined: builtins.bool | None = ...,
         script: builtins.str | None = ...,
         plotly_figure: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
+        mesh_scoping: global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
-        custom_options: collections.abc.Mapping[builtins.str, Global___CustomOptionsValue] | None = ...,
+        custom_options: collections.abc.Mapping[builtins.str, global___CustomOptionsValue] | None = ...,
         chunk_size: builtins.int | None = ...,
         creation_time: builtins.str | None = ...,
         supports_monitoring: builtins.bool | None = ...,
@@ -601,7 +601,7 @@ class ChartDefinition(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_user_defined", b"_user_defined"]) -> typing.Literal["user_defined"] | None: ...
 
-Global___ChartDefinition: typing_extensions.TypeAlias = ChartDefinition
+global___ChartDefinition = ChartDefinition
 
 @typing.final
 class ChartDefinitionCreate(google.protobuf.message.Message):
@@ -615,12 +615,12 @@ class ChartDefinitionCreate(google.protobuf.message.Message):
         VALUE_FIELD_NUMBER: builtins.int
         key: builtins.str
         @property
-        def value(self) -> Global___CustomOptionsValue: ...
+        def value(self) -> global___CustomOptionsValue: ...
         def __init__(
             self,
             *,
             key: builtins.str = ...,
-            value: Global___CustomOptionsValue | None = ...,
+            value: global___CustomOptionsValue | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
@@ -646,26 +646,26 @@ class ChartDefinitionCreate(google.protobuf.message.Message):
     chunk_size: builtins.int
     id: builtins.str
     @property
-    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartResult]: ...
+    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ChartResult]: ...
     @property
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
+    def mesh_scoping(self) -> global___NamedSelectionDefinition: ...
     @property
-    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, Global___CustomOptionsValue]: ...
+    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___CustomOptionsValue]: ...
     def __init__(
         self,
         *,
         name: builtins.str | None = ...,
-        results: collections.abc.Iterable[Global___ChartResult] | None = ...,
+        results: collections.abc.Iterable[global___ChartResult] | None = ...,
         all_sets: builtins.bool | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
         user_defined: builtins.bool | None = ...,
         script: builtins.str | None = ...,
         plotly_figure: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
+        mesh_scoping: global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
-        custom_options: collections.abc.Mapping[builtins.str, Global___CustomOptionsValue] | None = ...,
+        custom_options: collections.abc.Mapping[builtins.str, global___CustomOptionsValue] | None = ...,
         chunk_size: builtins.int | None = ...,
         id: builtins.str | None = ...,
     ) -> None: ...
@@ -688,7 +688,7 @@ class ChartDefinitionCreate(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_user_defined", b"_user_defined"]) -> typing.Literal["user_defined"] | None: ...
 
-Global___ChartDefinitionCreate: typing_extensions.TypeAlias = ChartDefinitionCreate
+global___ChartDefinitionCreate = ChartDefinitionCreate
 
 @typing.final
 class ChartDefinitionSerialize(google.protobuf.message.Message):
@@ -702,12 +702,12 @@ class ChartDefinitionSerialize(google.protobuf.message.Message):
         VALUE_FIELD_NUMBER: builtins.int
         key: builtins.str
         @property
-        def value(self) -> Global___CustomOptionsValue: ...
+        def value(self) -> global___CustomOptionsValue: ...
         def __init__(
             self,
             *,
             key: builtins.str = ...,
-            value: Global___CustomOptionsValue | None = ...,
+            value: global___CustomOptionsValue | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
@@ -735,27 +735,27 @@ class ChartDefinitionSerialize(google.protobuf.message.Message):
     chunk_size: builtins.int
     supports_monitoring: builtins.bool
     @property
-    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartResult]: ...
+    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ChartResult]: ...
     @property
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
+    def mesh_scoping(self) -> global___NamedSelectionDefinition: ...
     @property
-    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, Global___CustomOptionsValue]: ...
+    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___CustomOptionsValue]: ...
     def __init__(
         self,
         *,
         id: builtins.str = ...,
         name: builtins.str | None = ...,
-        results: collections.abc.Iterable[Global___ChartResult] | None = ...,
+        results: collections.abc.Iterable[global___ChartResult] | None = ...,
         all_sets: builtins.bool | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
         user_defined: builtins.bool | None = ...,
         script: builtins.str | None = ...,
         plotly_figure: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
+        mesh_scoping: global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
-        custom_options: collections.abc.Mapping[builtins.str, Global___CustomOptionsValue] | None = ...,
+        custom_options: collections.abc.Mapping[builtins.str, global___CustomOptionsValue] | None = ...,
         chunk_size: builtins.int | None = ...,
         supports_monitoring: builtins.bool | None = ...,
     ) -> None: ...
@@ -778,7 +778,7 @@ class ChartDefinitionSerialize(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_user_defined", b"_user_defined"]) -> typing.Literal["user_defined"] | None: ...
 
-Global___ChartDefinitionSerialize: typing_extensions.TypeAlias = ChartDefinitionSerialize
+global___ChartDefinitionSerialize = ChartDefinitionSerialize
 
 @typing.final
 class ChartResult(google.protobuf.message.Message):
@@ -795,30 +795,30 @@ class ChartResult(google.protobuf.message.Message):
     SHELL_POSITION_FIELD_NUMBER: builtins.int
     ON_SKIN_FIELD_NUMBER: builtins.int
     name: builtins.str
-    result_type: Global___ResultType.ValueType
+    result_type: global___ResultType.ValueType
     location: builtins.str
     average_by_entity: builtins.bool
     named_selection_id: builtins.str
-    shell_position: Global___ShellPosition.ValueType
+    shell_position: global___ShellPosition.ValueType
     on_skin: builtins.bool
     @property
-    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Field]: ...
+    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Field]: ...
     @property
-    def filters(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___Filter.ValueType]: ...
+    def filters(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___Filter.ValueType]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
+    def mesh_scoping(self) -> global___NamedSelectionDefinition: ...
     def __init__(
         self,
         *,
         name: builtins.str | None = ...,
-        result_type: Global___ResultType.ValueType = ...,
-        fields: collections.abc.Iterable[Global___Field] | None = ...,
+        result_type: global___ResultType.ValueType = ...,
+        fields: collections.abc.Iterable[global___Field] | None = ...,
         location: builtins.str | None = ...,
         average_by_entity: builtins.bool | None = ...,
-        filters: collections.abc.Iterable[Global___Filter.ValueType] | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
+        filters: collections.abc.Iterable[global___Filter.ValueType] | None = ...,
+        mesh_scoping: global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
-        shell_position: Global___ShellPosition.ValueType = ...,
+        shell_position: global___ShellPosition.ValueType = ...,
         on_skin: builtins.bool | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_average_by_entity", b"_average_by_entity", "_location", b"_location", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "average_by_entity", b"average_by_entity", "location", b"location", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin"]) -> builtins.bool: ...
@@ -834,7 +834,7 @@ class ChartResult(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_on_skin", b"_on_skin"]) -> typing.Literal["on_skin"] | None: ...
 
-Global___ChartResult: typing_extensions.TypeAlias = ChartResult
+global___ChartResult = ChartResult
 
 @typing.final
 class ChartSeries(google.protobuf.message.Message):
@@ -864,7 +864,7 @@ class ChartSeries(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_unit", b"_unit"]) -> typing.Literal["unit"] | None: ...
 
-Global___ChartSeries: typing_extensions.TypeAlias = ChartSeries
+global___ChartSeries = ChartSeries
 
 @typing.final
 class ConfigurableChart(google.protobuf.message.Message):
@@ -879,17 +879,17 @@ class ConfigurableChart(google.protobuf.message.Message):
     plotly_figure: builtins.bool
     script: builtins.str
     @property
-    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ConfigurableChartResult]: ...
+    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ConfigurableChartResult]: ...
     @property
-    def mesh_scoping_type(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___NamedSelectionType.ValueType]: ...
+    def mesh_scoping_type(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___NamedSelectionType.ValueType]: ...
     def __init__(
         self,
         *,
-        results: collections.abc.Iterable[Global___ConfigurableChartResult] | None = ...,
+        results: collections.abc.Iterable[global___ConfigurableChartResult] | None = ...,
         user_defined: builtins.bool | None = ...,
         plotly_figure: builtins.bool | None = ...,
         script: builtins.str | None = ...,
-        mesh_scoping_type: collections.abc.Iterable[Global___NamedSelectionType.ValueType] | None = ...,
+        mesh_scoping_type: collections.abc.Iterable[global___NamedSelectionType.ValueType] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_plotly_figure", b"_plotly_figure", "_script", b"_script", "_user_defined", b"_user_defined", "plotly_figure", b"plotly_figure", "script", b"script", "user_defined", b"user_defined"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_plotly_figure", b"_plotly_figure", "_script", b"_script", "_user_defined", b"_user_defined", "mesh_scoping_type", b"mesh_scoping_type", "plotly_figure", b"plotly_figure", "results", b"results", "script", b"script", "user_defined", b"user_defined"]) -> None: ...
@@ -900,7 +900,7 @@ class ConfigurableChart(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_user_defined", b"_user_defined"]) -> typing.Literal["user_defined"] | None: ...
 
-Global___ConfigurableChart: typing_extensions.TypeAlias = ConfigurableChart
+global___ConfigurableChart = ConfigurableChart
 
 @typing.final
 class ConfigurableChartResult(google.protobuf.message.Message):
@@ -917,33 +917,33 @@ class ConfigurableChartResult(google.protobuf.message.Message):
     AVERAGE_BY_ENTITY_FIELD_NUMBER: builtins.int
     SUPPORTS_ON_SKIN_FIELD_NUMBER: builtins.int
     SUPPORTS_AVERAGING_BY_ENTITY_FIELD_NUMBER: builtins.int
-    result_type: Global___ResultType.ValueType
+    result_type: global___ResultType.ValueType
     on_skin: builtins.bool
     average_by_entity: builtins.bool
     supports_on_skin: builtins.bool
     supports_averaging_by_entity: builtins.bool
     @property
-    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Field]: ...
+    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Field]: ...
     @property
     def locations(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
-    def filters(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___Filter.ValueType]: ...
+    def filters(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___Filter.ValueType]: ...
     @property
-    def mesh_scoping_type(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___NamedSelectionType.ValueType]: ...
+    def mesh_scoping_type(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___NamedSelectionType.ValueType]: ...
     @property
-    def shell_positions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___ShellPosition.ValueType]: ...
+    def shell_positions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___ShellPosition.ValueType]: ...
     @property
-    def mesh_properties(self) -> Global___AveragingMeshProperties: ...
+    def mesh_properties(self) -> global___AveragingMeshProperties: ...
     def __init__(
         self,
         *,
-        result_type: Global___ResultType.ValueType = ...,
-        fields: collections.abc.Iterable[Global___Field] | None = ...,
+        result_type: global___ResultType.ValueType = ...,
+        fields: collections.abc.Iterable[global___Field] | None = ...,
         locations: collections.abc.Iterable[builtins.str] | None = ...,
-        filters: collections.abc.Iterable[Global___Filter.ValueType] | None = ...,
-        mesh_scoping_type: collections.abc.Iterable[Global___NamedSelectionType.ValueType] | None = ...,
-        shell_positions: collections.abc.Iterable[Global___ShellPosition.ValueType] | None = ...,
-        mesh_properties: Global___AveragingMeshProperties | None = ...,
+        filters: collections.abc.Iterable[global___Filter.ValueType] | None = ...,
+        mesh_scoping_type: collections.abc.Iterable[global___NamedSelectionType.ValueType] | None = ...,
+        shell_positions: collections.abc.Iterable[global___ShellPosition.ValueType] | None = ...,
+        mesh_properties: global___AveragingMeshProperties | None = ...,
         on_skin: builtins.bool | None = ...,
         average_by_entity: builtins.bool | None = ...,
         supports_on_skin: builtins.bool | None = ...,
@@ -960,7 +960,7 @@ class ConfigurableChartResult(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_supports_on_skin", b"_supports_on_skin"]) -> typing.Literal["supports_on_skin"] | None: ...
 
-Global___ConfigurableChartResult: typing_extensions.TypeAlias = ConfigurableChartResult
+global___ConfigurableChartResult = ConfigurableChartResult
 
 @typing.final
 class ConfigurablePlot(google.protobuf.message.Message):
@@ -983,7 +983,7 @@ class ConfigurablePlot(google.protobuf.message.Message):
     AVERAGE_BY_ENTITY_FIELD_NUMBER: builtins.int
     ALL_SETS_FIELD_NUMBER: builtins.int
     LAST_SET_FIELD_NUMBER: builtins.int
-    result_type: Global___ResultType.ValueType
+    result_type: global___ResultType.ValueType
     script: builtins.str
     supports_time_scoping: builtins.bool
     supports_include_displacement: builtins.bool
@@ -995,32 +995,32 @@ class ConfigurablePlot(google.protobuf.message.Message):
     all_sets: builtins.bool
     last_set: builtins.bool
     @property
-    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Field]: ...
+    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Field]: ...
     @property
     def locations(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
     def supported_custom_selections(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
-    def mesh_scoping_type(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___NamedSelectionType.ValueType]: ...
+    def mesh_scoping_type(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___NamedSelectionType.ValueType]: ...
     @property
-    def shell_positions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___ShellPosition.ValueType]: ...
+    def shell_positions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___ShellPosition.ValueType]: ...
     @property
-    def mesh_properties(self) -> Global___AveragingMeshProperties: ...
+    def mesh_properties(self) -> global___AveragingMeshProperties: ...
     def __init__(
         self,
         *,
-        result_type: Global___ResultType.ValueType = ...,
-        fields: collections.abc.Iterable[Global___Field] | None = ...,
+        result_type: global___ResultType.ValueType = ...,
+        fields: collections.abc.Iterable[global___Field] | None = ...,
         locations: collections.abc.Iterable[builtins.str] | None = ...,
         supported_custom_selections: collections.abc.Iterable[builtins.str] | None = ...,
         script: builtins.str | None = ...,
-        mesh_scoping_type: collections.abc.Iterable[Global___NamedSelectionType.ValueType] | None = ...,
-        shell_positions: collections.abc.Iterable[Global___ShellPosition.ValueType] | None = ...,
+        mesh_scoping_type: collections.abc.Iterable[global___NamedSelectionType.ValueType] | None = ...,
+        shell_positions: collections.abc.Iterable[global___ShellPosition.ValueType] | None = ...,
         supports_time_scoping: builtins.bool | None = ...,
         supports_include_displacement: builtins.bool | None = ...,
         supports_on_skin: builtins.bool | None = ...,
         supports_averaging_by_entity: builtins.bool | None = ...,
-        mesh_properties: Global___AveragingMeshProperties | None = ...,
+        mesh_properties: global___AveragingMeshProperties | None = ...,
         on_skin: builtins.bool | None = ...,
         include_displacement: builtins.bool | None = ...,
         average_by_entity: builtins.bool | None = ...,
@@ -1050,7 +1050,7 @@ class ConfigurablePlot(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_supports_time_scoping", b"_supports_time_scoping"]) -> typing.Literal["supports_time_scoping"] | None: ...
 
-Global___ConfigurablePlot: typing_extensions.TypeAlias = ConfigurablePlot
+global___ConfigurablePlot = ConfigurablePlot
 
 @typing.final
 class ContactTrackerData(google.protobuf.message.Message):
@@ -1062,19 +1062,19 @@ class ContactTrackerData(google.protobuf.message.Message):
     contact_pair_id: builtins.str
     name: builtins.str
     @property
-    def series(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartSeries]: ...
+    def series(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ChartSeries]: ...
     def __init__(
         self,
         *,
         contact_pair_id: builtins.str = ...,
         name: builtins.str | None = ...,
-        series: collections.abc.Iterable[Global___ChartSeries] | None = ...,
+        series: collections.abc.Iterable[global___ChartSeries] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_name", b"_name", "name", b"name"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_name", b"_name", "contact_pair_id", b"contact_pair_id", "name", b"name", "series", b"series"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_name", b"_name"]) -> typing.Literal["name"] | None: ...
 
-Global___ContactTrackerData: typing_extensions.TypeAlias = ContactTrackerData
+global___ContactTrackerData = ContactTrackerData
 
 @typing.final
 class CustomOptionDefinition(google.protobuf.message.Message):
@@ -1088,32 +1088,32 @@ class CustomOptionDefinition(google.protobuf.message.Message):
     POSSIBLE_VALUES_FIELD_NUMBER: builtins.int
     DEFAULT_VALUE_FIELD_NUMBER: builtins.int
     label: builtins.str
-    type: Global___OptionType.ValueType
+    type: global___OptionType.ValueType
     required: builtins.bool
     @property
-    def min(self) -> Global___Min: ...
+    def min(self) -> global___Min: ...
     @property
-    def max(self) -> Global___Max: ...
+    def max(self) -> global___Max: ...
     @property
-    def possible_values(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___CustomOptionDefinitionPossibleValuesInner]: ...
+    def possible_values(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CustomOptionDefinitionPossibleValuesInner]: ...
     @property
-    def default_value(self) -> Global___DefaultValue: ...
+    def default_value(self) -> global___DefaultValue: ...
     def __init__(
         self,
         *,
         label: builtins.str = ...,
-        type: Global___OptionType.ValueType = ...,
+        type: global___OptionType.ValueType = ...,
         required: builtins.bool | None = ...,
-        min: Global___Min | None = ...,
-        max: Global___Max | None = ...,
-        possible_values: collections.abc.Iterable[Global___CustomOptionDefinitionPossibleValuesInner] | None = ...,
-        default_value: Global___DefaultValue | None = ...,
+        min: global___Min | None = ...,
+        max: global___Max | None = ...,
+        possible_values: collections.abc.Iterable[global___CustomOptionDefinitionPossibleValuesInner] | None = ...,
+        default_value: global___DefaultValue | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_required", b"_required", "default_value", b"default_value", "max", b"max", "min", b"min", "required", b"required"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_required", b"_required", "default_value", b"default_value", "label", b"label", "max", b"max", "min", b"min", "possible_values", b"possible_values", "required", b"required", "type", b"type"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_required", b"_required"]) -> typing.Literal["required"] | None: ...
 
-Global___CustomOptionDefinition: typing_extensions.TypeAlias = CustomOptionDefinition
+global___CustomOptionDefinition = CustomOptionDefinition
 
 @typing.final
 class CustomOptionDefinitionPossibleValuesInner(google.protobuf.message.Message):
@@ -1139,7 +1139,7 @@ class CustomOptionDefinitionPossibleValuesInner(google.protobuf.message.Message)
     def ClearField(self, field_name: typing.Literal["_bool", b"_bool", "bool", b"bool", "float", b"float", "int32", b"int32", "string", b"string"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_bool", b"_bool"]) -> typing.Literal["bool"] | None: ...
 
-Global___CustomOptionDefinitionPossibleValuesInner: typing_extensions.TypeAlias = CustomOptionDefinitionPossibleValuesInner
+global___CustomOptionDefinitionPossibleValuesInner = CustomOptionDefinitionPossibleValuesInner
 
 @typing.final
 class CustomOptionsValue(google.protobuf.message.Message):
@@ -1165,7 +1165,7 @@ class CustomOptionsValue(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["_bool", b"_bool", "bool", b"bool", "float", b"float", "int32", b"int32", "string", b"string"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_bool", b"_bool"]) -> typing.Literal["bool"] | None: ...
 
-Global___CustomOptionsValue: typing_extensions.TypeAlias = CustomOptionsValue
+global___CustomOptionsValue = CustomOptionsValue
 
 @typing.final
 class CustomSelection(google.protobuf.message.Message):
@@ -1184,7 +1184,7 @@ class CustomSelection(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["ids", b"ids", "name", b"name"]) -> None: ...
 
-Global___CustomSelection: typing_extensions.TypeAlias = CustomSelection
+global___CustomSelection = CustomSelection
 
 @typing.final
 class CustomSelectionDefinition(google.protobuf.message.Message):
@@ -1196,19 +1196,19 @@ class CustomSelectionDefinition(google.protobuf.message.Message):
     name: builtins.str
     multi_select: builtins.bool
     @property
-    def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___CustomSelectionItem]: ...
+    def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CustomSelectionItem]: ...
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         multi_select: builtins.bool | None = ...,
-        items: collections.abc.Iterable[Global___CustomSelectionItem] | None = ...,
+        items: collections.abc.Iterable[global___CustomSelectionItem] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_multi_select", b"_multi_select", "multi_select", b"multi_select"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_multi_select", b"_multi_select", "items", b"items", "multi_select", b"multi_select", "name", b"name"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_multi_select", b"_multi_select"]) -> typing.Literal["multi_select"] | None: ...
 
-Global___CustomSelectionDefinition: typing_extensions.TypeAlias = CustomSelectionDefinition
+global___CustomSelectionDefinition = CustomSelectionDefinition
 
 @typing.final
 class CustomSelectionItem(google.protobuf.message.Message):
@@ -1222,12 +1222,12 @@ class CustomSelectionItem(google.protobuf.message.Message):
         VALUE_FIELD_NUMBER: builtins.int
         key: builtins.str
         @property
-        def value(self) -> Global___CustomSelectionItemMetadataValue: ...
+        def value(self) -> global___CustomSelectionItemMetadataValue: ...
         def __init__(
             self,
             *,
             key: builtins.str = ...,
-            value: Global___CustomSelectionItemMetadataValue | None = ...,
+            value: global___CustomSelectionItemMetadataValue | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
@@ -1236,16 +1236,16 @@ class CustomSelectionItem(google.protobuf.message.Message):
     METADATA_FIELD_NUMBER: builtins.int
     name: builtins.str
     @property
-    def metadata(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, Global___CustomSelectionItemMetadataValue]: ...
+    def metadata(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___CustomSelectionItemMetadataValue]: ...
     def __init__(
         self,
         *,
         name: builtins.str = ...,
-        metadata: collections.abc.Mapping[builtins.str, Global___CustomSelectionItemMetadataValue] | None = ...,
+        metadata: collections.abc.Mapping[builtins.str, global___CustomSelectionItemMetadataValue] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["metadata", b"metadata", "name", b"name"]) -> None: ...
 
-Global___CustomSelectionItem: typing_extensions.TypeAlias = CustomSelectionItem
+global___CustomSelectionItem = CustomSelectionItem
 
 @typing.final
 class CustomSelectionItemMetadataValue(google.protobuf.message.Message):
@@ -1271,7 +1271,7 @@ class CustomSelectionItemMetadataValue(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["_bool", b"_bool", "bool", b"bool", "float", b"float", "int32", b"int32", "string", b"string"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_bool", b"_bool"]) -> typing.Literal["bool"] | None: ...
 
-Global___CustomSelectionItemMetadataValue: typing_extensions.TypeAlias = CustomSelectionItemMetadataValue
+global___CustomSelectionItemMetadataValue = CustomSelectionItemMetadataValue
 
 @typing.final
 class DefaultValue(google.protobuf.message.Message):
@@ -1297,7 +1297,7 @@ class DefaultValue(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["_bool", b"_bool", "bool", b"bool", "float", b"float", "int32", b"int32", "string", b"string"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_bool", b"_bool"]) -> typing.Literal["bool"] | None: ...
 
-Global___DefaultValue: typing_extensions.TypeAlias = DefaultValue
+global___DefaultValue = DefaultValue
 
 @typing.final
 class DefiningData(google.protobuf.message.Message):
@@ -1309,17 +1309,17 @@ class DefiningData(google.protobuf.message.Message):
     version: builtins.str
     creation_time: builtins.str
     @property
-    def solutions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___SolutionSerialize]: ...
+    def solutions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SolutionSerialize]: ...
     def __init__(
         self,
         *,
         version: builtins.str = ...,
         creation_time: builtins.str = ...,
-        solutions: collections.abc.Iterable[Global___SolutionSerialize] | None = ...,
+        solutions: collections.abc.Iterable[global___SolutionSerialize] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["creation_time", b"creation_time", "solutions", b"solutions", "version", b"version"]) -> None: ...
 
-Global___DefiningData: typing_extensions.TypeAlias = DefiningData
+global___DefiningData = DefiningData
 
 @typing.final
 class DefiningDataPostResponse(google.protobuf.message.Message):
@@ -1328,18 +1328,18 @@ class DefiningDataPostResponse(google.protobuf.message.Message):
     SOLUTIONS_FIELD_NUMBER: builtins.int
     MESSAGES_FIELD_NUMBER: builtins.int
     @property
-    def solutions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Solution]: ...
+    def solutions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Solution]: ...
     @property
     def messages(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     def __init__(
         self,
         *,
-        solutions: collections.abc.Iterable[Global___Solution] | None = ...,
+        solutions: collections.abc.Iterable[global___Solution] | None = ...,
         messages: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["messages", b"messages", "solutions", b"solutions"]) -> None: ...
 
-Global___DefiningDataPostResponse: typing_extensions.TypeAlias = DefiningDataPostResponse
+global___DefiningDataPostResponse = DefiningDataPostResponse
 
 @typing.final
 class FEMetadataOptions(google.protobuf.message.Message):
@@ -1357,7 +1357,7 @@ class FEMetadataOptions(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["_parse_fe_model_metadata", b"_parse_fe_model_metadata", "parse_fe_model_metadata", b"parse_fe_model_metadata"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_parse_fe_model_metadata", b"_parse_fe_model_metadata"]) -> typing.Literal["parse_fe_model_metadata"] | None: ...
 
-Global___FEMetadataOptions: typing_extensions.TypeAlias = FEMetadataOptions
+global___FEMetadataOptions = FEMetadataOptions
 
 @typing.final
 class FSItem(google.protobuf.message.Message):
@@ -1375,7 +1375,7 @@ class FSItem(google.protobuf.message.Message):
     last_modified: builtins.str
     size: builtins.int
     @property
-    def content(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___FSItem]: ...
+    def content(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___FSItem]: ...
     def __init__(
         self,
         *,
@@ -1384,7 +1384,7 @@ class FSItem(google.protobuf.message.Message):
         is_file: builtins.bool | None = ...,
         last_modified: builtins.str | None = ...,
         size: builtins.int | None = ...,
-        content: collections.abc.Iterable[Global___FSItem] | None = ...,
+        content: collections.abc.Iterable[global___FSItem] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_is_file", b"_is_file", "_last_modified", b"_last_modified", "_size", b"_size", "is_file", b"is_file", "last_modified", b"last_modified", "size", b"size"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_is_file", b"_is_file", "_last_modified", b"_last_modified", "_size", b"_size", "content", b"content", "is_file", b"is_file", "last_modified", b"last_modified", "name", b"name", "path", b"path", "size", b"size"]) -> None: ...
@@ -1395,7 +1395,7 @@ class FSItem(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_size", b"_size"]) -> typing.Literal["size"] | None: ...
 
-Global___FSItem: typing_extensions.TypeAlias = FSItem
+global___FSItem = FSItem
 
 @typing.final
 class FSItemCreate(google.protobuf.message.Message):
@@ -1413,7 +1413,7 @@ class FSItemCreate(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["max_depth", b"max_depth", "path", b"path"]) -> None: ...
 
-Global___FSItemCreate: typing_extensions.TypeAlias = FSItemCreate
+global___FSItemCreate = FSItemCreate
 
 @typing.final
 class FSPath(google.protobuf.message.Message):
@@ -1428,7 +1428,7 @@ class FSPath(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["path", b"path"]) -> None: ...
 
-Global___FSPath: typing_extensions.TypeAlias = FSPath
+global___FSPath = FSPath
 
 @typing.final
 class FSTailOptions(google.protobuf.message.Message):
@@ -1454,7 +1454,7 @@ class FSTailOptions(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_lines_offset", b"_lines_offset"]) -> typing.Literal["lines_offset"] | None: ...
 
-Global___FSTailOptions: typing_extensions.TypeAlias = FSTailOptions
+global___FSTailOptions = FSTailOptions
 
 @typing.final
 class Field(google.protobuf.message.Message):
@@ -1473,7 +1473,7 @@ class Field(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["components", b"components", "name", b"name"]) -> None: ...
 
-Global___Field: typing_extensions.TypeAlias = Field
+global___Field = Field
 
 @typing.final
 class File(google.protobuf.message.Message):
@@ -1506,7 +1506,7 @@ class File(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_path", b"_path"]) -> typing.Literal["path"] | None: ...
 
-Global___File: typing_extensions.TypeAlias = File
+global___File = File
 
 @typing.final
 class GatewayInfo(google.protobuf.message.Message):
@@ -1529,7 +1529,7 @@ class GatewayInfo(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["_ca_cert_path", b"_ca_cert_path", "ca_cert_path", b"ca_cert_path", "grpc_port", b"grpc_port", "http_port", b"http_port"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_ca_cert_path", b"_ca_cert_path"]) -> typing.Literal["ca_cert_path"] | None: ...
 
-Global___GatewayInfo: typing_extensions.TypeAlias = GatewayInfo
+global___GatewayInfo = GatewayInfo
 
 @typing.final
 class HTTPValidationError(google.protobuf.message.Message):
@@ -1537,15 +1537,15 @@ class HTTPValidationError(google.protobuf.message.Message):
 
     DETAIL_FIELD_NUMBER: builtins.int
     @property
-    def detail(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ValidationError]: ...
+    def detail(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ValidationError]: ...
     def __init__(
         self,
         *,
-        detail: collections.abc.Iterable[Global___ValidationError] | None = ...,
+        detail: collections.abc.Iterable[global___ValidationError] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["detail", b"detail"]) -> None: ...
 
-Global___HTTPValidationError: typing_extensions.TypeAlias = HTTPValidationError
+global___HTTPValidationError = HTTPValidationError
 
 @typing.final
 class HpsCredentials(google.protobuf.message.Message):
@@ -1592,7 +1592,7 @@ class HpsCredentials(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_username", b"_username"]) -> typing.Literal["username"] | None: ...
 
-Global___HpsCredentials: typing_extensions.TypeAlias = HpsCredentials
+global___HpsCredentials = HpsCredentials
 
 @typing.final
 class HpsFSItem(google.protobuf.message.Message):
@@ -1616,7 +1616,7 @@ class HpsFSItem(google.protobuf.message.Message):
     display_path: builtins.str
     status: builtins.str
     @property
-    def content(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___FSItem]: ...
+    def content(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___FSItem]: ...
     def __init__(
         self,
         *,
@@ -1625,7 +1625,7 @@ class HpsFSItem(google.protobuf.message.Message):
         is_file: builtins.bool | None = ...,
         last_modified: builtins.str | None = ...,
         size: builtins.int | None = ...,
-        content: collections.abc.Iterable[Global___FSItem] | None = ...,
+        content: collections.abc.Iterable[global___FSItem] | None = ...,
         id: builtins.str = ...,
         display_path: builtins.str = ...,
         status: builtins.str | None = ...,
@@ -1641,7 +1641,7 @@ class HpsFSItem(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_status", b"_status"]) -> typing.Literal["status"] | None: ...
 
-Global___HpsFSItem: typing_extensions.TypeAlias = HpsFSItem
+global___HpsFSItem = HpsFSItem
 
 @typing.final
 class HpsFile(google.protobuf.message.Message):
@@ -1659,7 +1659,7 @@ class HpsFile(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["file_id", b"file_id", "task_id", b"task_id"]) -> None: ...
 
-Global___HpsFile: typing_extensions.TypeAlias = HpsFile
+global___HpsFile = HpsFile
 
 @typing.final
 class HpsFiles(google.protobuf.message.Message):
@@ -1673,20 +1673,20 @@ class HpsFiles(google.protobuf.message.Message):
     project_id: builtins.str
     job_id: builtins.str
     @property
-    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___HpsFile]: ...
+    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HpsFile]: ...
     def __init__(
         self,
         *,
         hps_url: builtins.str = ...,
         project_id: builtins.str = ...,
         job_id: builtins.str | None = ...,
-        files: collections.abc.Iterable[Global___HpsFile] | None = ...,
+        files: collections.abc.Iterable[global___HpsFile] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_job_id", b"_job_id", "job_id", b"job_id"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_job_id", b"_job_id", "files", b"files", "hps_url", b"hps_url", "job_id", b"job_id", "project_id", b"project_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_job_id", b"_job_id"]) -> typing.Literal["job_id"] | None: ...
 
-Global___HpsFiles: typing_extensions.TypeAlias = HpsFiles
+global___HpsFiles = HpsFiles
 
 @typing.final
 class HpsTask(google.protobuf.message.Message):
@@ -1704,7 +1704,7 @@ class HpsTask(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["project_id", b"project_id", "task_id", b"task_id"]) -> None: ...
 
-Global___HpsTask: typing_extensions.TypeAlias = HpsTask
+global___HpsTask = HpsTask
 
 @typing.final
 class IdsScoping(google.protobuf.message.Message):
@@ -1715,17 +1715,17 @@ class IdsScoping(google.protobuf.message.Message):
     @property
     def values(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
-    def range(self) -> Global___Range: ...
+    def range(self) -> global___Range: ...
     def __init__(
         self,
         *,
         values: collections.abc.Iterable[builtins.int] | None = ...,
-        range: Global___Range | None = ...,
+        range: global___Range | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["range", b"range"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["range", b"range", "values", b"values"]) -> None: ...
 
-Global___IdsScoping: typing_extensions.TypeAlias = IdsScoping
+global___IdsScoping = IdsScoping
 
 @typing.final
 class Info(google.protobuf.message.Message):
@@ -1742,32 +1742,32 @@ class Info(google.protobuf.message.Message):
     name: builtins.str
     version: builtins.str
     hps_configured: builtins.bool
-    auth_type: Global___AuthType.ValueType
+    auth_type: global___AuthType.ValueType
     @property
-    def memory(self) -> Global___Memory: ...
+    def memory(self) -> global___Memory: ...
     @property
-    def settings(self) -> Global___Settings: ...
+    def settings(self) -> global___Settings: ...
     @property
-    def build_info(self) -> Global___BuildInfo: ...
+    def build_info(self) -> global___BuildInfo: ...
     @property
-    def gateway_info(self) -> Global___GatewayInfo: ...
+    def gateway_info(self) -> global___GatewayInfo: ...
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         version: builtins.str = ...,
         hps_configured: builtins.bool | None = ...,
-        memory: Global___Memory | None = ...,
-        auth_type: Global___AuthType.ValueType = ...,
-        settings: Global___Settings | None = ...,
-        build_info: Global___BuildInfo | None = ...,
-        gateway_info: Global___GatewayInfo | None = ...,
+        memory: global___Memory | None = ...,
+        auth_type: global___AuthType.ValueType = ...,
+        settings: global___Settings | None = ...,
+        build_info: global___BuildInfo | None = ...,
+        gateway_info: global___GatewayInfo | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_hps_configured", b"_hps_configured", "build_info", b"build_info", "gateway_info", b"gateway_info", "hps_configured", b"hps_configured", "memory", b"memory", "settings", b"settings"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_hps_configured", b"_hps_configured", "auth_type", b"auth_type", "build_info", b"build_info", "gateway_info", b"gateway_info", "hps_configured", b"hps_configured", "memory", b"memory", "name", b"name", "settings", b"settings", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_hps_configured", b"_hps_configured"]) -> typing.Literal["hps_configured"] | None: ...
 
-Global___Info: typing_extensions.TypeAlias = Info
+global___Info = Info
 
 @typing.final
 class LocationInner(google.protobuf.message.Message):
@@ -1785,7 +1785,7 @@ class LocationInner(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["int32", b"int32", "string", b"string"]) -> None: ...
 
-Global___LocationInner: typing_extensions.TypeAlias = LocationInner
+global___LocationInner = LocationInner
 
 @typing.final
 class Max(google.protobuf.message.Message):
@@ -1803,7 +1803,7 @@ class Max(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["float", b"float", "int32", b"int32"]) -> None: ...
 
-Global___Max: typing_extensions.TypeAlias = Max
+global___Max = Max
 
 @typing.final
 class Memory(google.protobuf.message.Message):
@@ -1821,7 +1821,7 @@ class Memory(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["in_use", b"in_use", "total", b"total"]) -> None: ...
 
-Global___Memory: typing_extensions.TypeAlias = Memory
+global___Memory = Memory
 
 @typing.final
 class MeshGraphicsOptions(google.protobuf.message.Message):
@@ -1844,7 +1844,7 @@ class MeshGraphicsOptions(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_on_skin", b"_on_skin"]) -> typing.Literal["on_skin"] | None: ...
 
-Global___MeshGraphicsOptions: typing_extensions.TypeAlias = MeshGraphicsOptions
+global___MeshGraphicsOptions = MeshGraphicsOptions
 
 @typing.final
 class Min(google.protobuf.message.Message):
@@ -1862,7 +1862,7 @@ class Min(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["float", b"float", "int32", b"int32"]) -> None: ...
 
-Global___Min: typing_extensions.TypeAlias = Min
+global___Min = Min
 
 @typing.final
 class MonitoringWsRequest(google.protobuf.message.Message):
@@ -1872,23 +1872,23 @@ class MonitoringWsRequest(google.protobuf.message.Message):
     WS_UNSUBSCRIBE_REQUEST_FIELD_NUMBER: builtins.int
     WS_TOPICS_REQUEST_FIELD_NUMBER: builtins.int
     @property
-    def ws_subscribe_request(self) -> Global___WsSubscribeRequest: ...
+    def ws_subscribe_request(self) -> global___WsSubscribeRequest: ...
     @property
-    def ws_unsubscribe_request(self) -> Global___WsUnsubscribeRequest: ...
+    def ws_unsubscribe_request(self) -> global___WsUnsubscribeRequest: ...
     @property
-    def ws_topics_request(self) -> Global___WsTopicsRequest: ...
+    def ws_topics_request(self) -> global___WsTopicsRequest: ...
     def __init__(
         self,
         *,
-        ws_subscribe_request: Global___WsSubscribeRequest | None = ...,
-        ws_unsubscribe_request: Global___WsUnsubscribeRequest | None = ...,
-        ws_topics_request: Global___WsTopicsRequest | None = ...,
+        ws_subscribe_request: global___WsSubscribeRequest | None = ...,
+        ws_unsubscribe_request: global___WsUnsubscribeRequest | None = ...,
+        ws_topics_request: global___WsTopicsRequest | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["monitoring_ws_request", b"monitoring_ws_request", "ws_subscribe_request", b"ws_subscribe_request", "ws_topics_request", b"ws_topics_request", "ws_unsubscribe_request", b"ws_unsubscribe_request"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["monitoring_ws_request", b"monitoring_ws_request", "ws_subscribe_request", b"ws_subscribe_request", "ws_topics_request", b"ws_topics_request", "ws_unsubscribe_request", b"ws_unsubscribe_request"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["monitoring_ws_request", b"monitoring_ws_request"]) -> typing.Literal["ws_subscribe_request", "ws_unsubscribe_request", "ws_topics_request"] | None: ...
 
-Global___MonitoringWsRequest: typing_extensions.TypeAlias = MonitoringWsRequest
+global___MonitoringWsRequest = MonitoringWsRequest
 
 @typing.final
 class MonitoringWsResponse(google.protobuf.message.Message):
@@ -1898,23 +1898,23 @@ class MonitoringWsResponse(google.protobuf.message.Message):
     WS_UPDATE_MESSAGE_FIELD_NUMBER: builtins.int
     WS_SOLUTION_END_FIELD_NUMBER: builtins.int
     @property
-    def ws_topics(self) -> Global___WsTopics: ...
+    def ws_topics(self) -> global___WsTopics: ...
     @property
-    def ws_update_message(self) -> Global___WsUpdateMessage: ...
+    def ws_update_message(self) -> global___WsUpdateMessage: ...
     @property
-    def ws_solution_end(self) -> Global___WsSolutionEnd: ...
+    def ws_solution_end(self) -> global___WsSolutionEnd: ...
     def __init__(
         self,
         *,
-        ws_topics: Global___WsTopics | None = ...,
-        ws_update_message: Global___WsUpdateMessage | None = ...,
-        ws_solution_end: Global___WsSolutionEnd | None = ...,
+        ws_topics: global___WsTopics | None = ...,
+        ws_update_message: global___WsUpdateMessage | None = ...,
+        ws_solution_end: global___WsSolutionEnd | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["monitoring_ws_response", b"monitoring_ws_response", "ws_solution_end", b"ws_solution_end", "ws_topics", b"ws_topics", "ws_update_message", b"ws_update_message"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["monitoring_ws_response", b"monitoring_ws_response", "ws_solution_end", b"ws_solution_end", "ws_topics", b"ws_topics", "ws_update_message", b"ws_update_message"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["monitoring_ws_response", b"monitoring_ws_response"]) -> typing.Literal["ws_topics", "ws_update_message", "ws_solution_end"] | None: ...
 
-Global___MonitoringWsResponse: typing_extensions.TypeAlias = MonitoringWsResponse
+global___MonitoringWsResponse = MonitoringWsResponse
 
 @typing.final
 class NamedSelection(google.protobuf.message.Message):
@@ -1934,7 +1934,7 @@ class NamedSelection(google.protobuf.message.Message):
     SIZE_FIELD_NUMBER: builtins.int
     READONLY_FIELD_NUMBER: builtins.int
     id: builtins.str
-    type: Global___NamedSelectionType.ValueType
+    type: global___NamedSelectionType.ValueType
     name: builtins.str
     description: builtins.str
     creation_time: builtins.str
@@ -1944,25 +1944,25 @@ class NamedSelection(google.protobuf.message.Message):
     @property
     def solver_named_selections(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
-    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___StringMap]: ...
+    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StringMap]: ...
     @property
-    def node_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
+    def node_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IdsScoping]: ...
     @property
-    def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
+    def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IdsScoping]: ...
     @property
-    def property_ids(self) -> Global___PropertyScoping: ...
+    def property_ids(self) -> global___PropertyScoping: ...
     def __init__(
         self,
         *,
         id: builtins.str = ...,
-        type: Global___NamedSelectionType.ValueType = ...,
+        type: global___NamedSelectionType.ValueType = ...,
         name: builtins.str | None = ...,
         description: builtins.str | None = ...,
         solver_named_selections: collections.abc.Iterable[builtins.str] | None = ...,
-        bodies: collections.abc.Iterable[Global___StringMap] | None = ...,
-        node_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        element_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        property_ids: Global___PropertyScoping | None = ...,
+        bodies: collections.abc.Iterable[global___StringMap] | None = ...,
+        node_ids: collections.abc.Iterable[global___IdsScoping] | None = ...,
+        element_ids: collections.abc.Iterable[global___IdsScoping] | None = ...,
+        property_ids: global___PropertyScoping | None = ...,
         creation_time: builtins.str | None = ...,
         location: builtins.str | None = ...,
         size: builtins.int | None = ...,
@@ -1983,7 +1983,7 @@ class NamedSelection(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_size", b"_size"]) -> typing.Literal["size"] | None: ...
 
-Global___NamedSelection: typing_extensions.TypeAlias = NamedSelection
+global___NamedSelection = NamedSelection
 
 @typing.final
 class NamedSelectionCreate(google.protobuf.message.Message):
@@ -1999,7 +1999,7 @@ class NamedSelectionCreate(google.protobuf.message.Message):
     PROPERTY_IDS_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     READONLY_FIELD_NUMBER: builtins.int
-    type: Global___NamedSelectionType.ValueType
+    type: global___NamedSelectionType.ValueType
     name: builtins.str
     description: builtins.str
     id: builtins.str
@@ -2007,24 +2007,24 @@ class NamedSelectionCreate(google.protobuf.message.Message):
     @property
     def solver_named_selections(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
-    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___StringMap]: ...
+    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StringMap]: ...
     @property
-    def node_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
+    def node_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IdsScoping]: ...
     @property
-    def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
+    def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IdsScoping]: ...
     @property
-    def property_ids(self) -> Global___PropertyScoping: ...
+    def property_ids(self) -> global___PropertyScoping: ...
     def __init__(
         self,
         *,
-        type: Global___NamedSelectionType.ValueType = ...,
+        type: global___NamedSelectionType.ValueType = ...,
         name: builtins.str | None = ...,
         description: builtins.str | None = ...,
         solver_named_selections: collections.abc.Iterable[builtins.str] | None = ...,
-        bodies: collections.abc.Iterable[Global___StringMap] | None = ...,
-        node_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        element_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        property_ids: Global___PropertyScoping | None = ...,
+        bodies: collections.abc.Iterable[global___StringMap] | None = ...,
+        node_ids: collections.abc.Iterable[global___IdsScoping] | None = ...,
+        element_ids: collections.abc.Iterable[global___IdsScoping] | None = ...,
+        property_ids: global___PropertyScoping | None = ...,
         id: builtins.str | None = ...,
         readonly: builtins.bool | None = ...,
     ) -> None: ...
@@ -2039,7 +2039,7 @@ class NamedSelectionCreate(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_readonly", b"_readonly"]) -> typing.Literal["readonly"] | None: ...
 
-Global___NamedSelectionCreate: typing_extensions.TypeAlias = NamedSelectionCreate
+global___NamedSelectionCreate = NamedSelectionCreate
 
 @typing.final
 class NamedSelectionDefinition(google.protobuf.message.Message):
@@ -2053,30 +2053,30 @@ class NamedSelectionDefinition(google.protobuf.message.Message):
     NODE_IDS_FIELD_NUMBER: builtins.int
     ELEMENT_IDS_FIELD_NUMBER: builtins.int
     PROPERTY_IDS_FIELD_NUMBER: builtins.int
-    type: Global___NamedSelectionType.ValueType
+    type: global___NamedSelectionType.ValueType
     name: builtins.str
     description: builtins.str
     @property
     def solver_named_selections(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
-    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___StringMap]: ...
+    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StringMap]: ...
     @property
-    def node_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
+    def node_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IdsScoping]: ...
     @property
-    def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
+    def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IdsScoping]: ...
     @property
-    def property_ids(self) -> Global___PropertyScoping: ...
+    def property_ids(self) -> global___PropertyScoping: ...
     def __init__(
         self,
         *,
-        type: Global___NamedSelectionType.ValueType = ...,
+        type: global___NamedSelectionType.ValueType = ...,
         name: builtins.str | None = ...,
         description: builtins.str | None = ...,
         solver_named_selections: collections.abc.Iterable[builtins.str] | None = ...,
-        bodies: collections.abc.Iterable[Global___StringMap] | None = ...,
-        node_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        element_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        property_ids: Global___PropertyScoping | None = ...,
+        bodies: collections.abc.Iterable[global___StringMap] | None = ...,
+        node_ids: collections.abc.Iterable[global___IdsScoping] | None = ...,
+        element_ids: collections.abc.Iterable[global___IdsScoping] | None = ...,
+        property_ids: global___PropertyScoping | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_description", b"_description", "_name", b"_name", "description", b"description", "name", b"name", "property_ids", b"property_ids"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_description", b"_description", "_name", b"_name", "bodies", b"bodies", "description", b"description", "element_ids", b"element_ids", "name", b"name", "node_ids", b"node_ids", "property_ids", b"property_ids", "solver_named_selections", b"solver_named_selections", "type", b"type"]) -> None: ...
@@ -2085,7 +2085,7 @@ class NamedSelectionDefinition(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_name", b"_name"]) -> typing.Literal["name"] | None: ...
 
-Global___NamedSelectionDefinition: typing_extensions.TypeAlias = NamedSelectionDefinition
+global___NamedSelectionDefinition = NamedSelectionDefinition
 
 @typing.final
 class NamedSelectionSerialize(google.protobuf.message.Message):
@@ -2102,32 +2102,32 @@ class NamedSelectionSerialize(google.protobuf.message.Message):
     PROPERTY_IDS_FIELD_NUMBER: builtins.int
     READONLY_FIELD_NUMBER: builtins.int
     id: builtins.str
-    type: Global___NamedSelectionType.ValueType
+    type: global___NamedSelectionType.ValueType
     name: builtins.str
     description: builtins.str
     readonly: builtins.bool
     @property
     def solver_named_selections(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
-    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___StringMap]: ...
+    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StringMap]: ...
     @property
-    def node_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
+    def node_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IdsScoping]: ...
     @property
-    def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
+    def element_ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IdsScoping]: ...
     @property
-    def property_ids(self) -> Global___PropertyScoping: ...
+    def property_ids(self) -> global___PropertyScoping: ...
     def __init__(
         self,
         *,
         id: builtins.str = ...,
-        type: Global___NamedSelectionType.ValueType = ...,
+        type: global___NamedSelectionType.ValueType = ...,
         name: builtins.str | None = ...,
         description: builtins.str | None = ...,
         solver_named_selections: collections.abc.Iterable[builtins.str] | None = ...,
-        bodies: collections.abc.Iterable[Global___StringMap] | None = ...,
-        node_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        element_ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
-        property_ids: Global___PropertyScoping | None = ...,
+        bodies: collections.abc.Iterable[global___StringMap] | None = ...,
+        node_ids: collections.abc.Iterable[global___IdsScoping] | None = ...,
+        element_ids: collections.abc.Iterable[global___IdsScoping] | None = ...,
+        property_ids: global___PropertyScoping | None = ...,
         readonly: builtins.bool | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_description", b"_description", "_name", b"_name", "_readonly", b"_readonly", "description", b"description", "name", b"name", "property_ids", b"property_ids", "readonly", b"readonly"]) -> builtins.bool: ...
@@ -2139,7 +2139,7 @@ class NamedSelectionSerialize(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_readonly", b"_readonly"]) -> typing.Literal["readonly"] | None: ...
 
-Global___NamedSelectionSerialize: typing_extensions.TypeAlias = NamedSelectionSerialize
+global___NamedSelectionSerialize = NamedSelectionSerialize
 
 @typing.final
 class Operation(google.protobuf.message.Message):
@@ -2177,7 +2177,7 @@ class Operation(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_succeeded", b"_succeeded"]) -> typing.Literal["succeeded"] | None: ...
 
-Global___Operation: typing_extensions.TypeAlias = Operation
+global___Operation = Operation
 
 @typing.final
 class PlotDefinition(google.protobuf.message.Message):
@@ -2191,12 +2191,12 @@ class PlotDefinition(google.protobuf.message.Message):
         VALUE_FIELD_NUMBER: builtins.int
         key: builtins.str
         @property
-        def value(self) -> Global___CustomOptionsValue: ...
+        def value(self) -> global___CustomOptionsValue: ...
         def __init__(
             self,
             *,
             key: builtins.str = ...,
-            value: Global___CustomOptionsValue | None = ...,
+            value: global___CustomOptionsValue | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
@@ -2222,7 +2222,7 @@ class PlotDefinition(google.protobuf.message.Message):
     CREATION_TIME_FIELD_NUMBER: builtins.int
     SUPPORTS_MONITORING_FIELD_NUMBER: builtins.int
     id: builtins.str
-    result_type: Global___ResultType.ValueType
+    result_type: global___ResultType.ValueType
     name: builtins.str
     location: builtins.str
     average_by_entity: builtins.bool
@@ -2236,40 +2236,40 @@ class PlotDefinition(google.protobuf.message.Message):
     last_set: builtins.bool
     script: builtins.str
     include_displacement: builtins.bool
-    shell_position: Global___ShellPosition.ValueType
+    shell_position: global___ShellPosition.ValueType
     creation_time: builtins.str
     supports_monitoring: builtins.bool
     @property
-    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Field]: ...
+    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Field]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
+    def mesh_scoping(self) -> global___NamedSelectionDefinition: ...
     @property
-    def custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___CustomSelection]: ...
+    def custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CustomSelection]: ...
     @property
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
-    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, Global___CustomOptionsValue]: ...
+    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___CustomOptionsValue]: ...
     def __init__(
         self,
         *,
         id: builtins.str = ...,
-        result_type: Global___ResultType.ValueType = ...,
+        result_type: global___ResultType.ValueType = ...,
         name: builtins.str | None = ...,
-        fields: collections.abc.Iterable[Global___Field] | None = ...,
+        fields: collections.abc.Iterable[global___Field] | None = ...,
         location: builtins.str = ...,
         average_by_entity: builtins.bool | None = ...,
         as_linear: builtins.bool | None = ...,
         on_skin: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
+        mesh_scoping: global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
-        custom_selections: collections.abc.Iterable[Global___CustomSelection] | None = ...,
+        custom_selections: collections.abc.Iterable[global___CustomSelection] | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
         all_sets: builtins.bool | None = ...,
         last_set: builtins.bool | None = ...,
         script: builtins.str | None = ...,
-        custom_options: collections.abc.Mapping[builtins.str, Global___CustomOptionsValue] | None = ...,
+        custom_options: collections.abc.Mapping[builtins.str, global___CustomOptionsValue] | None = ...,
         include_displacement: builtins.bool | None = ...,
-        shell_position: Global___ShellPosition.ValueType = ...,
+        shell_position: global___ShellPosition.ValueType = ...,
         creation_time: builtins.str | None = ...,
         supports_monitoring: builtins.bool | None = ...,
     ) -> None: ...
@@ -2298,7 +2298,7 @@ class PlotDefinition(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_supports_monitoring", b"_supports_monitoring"]) -> typing.Literal["supports_monitoring"] | None: ...
 
-Global___PlotDefinition: typing_extensions.TypeAlias = PlotDefinition
+global___PlotDefinition = PlotDefinition
 
 @typing.final
 class PlotDefinitionCreate(google.protobuf.message.Message):
@@ -2312,12 +2312,12 @@ class PlotDefinitionCreate(google.protobuf.message.Message):
         VALUE_FIELD_NUMBER: builtins.int
         key: builtins.str
         @property
-        def value(self) -> Global___CustomOptionsValue: ...
+        def value(self) -> global___CustomOptionsValue: ...
         def __init__(
             self,
             *,
             key: builtins.str = ...,
-            value: Global___CustomOptionsValue | None = ...,
+            value: global___CustomOptionsValue | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
@@ -2340,7 +2340,7 @@ class PlotDefinitionCreate(google.protobuf.message.Message):
     INCLUDE_DISPLACEMENT_FIELD_NUMBER: builtins.int
     SHELL_POSITION_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
-    result_type: Global___ResultType.ValueType
+    result_type: global___ResultType.ValueType
     name: builtins.str
     location: builtins.str
     average_by_entity: builtins.bool
@@ -2354,38 +2354,38 @@ class PlotDefinitionCreate(google.protobuf.message.Message):
     last_set: builtins.bool
     script: builtins.str
     include_displacement: builtins.bool
-    shell_position: Global___ShellPosition.ValueType
+    shell_position: global___ShellPosition.ValueType
     id: builtins.str
     @property
-    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Field]: ...
+    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Field]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
+    def mesh_scoping(self) -> global___NamedSelectionDefinition: ...
     @property
-    def custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___CustomSelection]: ...
+    def custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CustomSelection]: ...
     @property
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
-    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, Global___CustomOptionsValue]: ...
+    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___CustomOptionsValue]: ...
     def __init__(
         self,
         *,
-        result_type: Global___ResultType.ValueType = ...,
+        result_type: global___ResultType.ValueType = ...,
         name: builtins.str | None = ...,
-        fields: collections.abc.Iterable[Global___Field] | None = ...,
+        fields: collections.abc.Iterable[global___Field] | None = ...,
         location: builtins.str = ...,
         average_by_entity: builtins.bool | None = ...,
         as_linear: builtins.bool | None = ...,
         on_skin: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
+        mesh_scoping: global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
-        custom_selections: collections.abc.Iterable[Global___CustomSelection] | None = ...,
+        custom_selections: collections.abc.Iterable[global___CustomSelection] | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
         all_sets: builtins.bool | None = ...,
         last_set: builtins.bool | None = ...,
         script: builtins.str | None = ...,
-        custom_options: collections.abc.Mapping[builtins.str, Global___CustomOptionsValue] | None = ...,
+        custom_options: collections.abc.Mapping[builtins.str, global___CustomOptionsValue] | None = ...,
         include_displacement: builtins.bool | None = ...,
-        shell_position: Global___ShellPosition.ValueType = ...,
+        shell_position: global___ShellPosition.ValueType = ...,
         id: builtins.str | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_id", b"_id", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "script", b"script"]) -> builtins.bool: ...
@@ -2411,7 +2411,7 @@ class PlotDefinitionCreate(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_script", b"_script"]) -> typing.Literal["script"] | None: ...
 
-Global___PlotDefinitionCreate: typing_extensions.TypeAlias = PlotDefinitionCreate
+global___PlotDefinitionCreate = PlotDefinitionCreate
 
 @typing.final
 class PlotDefinitionSerialize(google.protobuf.message.Message):
@@ -2425,12 +2425,12 @@ class PlotDefinitionSerialize(google.protobuf.message.Message):
         VALUE_FIELD_NUMBER: builtins.int
         key: builtins.str
         @property
-        def value(self) -> Global___CustomOptionsValue: ...
+        def value(self) -> global___CustomOptionsValue: ...
         def __init__(
             self,
             *,
             key: builtins.str = ...,
-            value: Global___CustomOptionsValue | None = ...,
+            value: global___CustomOptionsValue | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
@@ -2455,7 +2455,7 @@ class PlotDefinitionSerialize(google.protobuf.message.Message):
     SHELL_POSITION_FIELD_NUMBER: builtins.int
     SUPPORTS_MONITORING_FIELD_NUMBER: builtins.int
     id: builtins.str
-    result_type: Global___ResultType.ValueType
+    result_type: global___ResultType.ValueType
     name: builtins.str
     location: builtins.str
     average_by_entity: builtins.bool
@@ -2469,39 +2469,39 @@ class PlotDefinitionSerialize(google.protobuf.message.Message):
     last_set: builtins.bool
     script: builtins.str
     include_displacement: builtins.bool
-    shell_position: Global___ShellPosition.ValueType
+    shell_position: global___ShellPosition.ValueType
     supports_monitoring: builtins.bool
     @property
-    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Field]: ...
+    def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Field]: ...
     @property
-    def mesh_scoping(self) -> Global___NamedSelectionDefinition: ...
+    def mesh_scoping(self) -> global___NamedSelectionDefinition: ...
     @property
-    def custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___CustomSelection]: ...
+    def custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CustomSelection]: ...
     @property
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
-    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, Global___CustomOptionsValue]: ...
+    def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___CustomOptionsValue]: ...
     def __init__(
         self,
         *,
         id: builtins.str | None = ...,
-        result_type: Global___ResultType.ValueType = ...,
+        result_type: global___ResultType.ValueType = ...,
         name: builtins.str | None = ...,
-        fields: collections.abc.Iterable[Global___Field] | None = ...,
+        fields: collections.abc.Iterable[global___Field] | None = ...,
         location: builtins.str = ...,
         average_by_entity: builtins.bool | None = ...,
         as_linear: builtins.bool | None = ...,
         on_skin: builtins.bool | None = ...,
-        mesh_scoping: Global___NamedSelectionDefinition | None = ...,
+        mesh_scoping: global___NamedSelectionDefinition | None = ...,
         named_selection_id: builtins.str | None = ...,
-        custom_selections: collections.abc.Iterable[Global___CustomSelection] | None = ...,
+        custom_selections: collections.abc.Iterable[global___CustomSelection] | None = ...,
         set_ids: collections.abc.Iterable[builtins.int] | None = ...,
         all_sets: builtins.bool | None = ...,
         last_set: builtins.bool | None = ...,
         script: builtins.str | None = ...,
-        custom_options: collections.abc.Mapping[builtins.str, Global___CustomOptionsValue] | None = ...,
+        custom_options: collections.abc.Mapping[builtins.str, global___CustomOptionsValue] | None = ...,
         include_displacement: builtins.bool | None = ...,
-        shell_position: Global___ShellPosition.ValueType = ...,
+        shell_position: global___ShellPosition.ValueType = ...,
         supports_monitoring: builtins.bool | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_id", b"_id", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "_supports_monitoring", b"_supports_monitoring", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "script", b"script", "supports_monitoring", b"supports_monitoring"]) -> builtins.bool: ...
@@ -2529,7 +2529,7 @@ class PlotDefinitionSerialize(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_supports_monitoring", b"_supports_monitoring"]) -> typing.Literal["supports_monitoring"] | None: ...
 
-Global___PlotDefinitionSerialize: typing_extensions.TypeAlias = PlotDefinitionSerialize
+global___PlotDefinitionSerialize = PlotDefinitionSerialize
 
 @typing.final
 class PropertyScoping(google.protobuf.message.Message):
@@ -2539,16 +2539,16 @@ class PropertyScoping(google.protobuf.message.Message):
     IDS_FIELD_NUMBER: builtins.int
     name: builtins.str
     @property
-    def ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___IdsScoping]: ...
+    def ids(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IdsScoping]: ...
     def __init__(
         self,
         *,
         name: builtins.str = ...,
-        ids: collections.abc.Iterable[Global___IdsScoping] | None = ...,
+        ids: collections.abc.Iterable[global___IdsScoping] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["ids", b"ids", "name", b"name"]) -> None: ...
 
-Global___PropertyScoping: typing_extensions.TypeAlias = PropertyScoping
+global___PropertyScoping = PropertyScoping
 
 @typing.final
 class Range(google.protobuf.message.Message):
@@ -2571,7 +2571,7 @@ class Range(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_min", b"_min"]) -> typing.Literal["min"] | None: ...
 
-Global___Range: typing_extensions.TypeAlias = Range
+global___Range = Range
 
 @typing.final
 class Script(google.protobuf.message.Message):
@@ -2586,7 +2586,7 @@ class Script(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["script", b"script"]) -> None: ...
 
-Global___Script: typing_extensions.TypeAlias = Script
+global___Script = Script
 
 @typing.final
 class Settings(google.protobuf.message.Message):
@@ -2648,7 +2648,7 @@ class Settings(google.protobuf.message.Message):
     max_memory_fraction: builtins.float
     target_message_size: builtins.int
     monitor_memory_interval: builtins.float
-    license: Global___License.ValueType
+    license: global___License.ValueType
     """Preferred license to checkout for the application."""
     timeout: builtins.int
     idle_timeout: builtins.int
@@ -2660,7 +2660,7 @@ class Settings(google.protobuf.message.Message):
     """Use std post for result evaluation."""
     dpf_path: builtins.str
     @property
-    def hps_credentials(self) -> Global___HpsCredentials: ...
+    def hps_credentials(self) -> global___HpsCredentials: ...
     def __init__(
         self,
         *,
@@ -2684,12 +2684,12 @@ class Settings(google.protobuf.message.Message):
         gzip_compression: builtins.bool | None = ...,
         hps_config_path: builtins.str | None = ...,
         hps_download_directory: builtins.str = ...,
-        hps_credentials: Global___HpsCredentials | None = ...,
+        hps_credentials: global___HpsCredentials | None = ...,
         web_app_path: builtins.str = ...,
         max_memory_fraction: builtins.float = ...,
         target_message_size: builtins.int = ...,
         monitor_memory_interval: builtins.float = ...,
-        license: Global___License.ValueType = ...,
+        license: global___License.ValueType = ...,
         timeout: builtins.int | None = ...,
         idle_timeout: builtins.int | None = ...,
         access_token_lifetime: builtins.int = ...,
@@ -2728,7 +2728,7 @@ class Settings(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_work_dir_as_home", b"_work_dir_as_home"]) -> typing.Literal["work_dir_as_home"] | None: ...
 
-Global___Settings: typing_extensions.TypeAlias = Settings
+global___Settings = Settings
 
 @typing.final
 class Solution(google.protobuf.message.Message):
@@ -2796,55 +2796,55 @@ class Solution(google.protobuf.message.Message):
     n_sets: builtins.int
     time_frequencies_unit: builtins.str
     @property
-    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___File]: ...
+    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___File]: ...
     @property
-    def hps_files(self) -> Global___HpsFiles: ...
+    def hps_files(self) -> global___HpsFiles: ...
     @property
     def errors(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
     def warnings(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
-    def worker(self) -> Global___Worker: ...
+    def worker(self) -> global___Worker: ...
     @property
-    def solver_named_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___SolverNamedSelection]: ...
+    def solver_named_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SolverNamedSelection]: ...
     @property
-    def available_custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___CustomSelectionDefinition]: ...
+    def available_custom_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CustomSelectionDefinition]: ...
     @property
-    def element_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___ElementGroup.ValueType]: ...
+    def element_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___ElementGroup.ValueType]: ...
     @property
     def unsupported_element_types(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
-    def available_results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___AvailableResult]:
+    def available_results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AvailableResult]:
         """Available DPF results. Not all of them are supported by plots and charts."""
 
     @property
-    def available_trackers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___TrackerType.ValueType]: ...
+    def available_trackers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___TrackerType.ValueType]: ...
     @property
-    def available_mesh_properties(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___AvailableMeshProperty]:
+    def available_mesh_properties(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AvailableMeshProperty]:
         """Mesh properties available for scoping."""
 
     @property
-    def time_frequencies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___TimeFrequency]: ...
+    def time_frequencies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TimeFrequency]: ...
     @property
-    def named_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___NamedSelection]: ...
+    def named_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NamedSelection]: ...
     @property
-    def mesh_graphics_options(self) -> Global___MeshGraphicsOptions: ...
+    def mesh_graphics_options(self) -> global___MeshGraphicsOptions: ...
     @property
-    def configurable_plots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ConfigurablePlot]: ...
+    def configurable_plots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ConfigurablePlot]: ...
     @property
-    def plots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___PlotDefinition]: ...
+    def plots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PlotDefinition]: ...
     @property
-    def configurable_charts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ConfigurableChart]: ...
+    def configurable_charts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ConfigurableChart]: ...
     @property
-    def charts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartDefinition]: ...
+    def charts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ChartDefinition]: ...
     @property
-    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Body]: ...
+    def bodies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Body]: ...
     @property
-    def operation(self) -> Global___Operation: ...
+    def operation(self) -> global___Operation: ...
     @property
-    def solver_text_outputs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___SolverTextOutputFile]: ...
+    def solver_text_outputs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SolverTextOutputFile]: ...
     @property
-    def views(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___View]: ...
+    def views(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___View]: ...
     def __init__(
         self,
         *,
@@ -2852,43 +2852,43 @@ class Solution(google.protobuf.message.Message):
         name: builtins.str | None = ...,
         description: builtins.str | None = ...,
         cache_plot_data: builtins.bool | None = ...,
-        files: collections.abc.Iterable[Global___File] | None = ...,
-        hps_files: Global___HpsFiles | None = ...,
+        files: collections.abc.Iterable[global___File] | None = ...,
+        hps_files: global___HpsFiles | None = ...,
         creation_time: builtins.str | None = ...,
         ready: builtins.bool | None = ...,
         errors: collections.abc.Iterable[builtins.str] | None = ...,
         warnings: collections.abc.Iterable[builtins.str] | None = ...,
         live: builtins.bool | None = ...,
         outdated: builtins.bool | None = ...,
-        worker: Global___Worker | None = ...,
-        solver_named_selections: collections.abc.Iterable[Global___SolverNamedSelection] | None = ...,
-        available_custom_selections: collections.abc.Iterable[Global___CustomSelectionDefinition] | None = ...,
+        worker: global___Worker | None = ...,
+        solver_named_selections: collections.abc.Iterable[global___SolverNamedSelection] | None = ...,
+        available_custom_selections: collections.abc.Iterable[global___CustomSelectionDefinition] | None = ...,
         n_elements: builtins.int | None = ...,
         n_nodes: builtins.int | None = ...,
         distance_unit: builtins.str | None = ...,
-        element_groups: collections.abc.Iterable[Global___ElementGroup.ValueType] | None = ...,
+        element_groups: collections.abc.Iterable[global___ElementGroup.ValueType] | None = ...,
         unsupported_element_types: collections.abc.Iterable[builtins.str] | None = ...,
         physics_type: builtins.str | None = ...,
         analysis_type: builtins.str | None = ...,
         unit_system: builtins.str | None = ...,
         n_results: builtins.int | None = ...,
         solver_version: builtins.str | None = ...,
-        available_results: collections.abc.Iterable[Global___AvailableResult] | None = ...,
-        available_trackers: collections.abc.Iterable[Global___TrackerType.ValueType] | None = ...,
-        available_mesh_properties: collections.abc.Iterable[Global___AvailableMeshProperty] | None = ...,
+        available_results: collections.abc.Iterable[global___AvailableResult] | None = ...,
+        available_trackers: collections.abc.Iterable[global___TrackerType.ValueType] | None = ...,
+        available_mesh_properties: collections.abc.Iterable[global___AvailableMeshProperty] | None = ...,
         n_sets: builtins.int | None = ...,
-        time_frequencies: collections.abc.Iterable[Global___TimeFrequency] | None = ...,
+        time_frequencies: collections.abc.Iterable[global___TimeFrequency] | None = ...,
         time_frequencies_unit: builtins.str | None = ...,
-        named_selections: collections.abc.Iterable[Global___NamedSelection] | None = ...,
-        mesh_graphics_options: Global___MeshGraphicsOptions | None = ...,
-        configurable_plots: collections.abc.Iterable[Global___ConfigurablePlot] | None = ...,
-        plots: collections.abc.Iterable[Global___PlotDefinition] | None = ...,
-        configurable_charts: collections.abc.Iterable[Global___ConfigurableChart] | None = ...,
-        charts: collections.abc.Iterable[Global___ChartDefinition] | None = ...,
-        bodies: collections.abc.Iterable[Global___Body] | None = ...,
-        operation: Global___Operation | None = ...,
-        solver_text_outputs: collections.abc.Iterable[Global___SolverTextOutputFile] | None = ...,
-        views: collections.abc.Iterable[Global___View] | None = ...,
+        named_selections: collections.abc.Iterable[global___NamedSelection] | None = ...,
+        mesh_graphics_options: global___MeshGraphicsOptions | None = ...,
+        configurable_plots: collections.abc.Iterable[global___ConfigurablePlot] | None = ...,
+        plots: collections.abc.Iterable[global___PlotDefinition] | None = ...,
+        configurable_charts: collections.abc.Iterable[global___ConfigurableChart] | None = ...,
+        charts: collections.abc.Iterable[global___ChartDefinition] | None = ...,
+        bodies: collections.abc.Iterable[global___Body] | None = ...,
+        operation: global___Operation | None = ...,
+        solver_text_outputs: collections.abc.Iterable[global___SolverTextOutputFile] | None = ...,
+        views: collections.abc.Iterable[global___View] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_analysis_type", b"_analysis_type", "_cache_plot_data", b"_cache_plot_data", "_creation_time", b"_creation_time", "_description", b"_description", "_distance_unit", b"_distance_unit", "_live", b"_live", "_n_elements", b"_n_elements", "_n_nodes", b"_n_nodes", "_n_results", b"_n_results", "_n_sets", b"_n_sets", "_name", b"_name", "_outdated", b"_outdated", "_physics_type", b"_physics_type", "_ready", b"_ready", "_solver_version", b"_solver_version", "_time_frequencies_unit", b"_time_frequencies_unit", "_unit_system", b"_unit_system", "analysis_type", b"analysis_type", "cache_plot_data", b"cache_plot_data", "creation_time", b"creation_time", "description", b"description", "distance_unit", b"distance_unit", "hps_files", b"hps_files", "live", b"live", "mesh_graphics_options", b"mesh_graphics_options", "n_elements", b"n_elements", "n_nodes", b"n_nodes", "n_results", b"n_results", "n_sets", b"n_sets", "name", b"name", "operation", b"operation", "outdated", b"outdated", "physics_type", b"physics_type", "ready", b"ready", "solver_version", b"solver_version", "time_frequencies_unit", b"time_frequencies_unit", "unit_system", b"unit_system", "worker", b"worker"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_analysis_type", b"_analysis_type", "_cache_plot_data", b"_cache_plot_data", "_creation_time", b"_creation_time", "_description", b"_description", "_distance_unit", b"_distance_unit", "_live", b"_live", "_n_elements", b"_n_elements", "_n_nodes", b"_n_nodes", "_n_results", b"_n_results", "_n_sets", b"_n_sets", "_name", b"_name", "_outdated", b"_outdated", "_physics_type", b"_physics_type", "_ready", b"_ready", "_solver_version", b"_solver_version", "_time_frequencies_unit", b"_time_frequencies_unit", "_unit_system", b"_unit_system", "analysis_type", b"analysis_type", "available_custom_selections", b"available_custom_selections", "available_mesh_properties", b"available_mesh_properties", "available_results", b"available_results", "available_trackers", b"available_trackers", "bodies", b"bodies", "cache_plot_data", b"cache_plot_data", "charts", b"charts", "configurable_charts", b"configurable_charts", "configurable_plots", b"configurable_plots", "creation_time", b"creation_time", "description", b"description", "distance_unit", b"distance_unit", "element_groups", b"element_groups", "errors", b"errors", "files", b"files", "hps_files", b"hps_files", "id", b"id", "live", b"live", "mesh_graphics_options", b"mesh_graphics_options", "n_elements", b"n_elements", "n_nodes", b"n_nodes", "n_results", b"n_results", "n_sets", b"n_sets", "name", b"name", "named_selections", b"named_selections", "operation", b"operation", "outdated", b"outdated", "physics_type", b"physics_type", "plots", b"plots", "ready", b"ready", "solver_named_selections", b"solver_named_selections", "solver_text_outputs", b"solver_text_outputs", "solver_version", b"solver_version", "time_frequencies", b"time_frequencies", "time_frequencies_unit", b"time_frequencies_unit", "unit_system", b"unit_system", "unsupported_element_types", b"unsupported_element_types", "views", b"views", "warnings", b"warnings", "worker", b"worker"]) -> None: ...
@@ -2927,7 +2927,7 @@ class Solution(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_unit_system", b"_unit_system"]) -> typing.Literal["unit_system"] | None: ...
 
-Global___Solution: typing_extensions.TypeAlias = Solution
+global___Solution = Solution
 
 @typing.final
 class SolutionCreate(google.protobuf.message.Message):
@@ -2950,36 +2950,36 @@ class SolutionCreate(google.protobuf.message.Message):
     cache_plot_data: builtins.bool
     id: builtins.str
     @property
-    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___File]: ...
+    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___File]: ...
     @property
-    def hps_files(self) -> Global___HpsFiles: ...
+    def hps_files(self) -> global___HpsFiles: ...
     @property
-    def mesh_graphics_options(self) -> Global___MeshGraphicsOptions: ...
+    def mesh_graphics_options(self) -> global___MeshGraphicsOptions: ...
     @property
-    def plots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___PlotDefinitionCreate]: ...
+    def plots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PlotDefinitionCreate]: ...
     @property
-    def charts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartDefinitionCreate]: ...
+    def charts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ChartDefinitionCreate]: ...
     @property
-    def named_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___NamedSelectionCreate]: ...
+    def named_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NamedSelectionCreate]: ...
     @property
-    def split_mesh_options(self) -> Global___SplitMeshOptions: ...
+    def split_mesh_options(self) -> global___SplitMeshOptions: ...
     @property
-    def fe_metadata_options(self) -> Global___FEMetadataOptions: ...
+    def fe_metadata_options(self) -> global___FEMetadataOptions: ...
     def __init__(
         self,
         *,
         name: builtins.str | None = ...,
         description: builtins.str | None = ...,
         cache_plot_data: builtins.bool | None = ...,
-        files: collections.abc.Iterable[Global___File] | None = ...,
-        hps_files: Global___HpsFiles | None = ...,
+        files: collections.abc.Iterable[global___File] | None = ...,
+        hps_files: global___HpsFiles | None = ...,
         id: builtins.str | None = ...,
-        mesh_graphics_options: Global___MeshGraphicsOptions | None = ...,
-        plots: collections.abc.Iterable[Global___PlotDefinitionCreate] | None = ...,
-        charts: collections.abc.Iterable[Global___ChartDefinitionCreate] | None = ...,
-        named_selections: collections.abc.Iterable[Global___NamedSelectionCreate] | None = ...,
-        split_mesh_options: Global___SplitMeshOptions | None = ...,
-        fe_metadata_options: Global___FEMetadataOptions | None = ...,
+        mesh_graphics_options: global___MeshGraphicsOptions | None = ...,
+        plots: collections.abc.Iterable[global___PlotDefinitionCreate] | None = ...,
+        charts: collections.abc.Iterable[global___ChartDefinitionCreate] | None = ...,
+        named_selections: collections.abc.Iterable[global___NamedSelectionCreate] | None = ...,
+        split_mesh_options: global___SplitMeshOptions | None = ...,
+        fe_metadata_options: global___FEMetadataOptions | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_cache_plot_data", b"_cache_plot_data", "_description", b"_description", "_id", b"_id", "_name", b"_name", "cache_plot_data", b"cache_plot_data", "description", b"description", "fe_metadata_options", b"fe_metadata_options", "hps_files", b"hps_files", "id", b"id", "mesh_graphics_options", b"mesh_graphics_options", "name", b"name", "split_mesh_options", b"split_mesh_options"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_cache_plot_data", b"_cache_plot_data", "_description", b"_description", "_id", b"_id", "_name", b"_name", "cache_plot_data", b"cache_plot_data", "charts", b"charts", "description", b"description", "fe_metadata_options", b"fe_metadata_options", "files", b"files", "hps_files", b"hps_files", "id", b"id", "mesh_graphics_options", b"mesh_graphics_options", "name", b"name", "named_selections", b"named_selections", "plots", b"plots", "split_mesh_options", b"split_mesh_options"]) -> None: ...
@@ -2992,7 +2992,7 @@ class SolutionCreate(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_name", b"_name"]) -> typing.Literal["name"] | None: ...
 
-Global___SolutionCreate: typing_extensions.TypeAlias = SolutionCreate
+global___SolutionCreate = SolutionCreate
 
 @typing.final
 class SolutionPatch(google.protobuf.message.Message):
@@ -3018,7 +3018,7 @@ class SolutionPatch(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_outdated", b"_outdated"]) -> typing.Literal["outdated"] | None: ...
 
-Global___SolutionPatch: typing_extensions.TypeAlias = SolutionPatch
+global___SolutionPatch = SolutionPatch
 
 @typing.final
 class SolutionSerialize(google.protobuf.message.Message):
@@ -3044,21 +3044,21 @@ class SolutionSerialize(google.protobuf.message.Message):
     has_bodies: builtins.bool
     """Whether the solution has bodies defined."""
     @property
-    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___File]: ...
+    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___File]: ...
     @property
-    def hps_files(self) -> Global___HpsFiles: ...
+    def hps_files(self) -> global___HpsFiles: ...
     @property
-    def mesh_graphics_options(self) -> Global___MeshGraphicsOptions: ...
+    def mesh_graphics_options(self) -> global___MeshGraphicsOptions: ...
     @property
-    def plots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___PlotDefinitionSerialize]: ...
+    def plots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PlotDefinitionSerialize]: ...
     @property
-    def charts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___ChartDefinitionSerialize]: ...
+    def charts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ChartDefinitionSerialize]: ...
     @property
-    def named_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___NamedSelectionSerialize]: ...
+    def named_selections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NamedSelectionSerialize]: ...
     @property
-    def split_mesh_options(self) -> Global___SplitMeshOptions: ...
+    def split_mesh_options(self) -> global___SplitMeshOptions: ...
     @property
-    def fe_metadata_options(self) -> Global___FEMetadataOptions: ...
+    def fe_metadata_options(self) -> global___FEMetadataOptions: ...
     def __init__(
         self,
         *,
@@ -3066,15 +3066,15 @@ class SolutionSerialize(google.protobuf.message.Message):
         name: builtins.str | None = ...,
         description: builtins.str | None = ...,
         cache_plot_data: builtins.bool | None = ...,
-        files: collections.abc.Iterable[Global___File] | None = ...,
-        hps_files: Global___HpsFiles | None = ...,
-        mesh_graphics_options: Global___MeshGraphicsOptions | None = ...,
-        plots: collections.abc.Iterable[Global___PlotDefinitionSerialize] | None = ...,
-        charts: collections.abc.Iterable[Global___ChartDefinitionSerialize] | None = ...,
-        named_selections: collections.abc.Iterable[Global___NamedSelectionSerialize] | None = ...,
+        files: collections.abc.Iterable[global___File] | None = ...,
+        hps_files: global___HpsFiles | None = ...,
+        mesh_graphics_options: global___MeshGraphicsOptions | None = ...,
+        plots: collections.abc.Iterable[global___PlotDefinitionSerialize] | None = ...,
+        charts: collections.abc.Iterable[global___ChartDefinitionSerialize] | None = ...,
+        named_selections: collections.abc.Iterable[global___NamedSelectionSerialize] | None = ...,
         has_bodies: builtins.bool | None = ...,
-        split_mesh_options: Global___SplitMeshOptions | None = ...,
-        fe_metadata_options: Global___FEMetadataOptions | None = ...,
+        split_mesh_options: global___SplitMeshOptions | None = ...,
+        fe_metadata_options: global___FEMetadataOptions | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_cache_plot_data", b"_cache_plot_data", "_description", b"_description", "_has_bodies", b"_has_bodies", "_name", b"_name", "cache_plot_data", b"cache_plot_data", "description", b"description", "fe_metadata_options", b"fe_metadata_options", "has_bodies", b"has_bodies", "hps_files", b"hps_files", "mesh_graphics_options", b"mesh_graphics_options", "name", b"name", "split_mesh_options", b"split_mesh_options"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_cache_plot_data", b"_cache_plot_data", "_description", b"_description", "_has_bodies", b"_has_bodies", "_name", b"_name", "cache_plot_data", b"cache_plot_data", "charts", b"charts", "description", b"description", "fe_metadata_options", b"fe_metadata_options", "files", b"files", "has_bodies", b"has_bodies", "hps_files", b"hps_files", "id", b"id", "mesh_graphics_options", b"mesh_graphics_options", "name", b"name", "named_selections", b"named_selections", "plots", b"plots", "split_mesh_options", b"split_mesh_options"]) -> None: ...
@@ -3087,7 +3087,7 @@ class SolutionSerialize(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_name", b"_name"]) -> typing.Literal["name"] | None: ...
 
-Global___SolutionSerialize: typing_extensions.TypeAlias = SolutionSerialize
+global___SolutionSerialize = SolutionSerialize
 
 @typing.final
 class SolverNamedSelection(google.protobuf.message.Message):
@@ -3113,7 +3113,7 @@ class SolverNamedSelection(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_size", b"_size"]) -> typing.Literal["size"] | None: ...
 
-Global___SolverNamedSelection: typing_extensions.TypeAlias = SolverNamedSelection
+global___SolverNamedSelection = SolverNamedSelection
 
 @typing.final
 class SolverTextOutputFile(google.protobuf.message.Message):
@@ -3123,14 +3123,14 @@ class SolverTextOutputFile(google.protobuf.message.Message):
     PATH_FIELD_NUMBER: builtins.int
     SUPPORTS_TAILING_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
-    type: Global___SolverTextOutputType.ValueType
+    type: global___SolverTextOutputType.ValueType
     path: builtins.str
     supports_tailing: builtins.bool
     name: builtins.str
     def __init__(
         self,
         *,
-        type: Global___SolverTextOutputType.ValueType = ...,
+        type: global___SolverTextOutputType.ValueType = ...,
         path: builtins.str = ...,
         supports_tailing: builtins.bool | None = ...,
         name: builtins.str | None = ...,
@@ -3142,7 +3142,7 @@ class SolverTextOutputFile(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_supports_tailing", b"_supports_tailing"]) -> typing.Literal["supports_tailing"] | None: ...
 
-Global___SolverTextOutputFile: typing_extensions.TypeAlias = SolverTextOutputFile
+global___SolverTextOutputFile = SolverTextOutputFile
 
 @typing.final
 class SplitMeshOptions(google.protobuf.message.Message):
@@ -3153,20 +3153,20 @@ class SplitMeshOptions(google.protobuf.message.Message):
     auto_split_mesh: builtins.bool
     """Whether to use program controlled logic to decide which properties to split the mesh by."""
     @property
-    def split_mesh_by(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[Global___MeshPropertyEnum.ValueType]:
+    def split_mesh_by(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___MeshPropertyEnum.ValueType]:
         """List of mesh properties to split the mesh by. To be used when auto_split_mesh is False."""
 
     def __init__(
         self,
         *,
         auto_split_mesh: builtins.bool | None = ...,
-        split_mesh_by: collections.abc.Iterable[Global___MeshPropertyEnum.ValueType] | None = ...,
+        split_mesh_by: collections.abc.Iterable[global___MeshPropertyEnum.ValueType] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_auto_split_mesh", b"_auto_split_mesh", "auto_split_mesh", b"auto_split_mesh"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_auto_split_mesh", b"_auto_split_mesh", "auto_split_mesh", b"auto_split_mesh", "split_mesh_by", b"split_mesh_by"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_auto_split_mesh", b"_auto_split_mesh"]) -> typing.Literal["auto_split_mesh"] | None: ...
 
-Global___SplitMeshOptions: typing_extensions.TypeAlias = SplitMeshOptions
+global___SplitMeshOptions = SplitMeshOptions
 
 @typing.final
 class StringMap(google.protobuf.message.Message):
@@ -3198,7 +3198,7 @@ class StringMap(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["string_map", b"string_map"]) -> None: ...
 
-Global___StringMap: typing_extensions.TypeAlias = StringMap
+global___StringMap = StringMap
 
 @typing.final
 class TimeFrequency(google.protobuf.message.Message):
@@ -3227,7 +3227,7 @@ class TimeFrequency(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_substep", b"_substep"]) -> typing.Literal["substep"] | None: ...
 
-Global___TimeFrequency: typing_extensions.TypeAlias = TimeFrequency
+global___TimeFrequency = TimeFrequency
 
 @typing.final
 class Topic(google.protobuf.message.Message):
@@ -3240,14 +3240,14 @@ class Topic(google.protobuf.message.Message):
     solution_id: builtins.str
     plot_id: builtins.str
     chart_id: builtins.str
-    tracker: Global___TrackerType.ValueType
+    tracker: global___TrackerType.ValueType
     def __init__(
         self,
         *,
         solution_id: builtins.str = ...,
         plot_id: builtins.str | None = ...,
         chart_id: builtins.str | None = ...,
-        tracker: Global___TrackerType.ValueType = ...,
+        tracker: global___TrackerType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_chart_id", b"_chart_id", "_plot_id", b"_plot_id", "chart_id", b"chart_id", "plot_id", b"plot_id"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_chart_id", b"_chart_id", "_plot_id", b"_plot_id", "chart_id", b"chart_id", "plot_id", b"plot_id", "solution_id", b"solution_id", "tracker", b"tracker"]) -> None: ...
@@ -3256,7 +3256,7 @@ class Topic(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_plot_id", b"_plot_id"]) -> typing.Literal["plot_id"] | None: ...
 
-Global___Topic: typing_extensions.TypeAlias = Topic
+global___Topic = Topic
 
 @typing.final
 class ValidationError(google.protobuf.message.Message):
@@ -3268,17 +3268,17 @@ class ValidationError(google.protobuf.message.Message):
     msg: builtins.str
     type: builtins.str
     @property
-    def loc(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___LocationInner]: ...
+    def loc(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___LocationInner]: ...
     def __init__(
         self,
         *,
-        loc: collections.abc.Iterable[Global___LocationInner] | None = ...,
+        loc: collections.abc.Iterable[global___LocationInner] | None = ...,
         msg: builtins.str = ...,
         type: builtins.str = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["loc", b"loc", "msg", b"msg", "type", b"type"]) -> None: ...
 
-Global___ValidationError: typing_extensions.TypeAlias = ValidationError
+global___ValidationError = ValidationError
 
 @typing.final
 class View(google.protobuf.message.Message):
@@ -3288,20 +3288,20 @@ class View(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     id: builtins.str
-    type: Global___ViewType.ValueType
+    type: global___ViewType.ValueType
     name: builtins.str
     def __init__(
         self,
         *,
         id: builtins.str = ...,
-        type: Global___ViewType.ValueType = ...,
+        type: global___ViewType.ValueType = ...,
         name: builtins.str | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_name", b"_name", "name", b"name"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_name", b"_name", "id", b"id", "name", b"name", "type", b"type"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_name", b"_name"]) -> typing.Literal["name"] | None: ...
 
-Global___View: typing_extensions.TypeAlias = View
+global___View = View
 
 @typing.final
 class Worker(google.protobuf.message.Message):
@@ -3349,7 +3349,7 @@ class Worker(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_version", b"_version"]) -> typing.Literal["version"] | None: ...
 
-Global___Worker: typing_extensions.TypeAlias = Worker
+global___Worker = Worker
 
 @typing.final
 class WsError(google.protobuf.message.Message):
@@ -3369,7 +3369,7 @@ class WsError(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["_traceback", b"_traceback", "message", b"message", "traceback", b"traceback"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_traceback", b"_traceback"]) -> typing.Literal["traceback"] | None: ...
 
-Global___WsError: typing_extensions.TypeAlias = WsError
+global___WsError = WsError
 
 @typing.final
 class WsPlotDataConfig(google.protobuf.message.Message):
@@ -3382,7 +3382,7 @@ class WsPlotDataConfig(google.protobuf.message.Message):
     WEB_GX_FIELD_NUMBER: builtins.int
     UPDATE_FIELD_NUMBER: builtins.int
     target_message_size: builtins.int
-    chunking_strategy: Global___ChunkingStrategy.ValueType
+    chunking_strategy: global___ChunkingStrategy.ValueType
     n_chunks: builtins.int
     last_time_id: builtins.int
     web_gx: builtins.bool
@@ -3391,7 +3391,7 @@ class WsPlotDataConfig(google.protobuf.message.Message):
         self,
         *,
         target_message_size: builtins.int | None = ...,
-        chunking_strategy: Global___ChunkingStrategy.ValueType = ...,
+        chunking_strategy: global___ChunkingStrategy.ValueType = ...,
         n_chunks: builtins.int | None = ...,
         last_time_id: builtins.int | None = ...,
         web_gx: builtins.bool | None = ...,
@@ -3410,7 +3410,7 @@ class WsPlotDataConfig(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_web_gx", b"_web_gx"]) -> typing.Literal["web_gx"] | None: ...
 
-Global___WsPlotDataConfig: typing_extensions.TypeAlias = WsPlotDataConfig
+global___WsPlotDataConfig = WsPlotDataConfig
 
 @typing.final
 class WsSolutionEnd(google.protobuf.message.Message):
@@ -3429,19 +3429,19 @@ class WsSolutionEnd(google.protobuf.message.Message):
 
     MESSAGE_TYPE_FIELD_NUMBER: builtins.int
     SOLUTION_PATCH_FIELD_NUMBER: builtins.int
-    message_type: Global___WsSolutionEnd.Message_type.ValueType
+    message_type: global___WsSolutionEnd.Message_type.ValueType
     @property
-    def solution_patch(self) -> Global___SolutionPatch: ...
+    def solution_patch(self) -> global___SolutionPatch: ...
     def __init__(
         self,
         *,
-        message_type: Global___WsSolutionEnd.Message_type.ValueType = ...,
-        solution_patch: Global___SolutionPatch | None = ...,
+        message_type: global___WsSolutionEnd.Message_type.ValueType = ...,
+        solution_patch: global___SolutionPatch | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["solution_patch", b"solution_patch"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["message_type", b"message_type", "solution_patch", b"solution_patch"]) -> None: ...
 
-Global___WsSolutionEnd: typing_extensions.TypeAlias = WsSolutionEnd
+global___WsSolutionEnd = WsSolutionEnd
 
 @typing.final
 class WsSubscribeRequest(google.protobuf.message.Message):
@@ -3460,18 +3460,18 @@ class WsSubscribeRequest(google.protobuf.message.Message):
 
     REQUEST_TYPE_FIELD_NUMBER: builtins.int
     TOPICS_FIELD_NUMBER: builtins.int
-    request_type: Global___WsSubscribeRequest.Request_type.ValueType
+    request_type: global___WsSubscribeRequest.Request_type.ValueType
     @property
-    def topics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Topic]: ...
+    def topics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Topic]: ...
     def __init__(
         self,
         *,
-        request_type: Global___WsSubscribeRequest.Request_type.ValueType = ...,
-        topics: collections.abc.Iterable[Global___Topic] | None = ...,
+        request_type: global___WsSubscribeRequest.Request_type.ValueType = ...,
+        topics: collections.abc.Iterable[global___Topic] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["request_type", b"request_type", "topics", b"topics"]) -> None: ...
 
-Global___WsSubscribeRequest: typing_extensions.TypeAlias = WsSubscribeRequest
+global___WsSubscribeRequest = WsSubscribeRequest
 
 @typing.final
 class WsTopics(google.protobuf.message.Message):
@@ -3490,18 +3490,18 @@ class WsTopics(google.protobuf.message.Message):
 
     MESSAGE_TYPE_FIELD_NUMBER: builtins.int
     TOPICS_FIELD_NUMBER: builtins.int
-    message_type: Global___WsTopics.Message_type.ValueType
+    message_type: global___WsTopics.Message_type.ValueType
     @property
-    def topics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Topic]: ...
+    def topics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Topic]: ...
     def __init__(
         self,
         *,
-        message_type: Global___WsTopics.Message_type.ValueType = ...,
-        topics: collections.abc.Iterable[Global___Topic] | None = ...,
+        message_type: global___WsTopics.Message_type.ValueType = ...,
+        topics: collections.abc.Iterable[global___Topic] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["message_type", b"message_type", "topics", b"topics"]) -> None: ...
 
-Global___WsTopics: typing_extensions.TypeAlias = WsTopics
+global___WsTopics = WsTopics
 
 @typing.final
 class WsTopicsRequest(google.protobuf.message.Message):
@@ -3519,15 +3519,15 @@ class WsTopicsRequest(google.protobuf.message.Message):
     REQUEST_TYPE_LIST_TOPICS: WsTopicsRequest.Request_type.ValueType  # 0
 
     REQUEST_TYPE_FIELD_NUMBER: builtins.int
-    request_type: Global___WsTopicsRequest.Request_type.ValueType
+    request_type: global___WsTopicsRequest.Request_type.ValueType
     def __init__(
         self,
         *,
-        request_type: Global___WsTopicsRequest.Request_type.ValueType = ...,
+        request_type: global___WsTopicsRequest.Request_type.ValueType = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["request_type", b"request_type"]) -> None: ...
 
-Global___WsTopicsRequest: typing_extensions.TypeAlias = WsTopicsRequest
+global___WsTopicsRequest = WsTopicsRequest
 
 @typing.final
 class WsUnsubscribeRequest(google.protobuf.message.Message):
@@ -3546,18 +3546,18 @@ class WsUnsubscribeRequest(google.protobuf.message.Message):
 
     REQUEST_TYPE_FIELD_NUMBER: builtins.int
     TOPICS_FIELD_NUMBER: builtins.int
-    request_type: Global___WsUnsubscribeRequest.Request_type.ValueType
+    request_type: global___WsUnsubscribeRequest.Request_type.ValueType
     @property
-    def topics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[Global___Topic]: ...
+    def topics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Topic]: ...
     def __init__(
         self,
         *,
-        request_type: Global___WsUnsubscribeRequest.Request_type.ValueType = ...,
-        topics: collections.abc.Iterable[Global___Topic] | None = ...,
+        request_type: global___WsUnsubscribeRequest.Request_type.ValueType = ...,
+        topics: collections.abc.Iterable[global___Topic] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["request_type", b"request_type", "topics", b"topics"]) -> None: ...
 
-Global___WsUnsubscribeRequest: typing_extensions.TypeAlias = WsUnsubscribeRequest
+global___WsUnsubscribeRequest = WsUnsubscribeRequest
 
 @typing.final
 class WsUpdateMessage(google.protobuf.message.Message):
@@ -3578,21 +3578,21 @@ class WsUpdateMessage(google.protobuf.message.Message):
     TOPIC_FIELD_NUMBER: builtins.int
     UPDATE_TYPE_FIELD_NUMBER: builtins.int
     MESSAGE_FIELD_NUMBER: builtins.int
-    message_type: Global___WsUpdateMessage.Message_type.ValueType
-    update_type: Global___WsUpdateMessageType.ValueType
+    message_type: global___WsUpdateMessage.Message_type.ValueType
+    update_type: global___WsUpdateMessageType.ValueType
     message: builtins.str
     @property
-    def topic(self) -> Global___Topic: ...
+    def topic(self) -> global___Topic: ...
     def __init__(
         self,
         *,
-        message_type: Global___WsUpdateMessage.Message_type.ValueType = ...,
-        topic: Global___Topic | None = ...,
-        update_type: Global___WsUpdateMessageType.ValueType = ...,
+        message_type: global___WsUpdateMessage.Message_type.ValueType = ...,
+        topic: global___Topic | None = ...,
+        update_type: global___WsUpdateMessageType.ValueType = ...,
         message: builtins.str | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_message", b"_message", "message", b"message", "topic", b"topic"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["_message", b"_message", "message", b"message", "message_type", b"message_type", "topic", b"topic", "update_type", b"update_type"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_message", b"_message"]) -> typing.Literal["message"] | None: ...
 
-Global___WsUpdateMessage: typing_extensions.TypeAlias = WsUpdateMessage
+global___WsUpdateMessage = WsUpdateMessage

@@ -9,7 +9,11 @@ updates:
       include:
         - '*'
       default-days: 7
-    
+    groups:
+       uv-deps:
+          patterns:
+            - "*"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -18,3 +22,20 @@ updates:
       include:
         - '*'
       default-days: 7
+    groups:
+       actions-deps:
+          patterns:
+            - "*"
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      include:
+        - '*'
+      default-days: 7
+    groups:
+       pre-commit-deps:
+          patterns:
+            - "*"

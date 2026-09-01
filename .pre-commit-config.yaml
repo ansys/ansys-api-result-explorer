@@ -3,7 +3,7 @@ repos:
 - repo: https://github.com/astral-sh/ruff-pre-commit
 
   # Ruff version.
-  rev: v0.15.14
+  rev: 1f1e8bf348ff38fc88619a38d3ca4d9c56abea49  # frozen: v0.16.5
   hooks:
     # Run the linter.
     - id: ruff-check
@@ -15,10 +15,29 @@ repos:
 
 # Add copyright statement to files
 - repo: https://github.com/ansys/pre-commit-hooks
-  rev: v0.7.2
+  rev: 55c5b6a5439abd847613579c6924da750e8b78b2  # frozen: v0.8.0
   hooks:
   - id: add-license-headers
     exclude: ^src/ansys/api/result_explorer/v0/
     args:
     - --start_year=2026
     - --custom_license=Apache-2.0
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # frozen: v6.0.0
+  hooks:
+    - id: check-merge-conflict
+    - id: debug-statements
+    - id: check-yaml
+    - id: trailing-whitespace
+
+- repo: https://github.com/tox-dev/pyproject-fmt
+  rev: 67cd950188cc8e2611e9ac21d1b032fdd446c601 # frozen: v2.28.0
+  hooks:
+    - id: pyproject-fmt
+      args: [--keep-full-version]
+
+- repo: https://github.com/python-jsonschema/check-jsonschema
+  rev: c4654a7e007c9619a5eb63c39a456572a0fa1851  # frozen: 0.38.0
+  hooks:
+    - id: check-github-workflows

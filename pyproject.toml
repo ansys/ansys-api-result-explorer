@@ -1,62 +1,60 @@
 [build-system]
-requires = ["flit_core>=3.12.0,<4"]
 build-backend = "flit_core.buildapi"
+requires = [ "flit-core>=3.12.0,<4" ]
 
 [project]
 name = "ansys-api-result-explorer"
 version = "0.1.0"
 description = "Result Explorer gRPC Interface Package."
+maintainers = [ { name = "Synopsys, Inc. and ANSYS, Inc." } ]
+authors = [ { name = "Synopsys, Inc. and ANSYS, Inc." } ]
 requires-python = ">=3.10,<4"
-authors = [{ name = "ANSYS, Inc."}]
-maintainers = [{ name = "ANSYS, Inc."}]
-repository = "https://github.com/ansys/ansys-api-result-explorer"
 classifiers = [
-    "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
 ]
-
 dependencies = [
-    "protobuf<7",
-    "grpcio",
+  "grpcio",
+  "protobuf<7",
 ]
+urls.Homepage = "https://github.com/ansys/ansys-api-result-explorer"
+urls.Source = "https://github.com/ansys/ansys-api-result-explorer"
+urls.Tracker = "https://github.com/ansys/ansys-api-result-explorer/issues"
+repository = "https://github.com/ansys/ansys-api-result-explorer"
 
 [dependency-groups]
 dev = [
-    "pytest==9.1.1",
-    "pytest-cov==7.1.0",
-    "pre-commit==4.6.2",
+  "pre-commit==4.6.2",
+  "pytest==9.1.1",
+  "pytest-cov==7.1.0",
+]
+build = [
+  "ansys-tools-protoc-helper>=0.7.0",
+  "requests",
 ]
 
-build = [
-    "requests",
-    "mypy-protobuf",
-    "grpcio-tools",
-]
+[tool.flit]
+module.name = "ansys.api.result_explorer"
 
 [tool.uv]
-default-groups = ["dev"]
+default-groups = [ "dev" ]
 cache-dir = "./.uv_cache"
 
-[project.urls]
-Source = "https://github.com/ansys/ansys-api-result-explorer"
-Homepage = "https://github.com/ansys/ansys-api-result-explorer"
-Tracker = "https://github.com/ansys/ansys-api-result-explorer/issues"
+[tool.ruff]
+lint.select = [ "B006", "B015", "B904", "C4", "E", "F", "I", "N", "UP", "W" ]
+lint.ignore = [ "E501", "E711" ]
+lint.per-file-ignores."__init__.py" = [ "F401" ]
 
-[tool.flit.module]
-name = "ansys.api.result_explorer"
-
-[tool.ruff.lint]
-select = ["E", "F", "UP", "N", "C4", "I", "W", "B006", "B015", "B904"]
-ignore = ["E711", "E501"]
-
-[tool.ruff.lint.per-file-ignores]
-"__init__.py" = ["F401"]
-
-[tool.pytest.ini_options]
-log_cli = true
-log_cli_level = "DEBUG"
-log_cli_format = "[%(asctime)s | %(levelname)s] %(message)s (%(filename)s:%(lineno)s)"
-log_cli_date_format = "%Y-%m-%d %H:%M:%S"
-filterwarnings = [
-    "ignore::DeprecationWarning",
+[tool.pytest]
+ini_options.filterwarnings = [
+  "ignore::DeprecationWarning",
 ]
-junit_family = "xunit2"
+ini_options.log_cli = true
+ini_options.log_cli_level = "DEBUG"
+ini_options.log_cli_format = "[%(asctime)s | %(levelname)s] %(message)s (%(filename)s:%(lineno)s)"
+ini_options.log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+ini_options.junit_family = "xunit2"

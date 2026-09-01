@@ -1,4 +1,4 @@
-// Copyright (C) 2026 ANSYS, Inc. and/or its affiliates.
+// Copyright (C) 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 //
 //
@@ -86,25 +86,25 @@ message UpdateMeshOptionsRequest {
   server_models.MeshGraphicsOptions mesh_options = 2;
 }
 
-service SolutionService { 
+service SolutionService {
   rpc Create(SolutionCreate) returns (server_models.Solution);
   rpc Delete(base.ResourceId) returns (base.Empty);
   rpc List(base.Empty) returns (SolutionList);
   rpc Get(base.ResourceId) returns (server_models.Solution);
 
-  rpc UpdateMeshOptions(UpdateMeshOptionsRequest) 
+  rpc UpdateMeshOptions(UpdateMeshOptionsRequest)
     returns (server_models.MeshGraphicsOptions);
 
-  rpc CreatePlotDefinition(CreatePlotDefinitionRequest) 
+  rpc CreatePlotDefinition(CreatePlotDefinitionRequest)
     returns (server_models.PlotDefinition);
   rpc UpdatePlotDefinition(UpdatePlotDefinitionRequest)
     returns (server_models.PlotDefinition);
-  rpc DeletePlotDefinition(DeletePlotDefinitionRequest) 
+  rpc DeletePlotDefinition(DeletePlotDefinitionRequest)
     returns (base.Empty);
 
   rpc CreateChartDefinition(CreateChartDefinitionRequest)
     returns (server_models.ChartDefinition);
-  rpc UpdateChartDefinition(UpdateChartDefinitionRequest) 
+  rpc UpdateChartDefinition(UpdateChartDefinitionRequest)
     returns (server_models.ChartDefinition);
   rpc DeleteChartDefinition(DeleteChartDefinitionRequest)
     returns (base.Empty);
