@@ -33,8 +33,7 @@ dev = [
   "pytest-cov==7.1.0",
 ]
 build = [
-  "grpcio-tools",
-  "mypy-protobuf",
+  "ansys-tools-protoc-helper>=0.7.0",
   "requests",
 ]
 

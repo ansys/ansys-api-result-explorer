@@ -1,29 +1,32 @@
 import glob
 import logging
 import os
-import subprocess
+import shutil
+
+from ansys.tools.protoc_helper import compile_proto_files
 
 log = logging.getLogger()
 
 
 def proto_compile(proto_path, output_dir):
+    # compile_proto_files requires .proto files to be inside the output directory
     target_protos = glob.glob(os.path.join(proto_path, "**/*.proto"), recursive=True)
-    command = [
-        "python -m grpc_tools.protoc",
-        f"--python_out={output_dir}",
-        f"--grpc_python_out={output_dir}",
-        f"--mypy_out={output_dir}",
-        f"--mypy_grpc_out={output_dir}",
-        f"--proto_path={proto_path}",
-    ] + target_protos
+    copied = []
+    for proto_file in target_protos:
+        rel = os.path.relpath(proto_file, proto_path)
+        dest = os.path.join(output_dir, rel)
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        shutil.copy2(proto_file, dest)
+        copied.append(dest)
 
-    log.debug(f"Running: {' '.join(command)}")
-    exit_code = subprocess.call(" ".join(command), shell=True)
-    if exit_code != 0:
-        raise RuntimeError(
-            f"Proto file compilation failed, command '{' '.join(command)}'."
-        )
-    log.info("Done compiling proto file.")
+    try:
+        compile_proto_files(output_dir)
+    finally:
+        for dest in copied:
+            if os.path.exists(dest):
+                os.remove(dest)
+
+    log.info("Done compiling proto files.")
 
 
 if __name__ == "__main__":
