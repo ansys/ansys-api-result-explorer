@@ -18,3 +18,12 @@ updates:
       include:
         - '*'
       default-days: 7
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      include:
+        - '*'
+      default-days: 7
