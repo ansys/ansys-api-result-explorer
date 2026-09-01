@@ -6,7 +6,7 @@ import warnings
 import app_pb2 as app__pb2
 import base_pb2 as base__pb2
 
-GRPC_GENERATED_VERSION = '1.76.0'
+GRPC_GENERATED_VERSION = '1.81.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -26,7 +26,7 @@ if _version_not_supported:
     )
 
 
-class AppServiceStub(object):
+class AppServiceStub:
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -82,7 +82,7 @@ class AppServiceStub(object):
                 _registered_method=True)
 
 
-class AppServiceServicer(object):
+class AppServiceServicer:
     """Missing associated documentation comment in .proto file."""
 
     def GetAppInfo(self, request, context):
@@ -195,7 +195,7 @@ def add_AppServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class AppService(object):
+class AppService:
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod

@@ -6,7 +6,7 @@ import warnings
 import base_pb2 as base__pb2
 import workspace_pb2 as workspace__pb2
 
-GRPC_GENERATED_VERSION = '1.76.0'
+GRPC_GENERATED_VERSION = '1.81.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -26,7 +26,7 @@ if _version_not_supported:
     )
 
 
-class WorkspaceServiceStub(object):
+class WorkspaceServiceStub:
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -97,7 +97,7 @@ class WorkspaceServiceStub(object):
                 _registered_method=True)
 
 
-class WorkspaceServiceServicer(object):
+class WorkspaceServiceServicer:
     """Missing associated documentation comment in .proto file."""
 
     def Create(self, request, context):
@@ -247,7 +247,7 @@ def add_WorkspaceServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class WorkspaceService(object):
+class WorkspaceService:
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
