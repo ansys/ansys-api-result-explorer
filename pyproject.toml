@@ -24,9 +24,11 @@ dependencies = [
   "grpcio",
   "protobuf<7",
 ]
+urls.Documentation = "https://github.com/ansys/ansys-api-result-explorer#readme"
 urls.Homepage = "https://github.com/ansys/ansys-api-result-explorer"
+urls.Issues = "https://github.com/ansys/ansys-api-result-explorer/issues"
+urls.Releases = "https://github.com/ansys/ansys-api-result-explorer/releases"
 urls.Source = "https://github.com/ansys/ansys-api-result-explorer"
-urls.Tracker = "https://github.com/ansys/ansys-api-result-explorer/issues"
 
 [dependency-groups]
 dev = [
