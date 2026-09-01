@@ -1,4 +1,4 @@
-// Copyright (C) 2026 ANSYS, Inc. and/or its affiliates.
+// Copyright (C) 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 //
 //
@@ -32,7 +32,7 @@ message ResultProvider {
   string url = 2;
   server_models.BuildInfo build_info = 3;
   optional string hps_url = 4;
-  
+
   repeated string solution_ids = 10;
 }
 
@@ -126,7 +126,7 @@ service AppService {
   rpc GetAppSettings(base.Empty) returns (AppSettings);
   rpc UpdateAppSettings(AppSettings) returns (AppSettings);
 
-  rpc ListResultProviders(base.Empty) 
+  rpc ListResultProviders(base.Empty)
     returns (ResultProviderList);
   rpc CreateResultProvider(CreateResultProviderRequest)
     returns (ResultProvider);

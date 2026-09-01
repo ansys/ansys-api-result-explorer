@@ -1,4 +1,4 @@
-// Copyright (C) 2026 ANSYS, Inc. and/or its affiliates.
+// Copyright (C) 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 //
 //
@@ -139,7 +139,7 @@ message WorkspaceImportRequest {
     string result_provider_name = 2;
     string file_path = 3;
   }
-  
+
   string template = 1;
   string workspace_name = 2;
   repeated SolutionInfo solutions = 3;
