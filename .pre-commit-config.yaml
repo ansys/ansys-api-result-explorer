@@ -31,7 +31,12 @@ repos:
     - id: check-yaml
     - id: trailing-whitespace
 
-# this validates our github workflow files
+- repo: https://github.com/tox-dev/pyproject-fmt
+  rev: 67cd950188cc8e2611e9ac21d1b032fdd446c601 # frozen: v2.28.0
+  hooks:
+    - id: pyproject-fmt
+      args: [--keep-full-version]
+
 - repo: https://github.com/python-jsonschema/check-jsonschema
   rev: c4654a7e007c9619a5eb63c39a456572a0fa1851  # frozen: 0.38.0
   hooks:
