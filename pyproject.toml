@@ -4,7 +4,7 @@ requires = [ "flit-core>=3.12.0,<5" ]
 
 [project]
 name = "ansys-api-result-explorer"
-version = "0.1.0"
+version = "0.2.dev0"
 description = "Result Explorer gRPC Interface Package."
 maintainers = [ { name = "Synopsys, Inc. and ANSYS, Inc." } ]
 authors = [ { name = "Synopsys, Inc. and ANSYS, Inc." } ]
