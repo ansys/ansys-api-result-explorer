@@ -72,7 +72,7 @@ jobs:
       # Commit changes if on a branch and not a tag
       - name: Commit changes
         if: github.ref != 'refs/heads/main' && !startsWith(github.ref, 'refs/tags')
-        uses: EndBug/add-and-commit@290ea2c423ad77ca9c62ae0f5b224379612c0321 # v10.0.0
+        uses: EndBug/add-and-commit@cc9c08ba6c8df3b93a8f2db63e89b98368ae2ae8 # v11.1.1
         with:
           add: |
             src/ansys/api/result_explorer/v0
@@ -107,7 +107,7 @@ jobs:
           path: ansys-api-result-explorer-artifacts
 
       - name: Release to GitHub
-        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2.5.0
+        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
         with:
           generate_release_notes: true
           files: |
@@ -131,7 +131,7 @@ jobs:
           path: ansys-api-result-explorer-artifacts
 
       - name: Upload artifacts to PyPI using trusted publisher
-        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2
         with:
           repository-url: "https://upload.pypi.org/legacy/"
           print-hash: true
