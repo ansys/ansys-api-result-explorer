@@ -260,6 +260,9 @@ class _ShellPositionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._
     SHELL_POSITION_MIDDLE: _ShellPosition.ValueType  # 1
     SHELL_POSITION_BOTTOM: _ShellPosition.ValueType  # 2
     SHELL_POSITION_ALL: _ShellPosition.ValueType  # 3
+    SHELL_POSITION_MIN: _ShellPosition.ValueType  # 4
+    SHELL_POSITION_MAX: _ShellPosition.ValueType  # 5
+    SHELL_POSITION_AVERAGE: _ShellPosition.ValueType  # 6
 
 class ShellPosition(_ShellPosition, metaclass=_ShellPositionEnumTypeWrapper): ...
 
@@ -267,6 +270,9 @@ SHELL_POSITION_TOP: ShellPosition.ValueType  # 0
 SHELL_POSITION_MIDDLE: ShellPosition.ValueType  # 1
 SHELL_POSITION_BOTTOM: ShellPosition.ValueType  # 2
 SHELL_POSITION_ALL: ShellPosition.ValueType  # 3
+SHELL_POSITION_MIN: ShellPosition.ValueType  # 4
+SHELL_POSITION_MAX: ShellPosition.ValueType  # 5
+SHELL_POSITION_AVERAGE: ShellPosition.ValueType  # 6
 global___ShellPosition = ShellPosition
 
 class _SolverTextOutputType:
