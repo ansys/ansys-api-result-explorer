@@ -1,4 +1,4 @@
-// Copyright (C) 2026 ANSYS, Inc. and/or its affiliates.
+// Copyright (C) 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 //
 //
@@ -1100,6 +1100,9 @@ enum ShellPosition {
   SHELL_POSITION_MIDDLE = 1;
   SHELL_POSITION_BOTTOM = 2;
   SHELL_POSITION_ALL = 3;
+  SHELL_POSITION_MIN = 4;
+  SHELL_POSITION_MAX = 5;
+  SHELL_POSITION_AVERAGE = 6;
 }
 
 message Solution {

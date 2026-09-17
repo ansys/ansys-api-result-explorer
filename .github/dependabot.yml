@@ -9,7 +9,15 @@ updates:
       include:
         - '*'
       default-days: 7
-    
+    ignore:
+      # protobuf is pinned to an exact version by ansys-tools-protoc-helper; let
+      # that package drive the protobuf version instead of upgrading it directly.
+      - dependency-name: "protobuf"
+    groups:
+       uv-deps:
+          patterns:
+            - "*"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -18,3 +26,20 @@ updates:
       include:
         - '*'
       default-days: 7
+    groups:
+       actions-deps:
+          patterns:
+            - "*"
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      include:
+        - '*'
+      default-days: 7
+    groups:
+       pre-commit-deps:
+          patterns:
+            - "*"

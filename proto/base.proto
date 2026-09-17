@@ -1,4 +1,4 @@
-// Copyright (C) 2026 ANSYS, Inc. and/or its affiliates.
+// Copyright (C) 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 // SPDX-License-Identifier: Apache-2.0
 //
 //
@@ -18,7 +18,7 @@ syntax = "proto3";
 package ansys.api.result_explorer.v0.base;
 
 message Empty {
-  
+
 }
 
 message ResourceId {
