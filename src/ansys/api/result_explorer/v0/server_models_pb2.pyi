@@ -2626,6 +2626,9 @@ class Settings(google.protobuf.message.Message):
     LICENSE_FIELD_NUMBER: builtins.int
     TIMEOUT_FIELD_NUMBER: builtins.int
     IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
+    WS_PING_INTERVAL_FIELD_NUMBER: builtins.int
+    WS_PING_TIMEOUT_FIELD_NUMBER: builtins.int
+    WS_FRAGMENT_SIZE_FIELD_NUMBER: builtins.int
     ACCESS_TOKEN_LIFETIME_FIELD_NUMBER: builtins.int
     MONITORING_INTERVAL_FIELD_NUMBER: builtins.int
     USE_STD_POST_FIELD_NUMBER: builtins.int
@@ -2658,6 +2661,10 @@ class Settings(google.protobuf.message.Message):
     """Preferred license to checkout for the application."""
     timeout: builtins.int
     idle_timeout: builtins.int
+    ws_ping_interval: builtins.float
+    ws_ping_timeout: builtins.float
+    ws_fragment_size: builtins.int
+    """Split outgoing WebSocket messages larger than this many bytes into fragments, so keepalive pings interleave and the transport buffer stays bounded. Set to 0 to disable fragmentation."""
     access_token_lifetime: builtins.int
     """Lifetime of the access token in seconds. Only used for token based authentication."""
     monitoring_interval: builtins.float
@@ -2698,13 +2705,16 @@ class Settings(google.protobuf.message.Message):
         license: global___License.ValueType = ...,
         timeout: builtins.int | None = ...,
         idle_timeout: builtins.int | None = ...,
+        ws_ping_interval: builtins.float | None = ...,
+        ws_ping_timeout: builtins.float | None = ...,
+        ws_fragment_size: builtins.int = ...,
         access_token_lifetime: builtins.int = ...,
         monitoring_interval: builtins.float = ...,
         use_std_post: builtins.bool | None = ...,
         dpf_path: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_debug_api_responses", b"_debug_api_responses", "_disable_user_defined_plots", b"_disable_user_defined_plots", "_dpf_multiple_servers", b"_dpf_multiple_servers", "_dpf_num_threads", b"_dpf_num_threads", "_dpf_path", b"_dpf_path", "_gzip_compression", b"_gzip_compression", "_hps_config_path", b"_hps_config_path", "_idle_timeout", b"_idle_timeout", "_log_file_name", b"_log_file_name", "_strict_checks", b"_strict_checks", "_time_requests", b"_time_requests", "_timeout", b"_timeout", "_use_std_post", b"_use_std_post", "_work_dir_as_home", b"_work_dir_as_home", "debug_api_responses", b"debug_api_responses", "disable_user_defined_plots", b"disable_user_defined_plots", "dpf_multiple_servers", b"dpf_multiple_servers", "dpf_num_threads", b"dpf_num_threads", "dpf_path", b"dpf_path", "gzip_compression", b"gzip_compression", "hps_config_path", b"hps_config_path", "hps_credentials", b"hps_credentials", "idle_timeout", b"idle_timeout", "log_file_name", b"log_file_name", "strict_checks", b"strict_checks", "time_requests", b"time_requests", "timeout", b"timeout", "use_std_post", b"use_std_post", "work_dir_as_home", b"work_dir_as_home"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_debug_api_responses", b"_debug_api_responses", "_disable_user_defined_plots", b"_disable_user_defined_plots", "_dpf_multiple_servers", b"_dpf_multiple_servers", "_dpf_num_threads", b"_dpf_num_threads", "_dpf_path", b"_dpf_path", "_gzip_compression", b"_gzip_compression", "_hps_config_path", b"_hps_config_path", "_idle_timeout", b"_idle_timeout", "_log_file_name", b"_log_file_name", "_strict_checks", b"_strict_checks", "_time_requests", b"_time_requests", "_timeout", b"_timeout", "_use_std_post", b"_use_std_post", "_work_dir_as_home", b"_work_dir_as_home", "access_token_lifetime", b"access_token_lifetime", "api_responses_debug_path", b"api_responses_debug_path", "api_v1_str", b"api_v1_str", "data_directory", b"data_directory", "debug_api_responses", b"debug_api_responses", "disable_user_defined_plots", b"disable_user_defined_plots", "dpf_multiple_servers", b"dpf_multiple_servers", "dpf_num_threads", b"dpf_num_threads", "dpf_path", b"dpf_path", "dpf_server_connection_attempts", b"dpf_server_connection_attempts", "gzip_compression", b"gzip_compression", "host", b"host", "hps_config_path", b"hps_config_path", "hps_credentials", b"hps_credentials", "hps_download_directory", b"hps_download_directory", "idle_timeout", b"idle_timeout", "license", b"license", "log_file_name", b"log_file_name", "log_level", b"log_level", "max_memory_fraction", b"max_memory_fraction", "monitor_memory_interval", b"monitor_memory_interval", "monitoring_interval", b"monitoring_interval", "name", b"name", "port", b"port", "project_name", b"project_name", "strict_checks", b"strict_checks", "target_message_size", b"target_message_size", "time_requests", b"time_requests", "timeout", b"timeout", "use_std_post", b"use_std_post", "web_app_path", b"web_app_path", "work_dir_as_home", b"work_dir_as_home"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_debug_api_responses", b"_debug_api_responses", "_disable_user_defined_plots", b"_disable_user_defined_plots", "_dpf_multiple_servers", b"_dpf_multiple_servers", "_dpf_num_threads", b"_dpf_num_threads", "_dpf_path", b"_dpf_path", "_gzip_compression", b"_gzip_compression", "_hps_config_path", b"_hps_config_path", "_idle_timeout", b"_idle_timeout", "_log_file_name", b"_log_file_name", "_strict_checks", b"_strict_checks", "_time_requests", b"_time_requests", "_timeout", b"_timeout", "_use_std_post", b"_use_std_post", "_work_dir_as_home", b"_work_dir_as_home", "_ws_ping_interval", b"_ws_ping_interval", "_ws_ping_timeout", b"_ws_ping_timeout", "debug_api_responses", b"debug_api_responses", "disable_user_defined_plots", b"disable_user_defined_plots", "dpf_multiple_servers", b"dpf_multiple_servers", "dpf_num_threads", b"dpf_num_threads", "dpf_path", b"dpf_path", "gzip_compression", b"gzip_compression", "hps_config_path", b"hps_config_path", "hps_credentials", b"hps_credentials", "idle_timeout", b"idle_timeout", "log_file_name", b"log_file_name", "strict_checks", b"strict_checks", "time_requests", b"time_requests", "timeout", b"timeout", "use_std_post", b"use_std_post", "work_dir_as_home", b"work_dir_as_home", "ws_ping_interval", b"ws_ping_interval", "ws_ping_timeout", b"ws_ping_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_debug_api_responses", b"_debug_api_responses", "_disable_user_defined_plots", b"_disable_user_defined_plots", "_dpf_multiple_servers", b"_dpf_multiple_servers", "_dpf_num_threads", b"_dpf_num_threads", "_dpf_path", b"_dpf_path", "_gzip_compression", b"_gzip_compression", "_hps_config_path", b"_hps_config_path", "_idle_timeout", b"_idle_timeout", "_log_file_name", b"_log_file_name", "_strict_checks", b"_strict_checks", "_time_requests", b"_time_requests", "_timeout", b"_timeout", "_use_std_post", b"_use_std_post", "_work_dir_as_home", b"_work_dir_as_home", "_ws_ping_interval", b"_ws_ping_interval", "_ws_ping_timeout", b"_ws_ping_timeout", "access_token_lifetime", b"access_token_lifetime", "api_responses_debug_path", b"api_responses_debug_path", "api_v1_str", b"api_v1_str", "data_directory", b"data_directory", "debug_api_responses", b"debug_api_responses", "disable_user_defined_plots", b"disable_user_defined_plots", "dpf_multiple_servers", b"dpf_multiple_servers", "dpf_num_threads", b"dpf_num_threads", "dpf_path", b"dpf_path", "dpf_server_connection_attempts", b"dpf_server_connection_attempts", "gzip_compression", b"gzip_compression", "host", b"host", "hps_config_path", b"hps_config_path", "hps_credentials", b"hps_credentials", "hps_download_directory", b"hps_download_directory", "idle_timeout", b"idle_timeout", "license", b"license", "log_file_name", b"log_file_name", "log_level", b"log_level", "max_memory_fraction", b"max_memory_fraction", "monitor_memory_interval", b"monitor_memory_interval", "monitoring_interval", b"monitoring_interval", "name", b"name", "port", b"port", "project_name", b"project_name", "strict_checks", b"strict_checks", "target_message_size", b"target_message_size", "time_requests", b"time_requests", "timeout", b"timeout", "use_std_post", b"use_std_post", "web_app_path", b"web_app_path", "work_dir_as_home", b"work_dir_as_home", "ws_fragment_size", b"ws_fragment_size", "ws_ping_interval", b"ws_ping_interval", "ws_ping_timeout", b"ws_ping_timeout"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_debug_api_responses", b"_debug_api_responses"]) -> typing.Literal["debug_api_responses"] | None: ...
     @typing.overload
@@ -2733,6 +2743,10 @@ class Settings(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["_use_std_post", b"_use_std_post"]) -> typing.Literal["use_std_post"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_work_dir_as_home", b"_work_dir_as_home"]) -> typing.Literal["work_dir_as_home"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_ws_ping_interval", b"_ws_ping_interval"]) -> typing.Literal["ws_ping_interval"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_ws_ping_timeout", b"_ws_ping_timeout"]) -> typing.Literal["ws_ping_timeout"] | None: ...
 
 global___Settings = Settings
 
