@@ -1082,16 +1082,23 @@ message Settings {
 
   optional int32 idle_timeout = 28;
 
+  optional float ws_ping_interval = 29;
+
+  optional float ws_ping_timeout = 30;
+
+  // Split outgoing WebSocket messages larger than this many bytes into fragments, so keepalive pings interleave and the transport buffer stays bounded. Set to 0 to disable fragmentation.
+  int32 ws_fragment_size = 31;
+
   // Lifetime of the access token in seconds. Only used for token based authentication.
-  int32 access_token_lifetime = 29;
+  int32 access_token_lifetime = 32;
 
   // Interval in seconds to check for changes during live post-processing.
-  float monitoring_interval = 30;
+  float monitoring_interval = 33;
 
   // Use std post for result evaluation.
-  optional bool use_std_post = 31;
+  optional bool use_std_post = 34;
 
-  optional string dpf_path = 32;
+  optional string dpf_path = 35;
 
 }
 
