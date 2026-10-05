@@ -43,6 +43,7 @@ build = [
 
 [tool.flit]
 module.name = "ansys.api.result_explorer"
+sdist.include = [ "proto/annotation.proto" ]
 
 [tool.uv]
 default-groups = [ "dev" ]
