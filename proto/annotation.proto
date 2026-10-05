@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package ansys.api.result_explorer.v0.annotation;
+
+message Annotation {
+  enum Placement {
+    PLACEMENT_UNSPECIFIED = 0;
+    FOLLOW_SCENE = 1;
+    SCREEN_PINNED = 2;
+  }
+
+  optional string id = 1;
+  AnnotationAnchor anchor = 2;
+  AnnotationContent content = 3;
+  optional Placement placement = 4;
+  AnnotationScreenLocation screen_location = 5;
+  optional bool visibility = 6;
+  AnnotationPropertyVisibility property_visibility = 7;
+  AnnotationEditPolicy edit_policy = 8;
+}
+
+message AnnotationAnchor {
+  AnnotationPosition position = 1;
+  AnnotationAnchorTarget target = 2;
+}
+
+message AnnotationPosition {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+}
+
+message AnnotationAnchorTarget {
+  enum Kind {
+    KIND_UNSPECIFIED = 0;
+    NODE = 1;
+    ELEMENT = 2;
+  }
+
+  Kind kind = 1;
+  string entity_id = 2;
+  optional string entity_name = 3;
+  uint32 id = 4;
+}
+
+message AnnotationContent {
+  optional string note = 1;
+  AnnotationResult result = 2;
+}
+
+message AnnotationResult {
+  oneof source {
+    CapturedAnnotationResult captured = 1;
+  }
+}
+
+message CapturedAnnotationResult {
+  optional string name = 1;
+  optional string component = 2;
+  optional float value = 3;
+  optional string unit = 4;
+}
+
+message AnnotationScreenLocation {
+  double x = 1;
+  double y = 2;
+}
+
+message AnnotationPropertyVisibility {
+  optional bool anchor_id = 1;
+  optional bool anchor_body_label = 2;
+  optional bool mesh_location = 3;
+  optional bool displaced_location = 4;
+  optional bool result_name = 5;
+  optional bool result_component = 6;
+  optional bool result_value = 7;
+  optional bool note = 8;
+}
+
+message AnnotationEditPolicy {
+  bool default = 1;
+  AnnotationEditableFields fields = 2;
+  optional bool deletable = 3;
+}
+
+message AnnotationEditableFields {
+  optional bool note = 1;
+  optional bool result = 2;
+  optional bool placement = 3;
+}
