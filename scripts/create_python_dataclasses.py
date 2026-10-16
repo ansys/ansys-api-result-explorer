@@ -37,7 +37,9 @@ def compile_protos(proto_dir: Path, out_dir: Path) -> None:
 
     # protoc locates the betterproto2 plugin through PATH; it lives next to this interpreter.
     env = os.environ.copy()
-    env["PATH"] = os.pathsep.join([str(Path(sys.executable).parent), env.get("PATH", "")])
+    env["PATH"] = os.pathsep.join(
+        [str(Path(sys.executable).parent), env.get("PATH", "")]
+    )
 
     with tempfile.TemporaryDirectory() as tmp:
         cmd = [
@@ -61,11 +63,17 @@ def compile_protos(proto_dir: Path, out_dir: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("out_dir", type=Path, help="Output package directory (replaced on each run).")
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    parser.add_argument(
+        "out_dir", type=Path, help="Output package directory (replaced on each run)."
+    )
     args = parser.parse_args()
 
-    logging.basicConfig(format="[%(asctime)s | %(levelname)5s] %(message)s", level=logging.DEBUG)
+    logging.basicConfig(
+        format="[%(asctime)s | %(levelname)5s] %(message)s", level=logging.DEBUG
+    )
     compile_protos(_PROTO_DIR, args.out_dir.resolve())
 
 
