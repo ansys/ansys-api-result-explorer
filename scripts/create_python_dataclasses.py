@@ -20,10 +20,12 @@ import argparse
 import logging
 import os
 import shutil
-import subprocess
 import sys
 import tempfile
+from importlib.resources import files
 from pathlib import Path
+
+from grpc_tools import protoc
 
 _logger = logging.getLogger(__name__)
 
@@ -36,23 +38,24 @@ def compile_protos(proto_dir: Path, out_dir: Path) -> None:
         raise FileNotFoundError(f"No .proto files found in {proto_dir}")
 
     # protoc locates the betterproto2 plugin through PATH; it lives next to this interpreter.
-    env = os.environ.copy()
-    env["PATH"] = os.pathsep.join(
-        [str(Path(sys.executable).parent), env.get("PATH", "")]
+    os.environ["PATH"] = os.pathsep.join(
+        [str(Path(sys.executable).parent), os.environ.get("PATH", "")]
     )
+    # Bundled well-known types (e.g. google/protobuf/struct.proto).
+    well_known_protos = files("grpc_tools") / "_proto"
 
     with tempfile.TemporaryDirectory() as tmp:
-        cmd = [
-            sys.executable,
-            "-m",
-            "grpc_tools.protoc",
+        args = [
+            "grpc_tools.protoc",  # argv[0], ignored by protoc
             f"--proto_path={proto_dir}",
+            f"--proto_path={well_known_protos}",
             f"--python_betterproto2_out={tmp}",
             *proto_files,
         ]
 
-        _logger.debug("Running: %s", " ".join(cmd))
-        subprocess.run(cmd, check=True, env=env)
+        _logger.debug("Running protoc with: %s", " ".join(args[1:]))
+        if (ret := protoc.main(args)) != 0:
+            raise RuntimeError(f"protoc failed with exit code {ret}")
 
         if out_dir.exists():
             _logger.info("Clearing output directory: %s", out_dir)
