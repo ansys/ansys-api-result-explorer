@@ -115,6 +115,23 @@ message Session {
   string data = 1;
 }
 
+enum GraphicsPrecision {
+  GRAPHICS_PRECISION_UNSPECIFIED = 0;
+  GRAPHICS_PRECISION_FULL = 1;
+  GRAPHICS_PRECISION_REDUCED = 2;
+  GRAPHICS_PRECISION_LOW = 3;
+}
+
+message SaveSessionRequest {
+  optional bool include_cached_data = 1;
+  optional uint32 compression_level = 2;
+  optional GraphicsPrecision precision = 3;
+}
+
+message SessionChunk {
+  bytes data = 1;
+}
+
 message AuthenticateResultProviderRequest {
   string result_provider_name = 1;
   string token = 2;
@@ -135,5 +152,6 @@ service AppService {
   rpc AuthenticateResultProvider(AuthenticateResultProviderRequest) returns (base.Empty);
 
   rpc SaveSession(base.Empty) returns (Session);
+  rpc SaveSessionStream(SaveSessionRequest) returns (stream SessionChunk);
   rpc OpenSession(Session) returns (base.Empty);
 }

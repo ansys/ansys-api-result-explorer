@@ -75,6 +75,11 @@ class AppServiceStub(object):
                 request_serializer=base__pb2.Empty.SerializeToString,
                 response_deserializer=app__pb2.Session.FromString,
                 _registered_method=True)
+        self.SaveSessionStream = channel.unary_stream(
+                '/ansys.api.result_explorer.v0.app.AppService/SaveSessionStream',
+                request_serializer=app__pb2.SaveSessionRequest.SerializeToString,
+                response_deserializer=app__pb2.SessionChunk.FromString,
+                _registered_method=True)
         self.OpenSession = channel.unary_unary(
                 '/ansys.api.result_explorer.v0.app.AppService/OpenSession',
                 request_serializer=app__pb2.Session.SerializeToString,
@@ -133,6 +138,12 @@ class AppServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SaveSessionStream(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def OpenSession(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -181,6 +192,11 @@ def add_AppServiceServicer_to_server(servicer, server):
                     servicer.SaveSession,
                     request_deserializer=base__pb2.Empty.FromString,
                     response_serializer=app__pb2.Session.SerializeToString,
+            ),
+            'SaveSessionStream': grpc.unary_stream_rpc_method_handler(
+                    servicer.SaveSessionStream,
+                    request_deserializer=app__pb2.SaveSessionRequest.FromString,
+                    response_serializer=app__pb2.SessionChunk.SerializeToString,
             ),
             'OpenSession': grpc.unary_unary_rpc_method_handler(
                     servicer.OpenSession,
@@ -404,6 +420,33 @@ class AppService(object):
             '/ansys.api.result_explorer.v0.app.AppService/SaveSession',
             base__pb2.Empty.SerializeToString,
             app__pb2.Session.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SaveSessionStream(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/ansys.api.result_explorer.v0.app.AppService/SaveSessionStream',
+            app__pb2.SaveSessionRequest.SerializeToString,
+            app__pb2.SessionChunk.FromString,
             options,
             channel_credentials,
             insecure,

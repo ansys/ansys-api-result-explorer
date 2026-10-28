@@ -75,6 +75,11 @@ class AppServiceStub:
         app_pb2.Session,
     ]
 
+    SaveSessionStream: grpc.UnaryStreamMultiCallable[
+        app_pb2.SaveSessionRequest,
+        app_pb2.SessionChunk,
+    ]
+
     OpenSession: grpc.UnaryUnaryMultiCallable[
         app_pb2.Session,
         base_pb2.Empty,
@@ -119,6 +124,11 @@ class AppServiceAsyncStub:
     SaveSession: grpc.aio.UnaryUnaryMultiCallable[
         base_pb2.Empty,
         app_pb2.Session,
+    ]
+
+    SaveSessionStream: grpc.aio.UnaryStreamMultiCallable[
+        app_pb2.SaveSessionRequest,
+        app_pb2.SessionChunk,
     ]
 
     OpenSession: grpc.aio.UnaryUnaryMultiCallable[
@@ -182,6 +192,13 @@ class AppServiceServicer(metaclass=abc.ABCMeta):
         request: base_pb2.Empty,
         context: _ServicerContext,
     ) -> typing.Union[app_pb2.Session, collections.abc.Awaitable[app_pb2.Session]]: ...
+
+    @abc.abstractmethod
+    def SaveSessionStream(
+        self,
+        request: app_pb2.SaveSessionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[collections.abc.Iterator[app_pb2.SessionChunk], collections.abc.AsyncIterator[app_pb2.SessionChunk]]: ...
 
     @abc.abstractmethod
     def OpenSession(
