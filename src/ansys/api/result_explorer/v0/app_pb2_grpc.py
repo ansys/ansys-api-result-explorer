@@ -85,6 +85,11 @@ class AppServiceStub(object):
                 request_serializer=app__pb2.Session.SerializeToString,
                 response_deserializer=base__pb2.Empty.FromString,
                 _registered_method=True)
+        self.OpenSessionStream = channel.stream_unary(
+                '/ansys.api.result_explorer.v0.app.AppService/OpenSessionStream',
+                request_serializer=app__pb2.OpenSessionRequest.SerializeToString,
+                response_deserializer=base__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class AppServiceServicer(object):
@@ -150,6 +155,12 @@ class AppServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def OpenSessionStream(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AppServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -201,6 +212,11 @@ def add_AppServiceServicer_to_server(servicer, server):
             'OpenSession': grpc.unary_unary_rpc_method_handler(
                     servicer.OpenSession,
                     request_deserializer=app__pb2.Session.FromString,
+                    response_serializer=base__pb2.Empty.SerializeToString,
+            ),
+            'OpenSessionStream': grpc.stream_unary_rpc_method_handler(
+                    servicer.OpenSessionStream,
+                    request_deserializer=app__pb2.OpenSessionRequest.FromString,
                     response_serializer=base__pb2.Empty.SerializeToString,
             ),
     }
@@ -473,6 +489,33 @@ class AppService(object):
             target,
             '/ansys.api.result_explorer.v0.app.AppService/OpenSession',
             app__pb2.Session.SerializeToString,
+            base__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def OpenSessionStream(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(
+            request_iterator,
+            target,
+            '/ansys.api.result_explorer.v0.app.AppService/OpenSessionStream',
+            app__pb2.OpenSessionRequest.SerializeToString,
             base__pb2.Empty.FromString,
             options,
             channel_credentials,

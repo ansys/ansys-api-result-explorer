@@ -137,6 +137,15 @@ message AuthenticateResultProviderRequest {
   string token = 2;
 }
 
+message SessionImportOptions {}
+
+message OpenSessionRequest {
+  oneof payload {
+    SessionImportOptions options = 1;
+    bytes data = 2;
+  }
+}
+
 service AppService {
   rpc GetAppInfo(base.Empty) returns (AppInfo);
 
@@ -151,7 +160,9 @@ service AppService {
     returns (base.Empty);
   rpc AuthenticateResultProvider(AuthenticateResultProviderRequest) returns (base.Empty);
 
+
   rpc SaveSession(base.Empty) returns (Session);
   rpc SaveSessionStream(SaveSessionRequest) returns (stream SessionChunk);
   rpc OpenSession(Session) returns (base.Empty);
+  rpc OpenSessionStream(stream OpenSessionRequest) returns (base.Empty);
 }

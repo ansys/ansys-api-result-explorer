@@ -85,6 +85,11 @@ class AppServiceStub:
         base_pb2.Empty,
     ]
 
+    OpenSessionStream: grpc.StreamUnaryMultiCallable[
+        app_pb2.OpenSessionRequest,
+        base_pb2.Empty,
+    ]
+
 class AppServiceAsyncStub:
     GetAppInfo: grpc.aio.UnaryUnaryMultiCallable[
         base_pb2.Empty,
@@ -133,6 +138,11 @@ class AppServiceAsyncStub:
 
     OpenSession: grpc.aio.UnaryUnaryMultiCallable[
         app_pb2.Session,
+        base_pb2.Empty,
+    ]
+
+    OpenSessionStream: grpc.aio.StreamUnaryMultiCallable[
+        app_pb2.OpenSessionRequest,
         base_pb2.Empty,
     ]
 
@@ -204,6 +214,13 @@ class AppServiceServicer(metaclass=abc.ABCMeta):
     def OpenSession(
         self,
         request: app_pb2.Session,
+        context: _ServicerContext,
+    ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
+
+    @abc.abstractmethod
+    def OpenSessionStream(
+        self,
+        request_iterator: _MaybeAsyncIterator[app_pb2.OpenSessionRequest],
         context: _ServicerContext,
     ) -> typing.Union[base_pb2.Empty, collections.abc.Awaitable[base_pb2.Empty]]: ...
 

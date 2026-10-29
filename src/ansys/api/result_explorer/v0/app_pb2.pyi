@@ -443,3 +443,34 @@ class AuthenticateResultProviderRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["result_provider_name", b"result_provider_name", "token", b"token"]) -> None: ...
 
 global___AuthenticateResultProviderRequest = AuthenticateResultProviderRequest
+
+@typing.final
+class SessionImportOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___SessionImportOptions = SessionImportOptions
+
+@typing.final
+class OpenSessionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPTIONS_FIELD_NUMBER: builtins.int
+    DATA_FIELD_NUMBER: builtins.int
+    data: builtins.bytes
+    @property
+    def options(self) -> global___SessionImportOptions: ...
+    def __init__(
+        self,
+        *,
+        options: global___SessionImportOptions | None = ...,
+        data: builtins.bytes = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["data", b"data", "options", b"options", "payload", b"payload"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data", b"data", "options", b"options", "payload", b"payload"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["payload", b"payload"]) -> typing.Literal["options", "data"] | None: ...
+
+global___OpenSessionRequest = OpenSessionRequest
