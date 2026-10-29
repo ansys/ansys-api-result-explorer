@@ -21,11 +21,16 @@ def test_imports():
         WorkspaceList,
         WorkspaceCreate,
     )
+    from ansys.api.result_explorer.v0.annotation_pb2 import Annotation  # noqa
 
 
 def test_init():
     from ansys.api.result_explorer.v0.solution_pb2 import SolutionCreate
+    from ansys.api.result_explorer.v0.annotation_pb2 import Annotation
 
     _ = SolutionCreate(
         name="Test Solution",
+    )
+    _ = Annotation(
+        id="Test Annotation",
     )
