@@ -132,6 +132,25 @@ PROCESSING_MODE_SKIN: ProcessingMode.ValueType  # 1
 PROCESSING_MODE_FULL: ProcessingMode.ValueType  # 2
 global___ProcessingMode = ProcessingMode
 
+class _GraphicsPrecision:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _GraphicsPrecisionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_GraphicsPrecision.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    GRAPHICS_PRECISION_UNSPECIFIED: _GraphicsPrecision.ValueType  # 0
+    GRAPHICS_PRECISION_FULL: _GraphicsPrecision.ValueType  # 1
+    GRAPHICS_PRECISION_REDUCED: _GraphicsPrecision.ValueType  # 2
+    GRAPHICS_PRECISION_LOW: _GraphicsPrecision.ValueType  # 3
+
+class GraphicsPrecision(_GraphicsPrecision, metaclass=_GraphicsPrecisionEnumTypeWrapper): ...
+
+GRAPHICS_PRECISION_UNSPECIFIED: GraphicsPrecision.ValueType  # 0
+GRAPHICS_PRECISION_FULL: GraphicsPrecision.ValueType  # 1
+GRAPHICS_PRECISION_REDUCED: GraphicsPrecision.ValueType  # 2
+GRAPHICS_PRECISION_LOW: GraphicsPrecision.ValueType  # 3
+global___GraphicsPrecision = GraphicsPrecision
+
 @typing.final
 class AppInfo(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -365,6 +384,49 @@ class Session(google.protobuf.message.Message):
 global___Session = Session
 
 @typing.final
+class SaveSessionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INCLUDE_CACHED_DATA_FIELD_NUMBER: builtins.int
+    COMPRESSION_LEVEL_FIELD_NUMBER: builtins.int
+    PRECISION_FIELD_NUMBER: builtins.int
+    include_cached_data: builtins.bool
+    compression_level: builtins.int
+    precision: global___GraphicsPrecision.ValueType
+    def __init__(
+        self,
+        *,
+        include_cached_data: builtins.bool | None = ...,
+        compression_level: builtins.int | None = ...,
+        precision: global___GraphicsPrecision.ValueType | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["_compression_level", b"_compression_level", "_include_cached_data", b"_include_cached_data", "_precision", b"_precision", "compression_level", b"compression_level", "include_cached_data", b"include_cached_data", "precision", b"precision"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_compression_level", b"_compression_level", "_include_cached_data", b"_include_cached_data", "_precision", b"_precision", "compression_level", b"compression_level", "include_cached_data", b"include_cached_data", "precision", b"precision"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_compression_level", b"_compression_level"]) -> typing.Literal["compression_level"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_include_cached_data", b"_include_cached_data"]) -> typing.Literal["include_cached_data"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_precision", b"_precision"]) -> typing.Literal["precision"] | None: ...
+
+global___SaveSessionRequest = SaveSessionRequest
+
+@typing.final
+class SessionChunk(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATA_FIELD_NUMBER: builtins.int
+    data: builtins.bytes
+    def __init__(
+        self,
+        *,
+        data: builtins.bytes = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["data", b"data"]) -> None: ...
+
+global___SessionChunk = SessionChunk
+
+@typing.final
 class AuthenticateResultProviderRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -381,3 +443,34 @@ class AuthenticateResultProviderRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["result_provider_name", b"result_provider_name", "token", b"token"]) -> None: ...
 
 global___AuthenticateResultProviderRequest = AuthenticateResultProviderRequest
+
+@typing.final
+class SessionImportOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___SessionImportOptions = SessionImportOptions
+
+@typing.final
+class OpenSessionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPTIONS_FIELD_NUMBER: builtins.int
+    DATA_FIELD_NUMBER: builtins.int
+    data: builtins.bytes
+    @property
+    def options(self) -> global___SessionImportOptions: ...
+    def __init__(
+        self,
+        *,
+        options: global___SessionImportOptions | None = ...,
+        data: builtins.bytes = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["data", b"data", "options", b"options", "payload", b"payload"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data", b"data", "options", b"options", "payload", b"payload"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["payload", b"payload"]) -> typing.Literal["options", "data"] | None: ...
+
+global___OpenSessionRequest = OpenSessionRequest
