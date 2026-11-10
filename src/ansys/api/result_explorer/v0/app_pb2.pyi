@@ -388,24 +388,29 @@ class SaveSessionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INCLUDE_CACHED_DATA_FIELD_NUMBER: builtins.int
+    ONLY_CACHE_VISIBLE_VIEWS_FIELD_NUMBER: builtins.int
     COMPRESSION_LEVEL_FIELD_NUMBER: builtins.int
     PRECISION_FIELD_NUMBER: builtins.int
     include_cached_data: builtins.bool
+    only_cache_visible_views: builtins.bool
     compression_level: builtins.int
     precision: global___GraphicsPrecision.ValueType
     def __init__(
         self,
         *,
         include_cached_data: builtins.bool | None = ...,
+        only_cache_visible_views: builtins.bool | None = ...,
         compression_level: builtins.int | None = ...,
         precision: global___GraphicsPrecision.ValueType | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_compression_level", b"_compression_level", "_include_cached_data", b"_include_cached_data", "_precision", b"_precision", "compression_level", b"compression_level", "include_cached_data", b"include_cached_data", "precision", b"precision"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_compression_level", b"_compression_level", "_include_cached_data", b"_include_cached_data", "_precision", b"_precision", "compression_level", b"compression_level", "include_cached_data", b"include_cached_data", "precision", b"precision"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_compression_level", b"_compression_level", "_include_cached_data", b"_include_cached_data", "_only_cache_visible_views", b"_only_cache_visible_views", "_precision", b"_precision", "compression_level", b"compression_level", "include_cached_data", b"include_cached_data", "only_cache_visible_views", b"only_cache_visible_views", "precision", b"precision"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_compression_level", b"_compression_level", "_include_cached_data", b"_include_cached_data", "_only_cache_visible_views", b"_only_cache_visible_views", "_precision", b"_precision", "compression_level", b"compression_level", "include_cached_data", b"include_cached_data", "only_cache_visible_views", b"only_cache_visible_views", "precision", b"precision"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_compression_level", b"_compression_level"]) -> typing.Literal["compression_level"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_include_cached_data", b"_include_cached_data"]) -> typing.Literal["include_cached_data"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_only_cache_visible_views", b"_only_cache_visible_views"]) -> typing.Literal["only_cache_visible_views"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_precision", b"_precision"]) -> typing.Literal["precision"] | None: ...
 
@@ -448,9 +453,16 @@ global___AuthenticateResultProviderRequest = AuthenticateResultProviderRequest
 class SessionImportOptions(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    READ_ONLY_FIELD_NUMBER: builtins.int
+    read_only: builtins.bool
     def __init__(
         self,
+        *,
+        read_only: builtins.bool | None = ...,
     ) -> None: ...
+    def HasField(self, field_name: typing.Literal["_read_only", b"_read_only", "read_only", b"read_only"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_read_only", b"_read_only", "read_only", b"read_only"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["_read_only", b"_read_only"]) -> typing.Literal["read_only"] | None: ...
 
 global___SessionImportOptions = SessionImportOptions
 
