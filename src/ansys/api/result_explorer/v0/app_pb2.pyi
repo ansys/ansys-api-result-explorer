@@ -389,22 +389,26 @@ class SaveSessionRequest(google.protobuf.message.Message):
 
     INCLUDE_CACHED_DATA_FIELD_NUMBER: builtins.int
     ONLY_CACHE_VISIBLE_VIEWS_FIELD_NUMBER: builtins.int
+    WORKSPACE_IDS_FIELD_NUMBER: builtins.int
     COMPRESSION_LEVEL_FIELD_NUMBER: builtins.int
     PRECISION_FIELD_NUMBER: builtins.int
     include_cached_data: builtins.bool
     only_cache_visible_views: builtins.bool
     compression_level: builtins.int
     precision: global___GraphicsPrecision.ValueType
+    @property
+    def workspace_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     def __init__(
         self,
         *,
         include_cached_data: builtins.bool | None = ...,
         only_cache_visible_views: builtins.bool | None = ...,
+        workspace_ids: collections.abc.Iterable[builtins.str] | None = ...,
         compression_level: builtins.int | None = ...,
         precision: global___GraphicsPrecision.ValueType | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_compression_level", b"_compression_level", "_include_cached_data", b"_include_cached_data", "_only_cache_visible_views", b"_only_cache_visible_views", "_precision", b"_precision", "compression_level", b"compression_level", "include_cached_data", b"include_cached_data", "only_cache_visible_views", b"only_cache_visible_views", "precision", b"precision"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_compression_level", b"_compression_level", "_include_cached_data", b"_include_cached_data", "_only_cache_visible_views", b"_only_cache_visible_views", "_precision", b"_precision", "compression_level", b"compression_level", "include_cached_data", b"include_cached_data", "only_cache_visible_views", b"only_cache_visible_views", "precision", b"precision"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["_compression_level", b"_compression_level", "_include_cached_data", b"_include_cached_data", "_only_cache_visible_views", b"_only_cache_visible_views", "_precision", b"_precision", "compression_level", b"compression_level", "include_cached_data", b"include_cached_data", "only_cache_visible_views", b"only_cache_visible_views", "precision", b"precision", "workspace_ids", b"workspace_ids"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_compression_level", b"_compression_level"]) -> typing.Literal["compression_level"] | None: ...
     @typing.overload

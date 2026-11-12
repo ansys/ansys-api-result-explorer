@@ -125,8 +125,9 @@ enum GraphicsPrecision {
 message SaveSessionRequest {
   optional bool include_cached_data = 1;
   optional bool only_cache_visible_views = 2;
-  optional uint32 compression_level = 3;
-  optional GraphicsPrecision precision = 4;
+  repeated string workspace_ids = 3;
+  optional uint32 compression_level = 4;
+  optional GraphicsPrecision precision = 5;
 }
 
 message SessionChunk {
