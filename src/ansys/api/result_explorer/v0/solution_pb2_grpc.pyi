@@ -38,7 +38,7 @@ class SolutionServiceStub:
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Create: grpc.UnaryUnaryMultiCallable[
         solution_pb2.SolutionCreate,
-        server_models_pb2.Solution,
+        solution_pb2.ExtendedSolution,
     ]
 
     Delete: grpc.UnaryUnaryMultiCallable[
@@ -53,7 +53,7 @@ class SolutionServiceStub:
 
     Get: grpc.UnaryUnaryMultiCallable[
         base_pb2.ResourceId,
-        server_models_pb2.Solution,
+        solution_pb2.ExtendedSolution,
     ]
 
     UpdateMeshOptions: grpc.UnaryUnaryMultiCallable[
@@ -109,7 +109,7 @@ class SolutionServiceStub:
 class SolutionServiceAsyncStub:
     Create: grpc.aio.UnaryUnaryMultiCallable[
         solution_pb2.SolutionCreate,
-        server_models_pb2.Solution,
+        solution_pb2.ExtendedSolution,
     ]
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
@@ -124,7 +124,7 @@ class SolutionServiceAsyncStub:
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         base_pb2.ResourceId,
-        server_models_pb2.Solution,
+        solution_pb2.ExtendedSolution,
     ]
 
     UpdateMeshOptions: grpc.aio.UnaryUnaryMultiCallable[
@@ -183,7 +183,7 @@ class SolutionServiceServicer(metaclass=abc.ABCMeta):
         self,
         request: solution_pb2.SolutionCreate,
         context: _ServicerContext,
-    ) -> typing.Union[server_models_pb2.Solution, collections.abc.Awaitable[server_models_pb2.Solution]]: ...
+    ) -> typing.Union[solution_pb2.ExtendedSolution, collections.abc.Awaitable[solution_pb2.ExtendedSolution]]: ...
 
     @abc.abstractmethod
     def Delete(
@@ -204,7 +204,7 @@ class SolutionServiceServicer(metaclass=abc.ABCMeta):
         self,
         request: base_pb2.ResourceId,
         context: _ServicerContext,
-    ) -> typing.Union[server_models_pb2.Solution, collections.abc.Awaitable[server_models_pb2.Solution]]: ...
+    ) -> typing.Union[solution_pb2.ExtendedSolution, collections.abc.Awaitable[solution_pb2.ExtendedSolution]]: ...
 
     @abc.abstractmethod
     def UpdateMeshOptions(

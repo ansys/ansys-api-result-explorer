@@ -39,7 +39,7 @@ class SolutionServiceStub(object):
         self.Create = channel.unary_unary(
                 '/ansys.api.result_explorer.v0.solution.SolutionService/Create',
                 request_serializer=solution__pb2.SolutionCreate.SerializeToString,
-                response_deserializer=server__models__pb2.Solution.FromString,
+                response_deserializer=solution__pb2.ExtendedSolution.FromString,
                 _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/ansys.api.result_explorer.v0.solution.SolutionService/Delete',
@@ -54,7 +54,7 @@ class SolutionServiceStub(object):
         self.Get = channel.unary_unary(
                 '/ansys.api.result_explorer.v0.solution.SolutionService/Get',
                 request_serializer=base__pb2.ResourceId.SerializeToString,
-                response_deserializer=server__models__pb2.Solution.FromString,
+                response_deserializer=solution__pb2.ExtendedSolution.FromString,
                 _registered_method=True)
         self.UpdateMeshOptions = channel.unary_unary(
                 '/ansys.api.result_explorer.v0.solution.SolutionService/UpdateMeshOptions',
@@ -201,7 +201,7 @@ def add_SolutionServiceServicer_to_server(servicer, server):
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=solution__pb2.SolutionCreate.FromString,
-                    response_serializer=server__models__pb2.Solution.SerializeToString,
+                    response_serializer=solution__pb2.ExtendedSolution.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
@@ -216,7 +216,7 @@ def add_SolutionServiceServicer_to_server(servicer, server):
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=base__pb2.ResourceId.FromString,
-                    response_serializer=server__models__pb2.Solution.SerializeToString,
+                    response_serializer=solution__pb2.ExtendedSolution.SerializeToString,
             ),
             'UpdateMeshOptions': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateMeshOptions,
@@ -295,7 +295,7 @@ class SolutionService(object):
             target,
             '/ansys.api.result_explorer.v0.solution.SolutionService/Create',
             solution__pb2.SolutionCreate.SerializeToString,
-            server__models__pb2.Solution.FromString,
+            solution__pb2.ExtendedSolution.FromString,
             options,
             channel_credentials,
             insecure,
@@ -376,7 +376,7 @@ class SolutionService(object):
             target,
             '/ansys.api.result_explorer.v0.solution.SolutionService/Get',
             base__pb2.ResourceId.SerializeToString,
-            server__models__pb2.Solution.FromString,
+            solution__pb2.ExtendedSolution.FromString,
             options,
             channel_credentials,
             insecure,
