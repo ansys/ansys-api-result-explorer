@@ -35,7 +35,7 @@ message ExtendedSolution {
 }
 
 message SolutionList {
-  repeated ClientSolution solutions = 1;
+  repeated ExtendedSolution solutions = 1;
 }
 
 message CreatePlotDefinitionRequest {
