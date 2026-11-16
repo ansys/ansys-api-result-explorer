@@ -515,6 +515,10 @@ message File {
 
   optional string description = 4;
 
+  optional int32 size = 5;
+
+  optional string last_modified = 6;
+
 }
 
 enum Filter {
@@ -525,11 +529,35 @@ enum Filter {
 
 message GatewayInfo {
 
-  int32 http_port = 1;
+  enum Type {
+    TYPE_DIRECT = 0;
+  }
 
-  int32 grpc_port = 2;
+  Type type = 1;
 
-  optional string ca_cert_path = 3;
+  int32 http_port = 2;
+
+  int32 grpc_port = 3;
+
+  optional string ca_cert_path = 4;
+
+}
+
+message GatewayProxyInfo {
+
+  enum Type {
+    TYPE_PROXY = 0;
+  }
+
+  Type type = 1;
+
+  string http_base_url = 2;
+
+  string grpc_base_url = 3;
+
+  optional string ca_cert_path = 4;
+
+  HpsData hps_data = 5;
 
 }
 
@@ -537,6 +565,25 @@ message HTTPValidationError {
 
   repeated ValidationError detail = 1;
 
+}
+
+message HotSpotDefinition {
+
+  HotSpotKind kind = 1;
+
+  optional int32 num_hotspots = 2;
+
+  optional float separation_distance = 3;
+
+  optional float threshold_high = 4;
+
+  optional float threshold_low = 5;
+
+}
+
+enum HotSpotKind {
+  HOT_SPOT_KIND_MAXIMUM = 0;
+  HOT_SPOT_KIND_MINIMUM = 1;
 }
 
 message HpsCredentials {
@@ -555,6 +602,12 @@ message HpsCredentials {
   optional string client_secret = 6;
 
   optional string refresh_token = 7;
+
+}
+
+message HpsData {
+
+  string grpc_resource_name = 1;
 
 }
 
@@ -632,8 +685,16 @@ message Info {
 
   BuildInfo build_info = 7;
 
-  GatewayInfo gateway_info = 8;
+  InfoGatewayConnectionInfo gateway_connection_info = 8;
 
+}
+
+message InfoGatewayConnectionInfo {
+
+    oneof info_gateway_connection_info {
+        GatewayInfo gateway_info = 1;
+        GatewayProxyInfo gateway_proxy_info = 2;
+    }
 }
 
 enum License {
@@ -878,9 +939,11 @@ message PlotDefinition {
 
   ShellPosition shell_position = 18;
 
-  optional string creation_time = 19;
+  HotSpotDefinition hot_spot_definition = 19;
 
-  optional bool supports_monitoring = 20;
+  optional string creation_time = 20;
+
+  optional bool supports_monitoring = 21;
 
 }
 
@@ -923,7 +986,9 @@ message PlotDefinitionCreate {
 
   ShellPosition shell_position = 17;
 
-  optional string id = 18;
+  HotSpotDefinition hot_spot_definition = 18;
+
+  optional string id = 19;
 
 }
 
@@ -968,7 +1033,9 @@ message PlotDefinitionSerialize {
 
   ShellPosition shell_position = 18;
 
-  optional bool supports_monitoring = 19;
+  HotSpotDefinition hot_spot_definition = 19;
+
+  optional bool supports_monitoring = 20;
 
 }
 
@@ -1061,44 +1128,52 @@ message Settings {
 
   optional bool gzip_compression = 18;
 
-  optional string hps_config_path = 19;
+  // HTTP port for the gateway server.
+  int32 gateway_http_port = 19;
 
-  string hps_download_directory = 20;
+  // gRPC port for the gateway server.
+  int32 gateway_grpc_port = 20;
 
-  HpsCredentials hps_credentials = 21;
+  GatewayProxyInfo gateway_proxy_info = 21;
 
-  string web_app_path = 22;
+  optional string hps_config_path = 22;
 
-  float max_memory_fraction = 23;
+  string hps_download_directory = 23;
 
-  int32 target_message_size = 24;
+  HpsCredentials hps_credentials = 24;
 
-  float monitor_memory_interval = 25;
+  string web_app_path = 25;
+
+  float max_memory_fraction = 26;
+
+  int32 target_message_size = 27;
+
+  float monitor_memory_interval = 28;
 
   // Preferred license to checkout for the application.
-  License license = 26;
+  License license = 29;
 
-  optional int32 timeout = 27;
+  optional int32 timeout = 30;
 
-  optional int32 idle_timeout = 28;
+  optional int32 idle_timeout = 31;
 
-  optional float ws_ping_interval = 29;
+  optional float ws_ping_interval = 32;
 
-  optional float ws_ping_timeout = 30;
+  optional float ws_ping_timeout = 33;
 
   // Split outgoing WebSocket messages larger than this many bytes into fragments, so keepalive pings interleave and the transport buffer stays bounded. Set to 0 to disable fragmentation.
-  int32 ws_fragment_size = 31;
+  int32 ws_fragment_size = 34;
 
   // Lifetime of the access token in seconds. Only used for token based authentication.
-  int32 access_token_lifetime = 32;
+  int32 access_token_lifetime = 35;
 
   // Interval in seconds to check for changes during live post-processing.
-  float monitoring_interval = 33;
+  float monitoring_interval = 36;
 
   // Use std post for result evaluation.
-  optional bool use_std_post = 34;
+  optional bool use_std_post = 37;
 
-  optional string dpf_path = 35;
+  optional string dpf_path = 38;
 
 }
 

@@ -109,6 +109,21 @@ FILTER_MAX: Filter.ValueType  # 1
 FILTER_AVERAGE: Filter.ValueType  # 2
 global___Filter = Filter
 
+class _HotSpotKind:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _HotSpotKindEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_HotSpotKind.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    HOT_SPOT_KIND_MAXIMUM: _HotSpotKind.ValueType  # 0
+    HOT_SPOT_KIND_MINIMUM: _HotSpotKind.ValueType  # 1
+
+class HotSpotKind(_HotSpotKind, metaclass=_HotSpotKindEnumTypeWrapper): ...
+
+HOT_SPOT_KIND_MAXIMUM: HotSpotKind.ValueType  # 0
+HOT_SPOT_KIND_MINIMUM: HotSpotKind.ValueType  # 1
+global___HotSpotKind = HotSpotKind
+
 class _License:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -1489,10 +1504,14 @@ class File(google.protobuf.message.Message):
     KEY_FIELD_NUMBER: builtins.int
     DOMAIN_ID_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    SIZE_FIELD_NUMBER: builtins.int
+    LAST_MODIFIED_FIELD_NUMBER: builtins.int
     path: builtins.str
     key: builtins.str
     domain_id: builtins.int
     description: builtins.str
+    size: builtins.int
+    last_modified: builtins.str
     def __init__(
         self,
         *,
@@ -1500,9 +1519,11 @@ class File(google.protobuf.message.Message):
         key: builtins.str | None = ...,
         domain_id: builtins.int | None = ...,
         description: builtins.str | None = ...,
+        size: builtins.int | None = ...,
+        last_modified: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_description", b"_description", "_domain_id", b"_domain_id", "_key", b"_key", "_path", b"_path", "description", b"description", "domain_id", b"domain_id", "key", b"key", "path", b"path"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_description", b"_description", "_domain_id", b"_domain_id", "_key", b"_key", "_path", b"_path", "description", b"description", "domain_id", b"domain_id", "key", b"key", "path", b"path"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_description", b"_description", "_domain_id", b"_domain_id", "_key", b"_key", "_last_modified", b"_last_modified", "_path", b"_path", "_size", b"_size", "description", b"description", "domain_id", b"domain_id", "key", b"key", "last_modified", b"last_modified", "path", b"path", "size", b"size"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_description", b"_description", "_domain_id", b"_domain_id", "_key", b"_key", "_last_modified", b"_last_modified", "_path", b"_path", "_size", b"_size", "description", b"description", "domain_id", b"domain_id", "key", b"key", "last_modified", b"last_modified", "path", b"path", "size", b"size"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_description", b"_description"]) -> typing.Literal["description"] | None: ...
     @typing.overload
@@ -1510,7 +1531,11 @@ class File(google.protobuf.message.Message):
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_key", b"_key"]) -> typing.Literal["key"] | None: ...
     @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_last_modified", b"_last_modified"]) -> typing.Literal["last_modified"] | None: ...
+    @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_path", b"_path"]) -> typing.Literal["path"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_size", b"_size"]) -> typing.Literal["size"] | None: ...
 
 global___File = File
 
@@ -1518,24 +1543,79 @@ global___File = File
 class GatewayInfo(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _Type:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[GatewayInfo._Type.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        TYPE_DIRECT: GatewayInfo._Type.ValueType  # 0
+
+    class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
+    TYPE_DIRECT: GatewayInfo.Type.ValueType  # 0
+
+    TYPE_FIELD_NUMBER: builtins.int
     HTTP_PORT_FIELD_NUMBER: builtins.int
     GRPC_PORT_FIELD_NUMBER: builtins.int
     CA_CERT_PATH_FIELD_NUMBER: builtins.int
+    type: global___GatewayInfo.Type.ValueType
     http_port: builtins.int
     grpc_port: builtins.int
     ca_cert_path: builtins.str
     def __init__(
         self,
         *,
+        type: global___GatewayInfo.Type.ValueType = ...,
         http_port: builtins.int = ...,
         grpc_port: builtins.int = ...,
         ca_cert_path: builtins.str | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["_ca_cert_path", b"_ca_cert_path", "ca_cert_path", b"ca_cert_path"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_ca_cert_path", b"_ca_cert_path", "ca_cert_path", b"ca_cert_path", "grpc_port", b"grpc_port", "http_port", b"http_port"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["_ca_cert_path", b"_ca_cert_path", "ca_cert_path", b"ca_cert_path", "grpc_port", b"grpc_port", "http_port", b"http_port", "type", b"type"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_ca_cert_path", b"_ca_cert_path"]) -> typing.Literal["ca_cert_path"] | None: ...
 
 global___GatewayInfo = GatewayInfo
+
+@typing.final
+class GatewayProxyInfo(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Type:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[GatewayProxyInfo._Type.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        TYPE_PROXY: GatewayProxyInfo._Type.ValueType  # 0
+
+    class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
+    TYPE_PROXY: GatewayProxyInfo.Type.ValueType  # 0
+
+    TYPE_FIELD_NUMBER: builtins.int
+    HTTP_BASE_URL_FIELD_NUMBER: builtins.int
+    GRPC_BASE_URL_FIELD_NUMBER: builtins.int
+    CA_CERT_PATH_FIELD_NUMBER: builtins.int
+    HPS_DATA_FIELD_NUMBER: builtins.int
+    type: global___GatewayProxyInfo.Type.ValueType
+    http_base_url: builtins.str
+    grpc_base_url: builtins.str
+    ca_cert_path: builtins.str
+    @property
+    def hps_data(self) -> global___HpsData: ...
+    def __init__(
+        self,
+        *,
+        type: global___GatewayProxyInfo.Type.ValueType = ...,
+        http_base_url: builtins.str = ...,
+        grpc_base_url: builtins.str = ...,
+        ca_cert_path: builtins.str | None = ...,
+        hps_data: global___HpsData | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["_ca_cert_path", b"_ca_cert_path", "ca_cert_path", b"ca_cert_path", "hps_data", b"hps_data"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_ca_cert_path", b"_ca_cert_path", "ca_cert_path", b"ca_cert_path", "grpc_base_url", b"grpc_base_url", "hps_data", b"hps_data", "http_base_url", b"http_base_url", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["_ca_cert_path", b"_ca_cert_path"]) -> typing.Literal["ca_cert_path"] | None: ...
+
+global___GatewayProxyInfo = GatewayProxyInfo
 
 @typing.final
 class HTTPValidationError(google.protobuf.message.Message):
@@ -1552,6 +1632,42 @@ class HTTPValidationError(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["detail", b"detail"]) -> None: ...
 
 global___HTTPValidationError = HTTPValidationError
+
+@typing.final
+class HotSpotDefinition(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    KIND_FIELD_NUMBER: builtins.int
+    NUM_HOTSPOTS_FIELD_NUMBER: builtins.int
+    SEPARATION_DISTANCE_FIELD_NUMBER: builtins.int
+    THRESHOLD_HIGH_FIELD_NUMBER: builtins.int
+    THRESHOLD_LOW_FIELD_NUMBER: builtins.int
+    kind: global___HotSpotKind.ValueType
+    num_hotspots: builtins.int
+    separation_distance: builtins.float
+    threshold_high: builtins.float
+    threshold_low: builtins.float
+    def __init__(
+        self,
+        *,
+        kind: global___HotSpotKind.ValueType = ...,
+        num_hotspots: builtins.int | None = ...,
+        separation_distance: builtins.float | None = ...,
+        threshold_high: builtins.float | None = ...,
+        threshold_low: builtins.float | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["_num_hotspots", b"_num_hotspots", "_separation_distance", b"_separation_distance", "_threshold_high", b"_threshold_high", "_threshold_low", b"_threshold_low", "num_hotspots", b"num_hotspots", "separation_distance", b"separation_distance", "threshold_high", b"threshold_high", "threshold_low", b"threshold_low"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_num_hotspots", b"_num_hotspots", "_separation_distance", b"_separation_distance", "_threshold_high", b"_threshold_high", "_threshold_low", b"_threshold_low", "kind", b"kind", "num_hotspots", b"num_hotspots", "separation_distance", b"separation_distance", "threshold_high", b"threshold_high", "threshold_low", b"threshold_low"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_num_hotspots", b"_num_hotspots"]) -> typing.Literal["num_hotspots"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_separation_distance", b"_separation_distance"]) -> typing.Literal["separation_distance"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_threshold_high", b"_threshold_high"]) -> typing.Literal["threshold_high"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["_threshold_low", b"_threshold_low"]) -> typing.Literal["threshold_low"] | None: ...
+
+global___HotSpotDefinition = HotSpotDefinition
 
 @typing.final
 class HpsCredentials(google.protobuf.message.Message):
@@ -1599,6 +1715,21 @@ class HpsCredentials(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["_username", b"_username"]) -> typing.Literal["username"] | None: ...
 
 global___HpsCredentials = HpsCredentials
+
+@typing.final
+class HpsData(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GRPC_RESOURCE_NAME_FIELD_NUMBER: builtins.int
+    grpc_resource_name: builtins.str
+    def __init__(
+        self,
+        *,
+        grpc_resource_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["grpc_resource_name", b"grpc_resource_name"]) -> None: ...
+
+global___HpsData = HpsData
 
 @typing.final
 class HpsFSItem(google.protobuf.message.Message):
@@ -1744,7 +1875,7 @@ class Info(google.protobuf.message.Message):
     AUTH_TYPE_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     BUILD_INFO_FIELD_NUMBER: builtins.int
-    GATEWAY_INFO_FIELD_NUMBER: builtins.int
+    GATEWAY_CONNECTION_INFO_FIELD_NUMBER: builtins.int
     name: builtins.str
     version: builtins.str
     hps_configured: builtins.bool
@@ -1756,7 +1887,7 @@ class Info(google.protobuf.message.Message):
     @property
     def build_info(self) -> global___BuildInfo: ...
     @property
-    def gateway_info(self) -> global___GatewayInfo: ...
+    def gateway_connection_info(self) -> global___InfoGatewayConnectionInfo: ...
     def __init__(
         self,
         *,
@@ -1767,13 +1898,35 @@ class Info(google.protobuf.message.Message):
         auth_type: global___AuthType.ValueType = ...,
         settings: global___Settings | None = ...,
         build_info: global___BuildInfo | None = ...,
-        gateway_info: global___GatewayInfo | None = ...,
+        gateway_connection_info: global___InfoGatewayConnectionInfo | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_hps_configured", b"_hps_configured", "build_info", b"build_info", "gateway_info", b"gateway_info", "hps_configured", b"hps_configured", "memory", b"memory", "settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_hps_configured", b"_hps_configured", "auth_type", b"auth_type", "build_info", b"build_info", "gateway_info", b"gateway_info", "hps_configured", b"hps_configured", "memory", b"memory", "name", b"name", "settings", b"settings", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_hps_configured", b"_hps_configured", "build_info", b"build_info", "gateway_connection_info", b"gateway_connection_info", "hps_configured", b"hps_configured", "memory", b"memory", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_hps_configured", b"_hps_configured", "auth_type", b"auth_type", "build_info", b"build_info", "gateway_connection_info", b"gateway_connection_info", "hps_configured", b"hps_configured", "memory", b"memory", "name", b"name", "settings", b"settings", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_hps_configured", b"_hps_configured"]) -> typing.Literal["hps_configured"] | None: ...
 
 global___Info = Info
+
+@typing.final
+class InfoGatewayConnectionInfo(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GATEWAY_INFO_FIELD_NUMBER: builtins.int
+    GATEWAY_PROXY_INFO_FIELD_NUMBER: builtins.int
+    @property
+    def gateway_info(self) -> global___GatewayInfo: ...
+    @property
+    def gateway_proxy_info(self) -> global___GatewayProxyInfo: ...
+    def __init__(
+        self,
+        *,
+        gateway_info: global___GatewayInfo | None = ...,
+        gateway_proxy_info: global___GatewayProxyInfo | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["gateway_info", b"gateway_info", "gateway_proxy_info", b"gateway_proxy_info", "info_gateway_connection_info", b"info_gateway_connection_info"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["gateway_info", b"gateway_info", "gateway_proxy_info", b"gateway_proxy_info", "info_gateway_connection_info", b"info_gateway_connection_info"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["info_gateway_connection_info", b"info_gateway_connection_info"]) -> typing.Literal["gateway_info", "gateway_proxy_info"] | None: ...
+
+global___InfoGatewayConnectionInfo = InfoGatewayConnectionInfo
 
 @typing.final
 class LocationInner(google.protobuf.message.Message):
@@ -2225,6 +2378,7 @@ class PlotDefinition(google.protobuf.message.Message):
     CUSTOM_OPTIONS_FIELD_NUMBER: builtins.int
     INCLUDE_DISPLACEMENT_FIELD_NUMBER: builtins.int
     SHELL_POSITION_FIELD_NUMBER: builtins.int
+    HOT_SPOT_DEFINITION_FIELD_NUMBER: builtins.int
     CREATION_TIME_FIELD_NUMBER: builtins.int
     SUPPORTS_MONITORING_FIELD_NUMBER: builtins.int
     id: builtins.str
@@ -2255,6 +2409,8 @@ class PlotDefinition(google.protobuf.message.Message):
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
     def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___CustomOptionsValue]: ...
+    @property
+    def hot_spot_definition(self) -> global___HotSpotDefinition: ...
     def __init__(
         self,
         *,
@@ -2276,11 +2432,12 @@ class PlotDefinition(google.protobuf.message.Message):
         custom_options: collections.abc.Mapping[builtins.str, global___CustomOptionsValue] | None = ...,
         include_displacement: builtins.bool | None = ...,
         shell_position: global___ShellPosition.ValueType = ...,
+        hot_spot_definition: global___HotSpotDefinition | None = ...,
         creation_time: builtins.str | None = ...,
         supports_monitoring: builtins.bool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_creation_time", b"_creation_time", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "_supports_monitoring", b"_supports_monitoring", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "creation_time", b"creation_time", "include_displacement", b"include_displacement", "last_set", b"last_set", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "script", b"script", "supports_monitoring", b"supports_monitoring"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_creation_time", b"_creation_time", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "_supports_monitoring", b"_supports_monitoring", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "creation_time", b"creation_time", "custom_options", b"custom_options", "custom_selections", b"custom_selections", "fields", b"fields", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "location", b"location", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "result_type", b"result_type", "script", b"script", "set_ids", b"set_ids", "shell_position", b"shell_position", "supports_monitoring", b"supports_monitoring"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_creation_time", b"_creation_time", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "_supports_monitoring", b"_supports_monitoring", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "creation_time", b"creation_time", "hot_spot_definition", b"hot_spot_definition", "include_displacement", b"include_displacement", "last_set", b"last_set", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "script", b"script", "supports_monitoring", b"supports_monitoring"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_creation_time", b"_creation_time", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "_supports_monitoring", b"_supports_monitoring", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "creation_time", b"creation_time", "custom_options", b"custom_options", "custom_selections", b"custom_selections", "fields", b"fields", "hot_spot_definition", b"hot_spot_definition", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "location", b"location", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "result_type", b"result_type", "script", b"script", "set_ids", b"set_ids", "shell_position", b"shell_position", "supports_monitoring", b"supports_monitoring"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_all_sets", b"_all_sets"]) -> typing.Literal["all_sets"] | None: ...
     @typing.overload
@@ -2345,6 +2502,7 @@ class PlotDefinitionCreate(google.protobuf.message.Message):
     CUSTOM_OPTIONS_FIELD_NUMBER: builtins.int
     INCLUDE_DISPLACEMENT_FIELD_NUMBER: builtins.int
     SHELL_POSITION_FIELD_NUMBER: builtins.int
+    HOT_SPOT_DEFINITION_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     result_type: global___ResultType.ValueType
     name: builtins.str
@@ -2372,6 +2530,8 @@ class PlotDefinitionCreate(google.protobuf.message.Message):
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
     def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___CustomOptionsValue]: ...
+    @property
+    def hot_spot_definition(self) -> global___HotSpotDefinition: ...
     def __init__(
         self,
         *,
@@ -2392,10 +2552,11 @@ class PlotDefinitionCreate(google.protobuf.message.Message):
         custom_options: collections.abc.Mapping[builtins.str, global___CustomOptionsValue] | None = ...,
         include_displacement: builtins.bool | None = ...,
         shell_position: global___ShellPosition.ValueType = ...,
+        hot_spot_definition: global___HotSpotDefinition | None = ...,
         id: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_id", b"_id", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "script", b"script"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_id", b"_id", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "custom_options", b"custom_options", "custom_selections", b"custom_selections", "fields", b"fields", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "location", b"location", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "result_type", b"result_type", "script", b"script", "set_ids", b"set_ids", "shell_position", b"shell_position"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_id", b"_id", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "hot_spot_definition", b"hot_spot_definition", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "script", b"script"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_id", b"_id", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "custom_options", b"custom_options", "custom_selections", b"custom_selections", "fields", b"fields", "hot_spot_definition", b"hot_spot_definition", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "location", b"location", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "result_type", b"result_type", "script", b"script", "set_ids", b"set_ids", "shell_position", b"shell_position"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_all_sets", b"_all_sets"]) -> typing.Literal["all_sets"] | None: ...
     @typing.overload
@@ -2459,6 +2620,7 @@ class PlotDefinitionSerialize(google.protobuf.message.Message):
     CUSTOM_OPTIONS_FIELD_NUMBER: builtins.int
     INCLUDE_DISPLACEMENT_FIELD_NUMBER: builtins.int
     SHELL_POSITION_FIELD_NUMBER: builtins.int
+    HOT_SPOT_DEFINITION_FIELD_NUMBER: builtins.int
     SUPPORTS_MONITORING_FIELD_NUMBER: builtins.int
     id: builtins.str
     result_type: global___ResultType.ValueType
@@ -2487,6 +2649,8 @@ class PlotDefinitionSerialize(google.protobuf.message.Message):
     def set_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
     @property
     def custom_options(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___CustomOptionsValue]: ...
+    @property
+    def hot_spot_definition(self) -> global___HotSpotDefinition: ...
     def __init__(
         self,
         *,
@@ -2508,10 +2672,11 @@ class PlotDefinitionSerialize(google.protobuf.message.Message):
         custom_options: collections.abc.Mapping[builtins.str, global___CustomOptionsValue] | None = ...,
         include_displacement: builtins.bool | None = ...,
         shell_position: global___ShellPosition.ValueType = ...,
+        hot_spot_definition: global___HotSpotDefinition | None = ...,
         supports_monitoring: builtins.bool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_id", b"_id", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "_supports_monitoring", b"_supports_monitoring", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "script", b"script", "supports_monitoring", b"supports_monitoring"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_id", b"_id", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "_supports_monitoring", b"_supports_monitoring", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "custom_options", b"custom_options", "custom_selections", b"custom_selections", "fields", b"fields", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "location", b"location", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "result_type", b"result_type", "script", b"script", "set_ids", b"set_ids", "shell_position", b"shell_position", "supports_monitoring", b"supports_monitoring"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_id", b"_id", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "_supports_monitoring", b"_supports_monitoring", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "hot_spot_definition", b"hot_spot_definition", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "script", b"script", "supports_monitoring", b"supports_monitoring"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_all_sets", b"_all_sets", "_as_linear", b"_as_linear", "_average_by_entity", b"_average_by_entity", "_id", b"_id", "_include_displacement", b"_include_displacement", "_last_set", b"_last_set", "_name", b"_name", "_named_selection_id", b"_named_selection_id", "_on_skin", b"_on_skin", "_script", b"_script", "_supports_monitoring", b"_supports_monitoring", "all_sets", b"all_sets", "as_linear", b"as_linear", "average_by_entity", b"average_by_entity", "custom_options", b"custom_options", "custom_selections", b"custom_selections", "fields", b"fields", "hot_spot_definition", b"hot_spot_definition", "id", b"id", "include_displacement", b"include_displacement", "last_set", b"last_set", "location", b"location", "mesh_scoping", b"mesh_scoping", "name", b"name", "named_selection_id", b"named_selection_id", "on_skin", b"on_skin", "result_type", b"result_type", "script", b"script", "set_ids", b"set_ids", "shell_position", b"shell_position", "supports_monitoring", b"supports_monitoring"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_all_sets", b"_all_sets"]) -> typing.Literal["all_sets"] | None: ...
     @typing.overload
@@ -2616,6 +2781,9 @@ class Settings(google.protobuf.message.Message):
     DISABLE_USER_DEFINED_PLOTS_FIELD_NUMBER: builtins.int
     WORK_DIR_AS_HOME_FIELD_NUMBER: builtins.int
     GZIP_COMPRESSION_FIELD_NUMBER: builtins.int
+    GATEWAY_HTTP_PORT_FIELD_NUMBER: builtins.int
+    GATEWAY_GRPC_PORT_FIELD_NUMBER: builtins.int
+    GATEWAY_PROXY_INFO_FIELD_NUMBER: builtins.int
     HPS_CONFIG_PATH_FIELD_NUMBER: builtins.int
     HPS_DOWNLOAD_DIRECTORY_FIELD_NUMBER: builtins.int
     HPS_CREDENTIALS_FIELD_NUMBER: builtins.int
@@ -2651,6 +2819,10 @@ class Settings(google.protobuf.message.Message):
     disable_user_defined_plots: builtins.bool
     work_dir_as_home: builtins.bool
     gzip_compression: builtins.bool
+    gateway_http_port: builtins.int
+    """HTTP port for the gateway server."""
+    gateway_grpc_port: builtins.int
+    """gRPC port for the gateway server."""
     hps_config_path: builtins.str
     hps_download_directory: builtins.str
     web_app_path: builtins.str
@@ -2672,6 +2844,8 @@ class Settings(google.protobuf.message.Message):
     use_std_post: builtins.bool
     """Use std post for result evaluation."""
     dpf_path: builtins.str
+    @property
+    def gateway_proxy_info(self) -> global___GatewayProxyInfo: ...
     @property
     def hps_credentials(self) -> global___HpsCredentials: ...
     def __init__(
@@ -2695,6 +2869,9 @@ class Settings(google.protobuf.message.Message):
         disable_user_defined_plots: builtins.bool | None = ...,
         work_dir_as_home: builtins.bool | None = ...,
         gzip_compression: builtins.bool | None = ...,
+        gateway_http_port: builtins.int = ...,
+        gateway_grpc_port: builtins.int = ...,
+        gateway_proxy_info: global___GatewayProxyInfo | None = ...,
         hps_config_path: builtins.str | None = ...,
         hps_download_directory: builtins.str = ...,
         hps_credentials: global___HpsCredentials | None = ...,
@@ -2713,8 +2890,8 @@ class Settings(google.protobuf.message.Message):
         use_std_post: builtins.bool | None = ...,
         dpf_path: builtins.str | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_debug_api_responses", b"_debug_api_responses", "_disable_user_defined_plots", b"_disable_user_defined_plots", "_dpf_multiple_servers", b"_dpf_multiple_servers", "_dpf_num_threads", b"_dpf_num_threads", "_dpf_path", b"_dpf_path", "_gzip_compression", b"_gzip_compression", "_hps_config_path", b"_hps_config_path", "_idle_timeout", b"_idle_timeout", "_log_file_name", b"_log_file_name", "_strict_checks", b"_strict_checks", "_time_requests", b"_time_requests", "_timeout", b"_timeout", "_use_std_post", b"_use_std_post", "_work_dir_as_home", b"_work_dir_as_home", "_ws_ping_interval", b"_ws_ping_interval", "_ws_ping_timeout", b"_ws_ping_timeout", "debug_api_responses", b"debug_api_responses", "disable_user_defined_plots", b"disable_user_defined_plots", "dpf_multiple_servers", b"dpf_multiple_servers", "dpf_num_threads", b"dpf_num_threads", "dpf_path", b"dpf_path", "gzip_compression", b"gzip_compression", "hps_config_path", b"hps_config_path", "hps_credentials", b"hps_credentials", "idle_timeout", b"idle_timeout", "log_file_name", b"log_file_name", "strict_checks", b"strict_checks", "time_requests", b"time_requests", "timeout", b"timeout", "use_std_post", b"use_std_post", "work_dir_as_home", b"work_dir_as_home", "ws_ping_interval", b"ws_ping_interval", "ws_ping_timeout", b"ws_ping_timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_debug_api_responses", b"_debug_api_responses", "_disable_user_defined_plots", b"_disable_user_defined_plots", "_dpf_multiple_servers", b"_dpf_multiple_servers", "_dpf_num_threads", b"_dpf_num_threads", "_dpf_path", b"_dpf_path", "_gzip_compression", b"_gzip_compression", "_hps_config_path", b"_hps_config_path", "_idle_timeout", b"_idle_timeout", "_log_file_name", b"_log_file_name", "_strict_checks", b"_strict_checks", "_time_requests", b"_time_requests", "_timeout", b"_timeout", "_use_std_post", b"_use_std_post", "_work_dir_as_home", b"_work_dir_as_home", "_ws_ping_interval", b"_ws_ping_interval", "_ws_ping_timeout", b"_ws_ping_timeout", "access_token_lifetime", b"access_token_lifetime", "api_responses_debug_path", b"api_responses_debug_path", "api_v1_str", b"api_v1_str", "data_directory", b"data_directory", "debug_api_responses", b"debug_api_responses", "disable_user_defined_plots", b"disable_user_defined_plots", "dpf_multiple_servers", b"dpf_multiple_servers", "dpf_num_threads", b"dpf_num_threads", "dpf_path", b"dpf_path", "dpf_server_connection_attempts", b"dpf_server_connection_attempts", "gzip_compression", b"gzip_compression", "host", b"host", "hps_config_path", b"hps_config_path", "hps_credentials", b"hps_credentials", "hps_download_directory", b"hps_download_directory", "idle_timeout", b"idle_timeout", "license", b"license", "log_file_name", b"log_file_name", "log_level", b"log_level", "max_memory_fraction", b"max_memory_fraction", "monitor_memory_interval", b"monitor_memory_interval", "monitoring_interval", b"monitoring_interval", "name", b"name", "port", b"port", "project_name", b"project_name", "strict_checks", b"strict_checks", "target_message_size", b"target_message_size", "time_requests", b"time_requests", "timeout", b"timeout", "use_std_post", b"use_std_post", "web_app_path", b"web_app_path", "work_dir_as_home", b"work_dir_as_home", "ws_fragment_size", b"ws_fragment_size", "ws_ping_interval", b"ws_ping_interval", "ws_ping_timeout", b"ws_ping_timeout"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_debug_api_responses", b"_debug_api_responses", "_disable_user_defined_plots", b"_disable_user_defined_plots", "_dpf_multiple_servers", b"_dpf_multiple_servers", "_dpf_num_threads", b"_dpf_num_threads", "_dpf_path", b"_dpf_path", "_gzip_compression", b"_gzip_compression", "_hps_config_path", b"_hps_config_path", "_idle_timeout", b"_idle_timeout", "_log_file_name", b"_log_file_name", "_strict_checks", b"_strict_checks", "_time_requests", b"_time_requests", "_timeout", b"_timeout", "_use_std_post", b"_use_std_post", "_work_dir_as_home", b"_work_dir_as_home", "_ws_ping_interval", b"_ws_ping_interval", "_ws_ping_timeout", b"_ws_ping_timeout", "debug_api_responses", b"debug_api_responses", "disable_user_defined_plots", b"disable_user_defined_plots", "dpf_multiple_servers", b"dpf_multiple_servers", "dpf_num_threads", b"dpf_num_threads", "dpf_path", b"dpf_path", "gateway_proxy_info", b"gateway_proxy_info", "gzip_compression", b"gzip_compression", "hps_config_path", b"hps_config_path", "hps_credentials", b"hps_credentials", "idle_timeout", b"idle_timeout", "log_file_name", b"log_file_name", "strict_checks", b"strict_checks", "time_requests", b"time_requests", "timeout", b"timeout", "use_std_post", b"use_std_post", "work_dir_as_home", b"work_dir_as_home", "ws_ping_interval", b"ws_ping_interval", "ws_ping_timeout", b"ws_ping_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_debug_api_responses", b"_debug_api_responses", "_disable_user_defined_plots", b"_disable_user_defined_plots", "_dpf_multiple_servers", b"_dpf_multiple_servers", "_dpf_num_threads", b"_dpf_num_threads", "_dpf_path", b"_dpf_path", "_gzip_compression", b"_gzip_compression", "_hps_config_path", b"_hps_config_path", "_idle_timeout", b"_idle_timeout", "_log_file_name", b"_log_file_name", "_strict_checks", b"_strict_checks", "_time_requests", b"_time_requests", "_timeout", b"_timeout", "_use_std_post", b"_use_std_post", "_work_dir_as_home", b"_work_dir_as_home", "_ws_ping_interval", b"_ws_ping_interval", "_ws_ping_timeout", b"_ws_ping_timeout", "access_token_lifetime", b"access_token_lifetime", "api_responses_debug_path", b"api_responses_debug_path", "api_v1_str", b"api_v1_str", "data_directory", b"data_directory", "debug_api_responses", b"debug_api_responses", "disable_user_defined_plots", b"disable_user_defined_plots", "dpf_multiple_servers", b"dpf_multiple_servers", "dpf_num_threads", b"dpf_num_threads", "dpf_path", b"dpf_path", "dpf_server_connection_attempts", b"dpf_server_connection_attempts", "gateway_grpc_port", b"gateway_grpc_port", "gateway_http_port", b"gateway_http_port", "gateway_proxy_info", b"gateway_proxy_info", "gzip_compression", b"gzip_compression", "host", b"host", "hps_config_path", b"hps_config_path", "hps_credentials", b"hps_credentials", "hps_download_directory", b"hps_download_directory", "idle_timeout", b"idle_timeout", "license", b"license", "log_file_name", b"log_file_name", "log_level", b"log_level", "max_memory_fraction", b"max_memory_fraction", "monitor_memory_interval", b"monitor_memory_interval", "monitoring_interval", b"monitoring_interval", "name", b"name", "port", b"port", "project_name", b"project_name", "strict_checks", b"strict_checks", "target_message_size", b"target_message_size", "time_requests", b"time_requests", "timeout", b"timeout", "use_std_post", b"use_std_post", "web_app_path", b"web_app_path", "work_dir_as_home", b"work_dir_as_home", "ws_fragment_size", b"ws_fragment_size", "ws_ping_interval", b"ws_ping_interval", "ws_ping_timeout", b"ws_ping_timeout"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["_debug_api_responses", b"_debug_api_responses"]) -> typing.Literal["debug_api_responses"] | None: ...
     @typing.overload
