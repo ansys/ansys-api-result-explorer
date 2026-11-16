@@ -7,6 +7,7 @@ on:
 
 env:
   MAIN_PYTHON_VERSION: '3.11'
+  RX_SERVER_INSTALLATION_PATH: '/tmp/result-explorer-server'
 
 jobs:
 
@@ -30,19 +31,27 @@ jobs:
       - name: Create data folder
         run: mkdir -p /tmp/data
 
-      - name: Start Result Explorer
-        id: rx-compose
-        uses: ./.github/actions/result-explorer-docker
+      - name: "Install Result Explorer"
+        id: install-rx
+        uses: ansys/pyresultexplorer/.github/actions/result-explorer-server@main
         with:
+          version: 'latest-dev'
+          installation-path: ${{ env.RX_SERVER_INSTALLATION_PATH }}
           token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
-          ghcr-username: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
-          ghcr-token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
-          license-server: ${{ secrets.LICENSE_SERVER }}
-          results-folder: /tmp/data
+
+      - name: "Start Result Explorer Server"
+        run: |
+          ${{ env.RX_SERVER_INSTALLATION_PATH }}/viz-server/viz-server --no-auth --no-ssl &
+          sleep 10
 
       - name: Generate server models from openapi
         run: |
           python scripts/generate_proto_from_openapi.py
+
+      - name: Stop result explorer server
+        if: always()
+        run: |
+          pkill -f 'viz-server/viz-server' || echo "No server process found to kill"
 
       - name: Pre-commit checks
         continue-on-error: true
