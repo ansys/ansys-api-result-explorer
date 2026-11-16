@@ -39,6 +39,11 @@ jobs:
           installation-path: ${{ env.RX_SERVER_INSTALLATION_PATH }}
           token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
 
+      - name: "Start Result Explorer Server"
+        run: |
+          ${{ env.RX_SERVER_INSTALLATION_PATH }}/viz-server/viz-server --no-auth --no-ssl &
+          sleep 10
+
       - name: Generate server models from openapi
         run: |
           python scripts/generate_proto_from_openapi.py
