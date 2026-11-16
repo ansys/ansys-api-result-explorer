@@ -48,6 +48,11 @@ jobs:
         run: |
           python scripts/generate_proto_from_openapi.py
 
+      - name: Stop result explorer server
+        if: always()
+        run: |
+          pkill -f 'viz-server/viz-server' || echo "No server process found to kill"
+
       - name: Pre-commit checks
         continue-on-error: true
         run: |
