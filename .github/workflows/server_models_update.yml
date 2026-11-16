@@ -33,7 +33,7 @@ jobs:
 
       - name: "Install Result Explorer"
         id: install-rx
-        uses: ./.github/actions/result-explorer-server
+        uses: ansys/pyresultexplorer/.github/actions/result-explorer-server@main
         with:
           version: 'latest-dev'
           installation-path: ${{ env.RX_SERVER_INSTALLATION_PATH }}
