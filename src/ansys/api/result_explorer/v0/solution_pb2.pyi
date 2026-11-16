@@ -60,16 +60,36 @@ class SolutionCreate(google.protobuf.message.Message):
 global___SolutionCreate = SolutionCreate
 
 @typing.final
+class ExtendedSolution(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SOLUTION_FIELD_NUMBER: builtins.int
+    READ_ONLY_FIELD_NUMBER: builtins.int
+    read_only: builtins.bool
+    @property
+    def solution(self) -> server_models_pb2.Solution: ...
+    def __init__(
+        self,
+        *,
+        solution: server_models_pb2.Solution | None = ...,
+        read_only: builtins.bool = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["solution", b"solution"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["read_only", b"read_only", "solution", b"solution"]) -> None: ...
+
+global___ExtendedSolution = ExtendedSolution
+
+@typing.final
 class SolutionList(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SOLUTIONS_FIELD_NUMBER: builtins.int
     @property
-    def solutions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[server_models_pb2.Solution]: ...
+    def solutions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ExtendedSolution]: ...
     def __init__(
         self,
         *,
-        solutions: collections.abc.Iterable[server_models_pb2.Solution] | None = ...,
+        solutions: collections.abc.Iterable[global___ExtendedSolution] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["solutions", b"solutions"]) -> None: ...
 

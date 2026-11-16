@@ -29,8 +29,13 @@ message SolutionCreate {
   server_models.SplitMeshOptions split_mesh_options = 5;
 }
 
+message ExtendedSolution {
+  server_models.Solution solution = 1;
+  bool read_only = 2;
+}
+
 message SolutionList {
-  repeated server_models.Solution solutions = 1;
+  repeated ExtendedSolution solutions = 1;
 }
 
 message CreatePlotDefinitionRequest {
@@ -87,10 +92,10 @@ message UpdateMeshOptionsRequest {
 }
 
 service SolutionService {
-  rpc Create(SolutionCreate) returns (server_models.Solution);
+  rpc Create(SolutionCreate) returns (ExtendedSolution);
   rpc Delete(base.ResourceId) returns (base.Empty);
   rpc List(base.Empty) returns (SolutionList);
-  rpc Get(base.ResourceId) returns (server_models.Solution);
+  rpc Get(base.ResourceId) returns (ExtendedSolution);
 
   rpc UpdateMeshOptions(UpdateMeshOptionsRequest)
     returns (server_models.MeshGraphicsOptions);
